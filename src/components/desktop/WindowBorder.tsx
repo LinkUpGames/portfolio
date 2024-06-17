@@ -1,5 +1,54 @@
+import DesktopMenu from "./DesktopMenu";
+import MobileMenu from "./MobileMenu";
+import { FaCircle } from "react-icons/fa";
+
 const WindowBorder = () => {
-  return <div>WindowBorder</div>;
+  const menu: Option[] = [
+    {
+      name: "Projects",
+    },
+    {
+      name: "Socials",
+    },
+    {
+      name: "Experience",
+    },
+  ];
+
+  const options: Option[] = [
+    {
+      name: "#ff0000",
+    },
+    {
+      name: "#fcf00a",
+    },
+    {
+      name: "#34fc08",
+    },
+  ];
+
+  return (
+    <div
+      className={`w-full flex items-center rounded-t-md justify-between h-3 px-4 py-4 bg-white`}
+    >
+      {/* Mobile Version */}
+      <div className="md:hidden cursor-pointer">
+        <MobileMenu menu={menu} />
+      </div>
+
+      {/* Desktop */}
+      <div className="hidden md:flex">
+        <DesktopMenu menu={menu} />
+      </div>
+
+      {/* Window Leave */}
+      <div className="flex flex-row gap-4">
+        {options.map((option) => (
+          <FaCircle color={option.name} />
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default WindowBorder;
