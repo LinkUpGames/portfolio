@@ -5,6 +5,9 @@ import { FaCircle } from "react-icons/fa";
 const WindowBorder = () => {
   const menu: Option[] = [
     {
+      name: "Home",
+    },
+    {
       name: "Projects",
     },
     {
@@ -29,7 +32,7 @@ const WindowBorder = () => {
 
   return (
     <div
-      className={`w-full flex items-center rounded-t-md justify-between h-3 px-4 py-4 bg-white`}
+      className={`w-full flex items-center rounded-t-md justify-between h-3 px-4 py-4 bg-white border-b-black border-b-2`}
     >
       {/* Mobile Version */}
       <div className="md:hidden cursor-pointer">
