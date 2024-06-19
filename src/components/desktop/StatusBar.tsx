@@ -2,7 +2,7 @@ import DesktopMenu from "./DesktopMenu";
 import MobileMenu from "./MobileMenu";
 import { FaCircle } from "react-icons/fa";
 
-const WindowBorder = () => {
+const StatusBar = () => {
   const menu: Option[] = [
     {
       name: "Home",
@@ -46,12 +46,12 @@ const WindowBorder = () => {
 
       {/* Window Leave */}
       <div className="flex flex-row gap-4">
-        {options.map((option) => (
-          <FaCircle color={option.name} />
+        {options.map((option, index) => (
+          <FaCircle key={index} color={option.name} />
         ))}
       </div>
     </div>
   );
 };
 
-export default WindowBorder;
+export default StatusBar;

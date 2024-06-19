@@ -1,5 +1,7 @@
+import WindowBorder from "@/components/desktop/Window";
+
 const Home = () => {
-  return <div>Home</div>;
+  return <WindowBorder>Hello</WindowBorder>;
 };
 
 export default Home;
