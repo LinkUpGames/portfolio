@@ -17,7 +17,7 @@ function App() {
         menu: menu,
       }}
     >
-      <div className="w-full p-3 h-screen bg-black flex flex-col">
+      <div className="w-full p-3 h-screen max-h-screen bg-black flex flex-col overflow-hidden">
         {/* Navbar */}
         <StatusBar />
 
