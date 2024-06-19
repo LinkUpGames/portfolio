@@ -75,7 +75,7 @@ const WindowBorder = ({ children, title = "" }: Props) => {
   useEffect(() => {
     const handleResize = () => {
       const element = ref.current;
-      if (element) {
+      if (element && (pos.x !== 0 || pos.y !== 0)) {
         setPos({ x: 0, y: 0 });
         element.style.transform = `translate(${0}px, ${0}px)`;
       }
