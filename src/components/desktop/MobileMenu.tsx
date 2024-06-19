@@ -1,25 +1,41 @@
 import { useState } from "react";
 import { CiMenuBurger } from "react-icons/ci";
 
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Link } from "react-router-dom";
+
 interface Props {
   menu: Option[];
 }
 
 const MobileMenu = ({ menu }: Props) => {
   // STATES
-  // Control the state of the mobile menu
-  const [open, setOpen] = useState(false);
 
   return (
-    <button
-      className="w-fit h-fit flex items-center cursor-pointer relative"
-      onClick={() => setOpen((prev) => !prev)}
-    >
-      <CiMenuBurger size={25} />
+    <DropdownMenu>
+      {/* Button */}
+      <DropdownMenuTrigger asChild>
+        <CiMenuBurger size={25} />
+      </DropdownMenuTrigger>
 
-      {/* Menu */}
-      {open && <div className="absolute">hello</div>}
-    </button>
+      {/* Content */}
+      <DropdownMenuContent className="z-[9999] ml-3">
+        {menu.map((element, index) => (
+          <DropdownMenuItem key={index}>
+            <Link key={index} to={element.name} className="text-xl">
+              {element.name}
+            </Link>
+          </DropdownMenuItem>
+        ))}
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 };
 
