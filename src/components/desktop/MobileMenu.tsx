@@ -21,7 +21,7 @@ const MobileMenu = ({ menu }: Props) => {
   return (
     <DropdownMenu>
       {/* Button */}
-      <DropdownMenuTrigger asChild>
+      <DropdownMenuTrigger>
         <CiMenuBurger size={25} />
       </DropdownMenuTrigger>
 
