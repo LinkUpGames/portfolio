@@ -34,6 +34,8 @@ const WindowBorder = ({ children }: Props) => {
    */
   const onMouseDown = useCallback(
     (event: any) => {
+      const element = ref.current;
+
       const onMouseMove = (event: MouseEvent) => {
         pos.x += event.movementX;
         pos.y += event.movementY;
@@ -41,10 +43,9 @@ const WindowBorder = ({ children }: Props) => {
         pos.x = clampNumber(pos.x, MAXPOS[0].x, MAXPOS[1].x);
         pos.y = clampNumber(pos.y, MAXPOS[0].y, MAXPOS[1].y);
 
-        const element = ref.current;
-
         if (element && window.innerWidth > 768) {
           element.style.transform = `translate(${pos.x}px, ${pos.y}px)`;
+          element.style.zIndex = "9999";
         }
 
         setPos(pos);
@@ -53,7 +54,13 @@ const WindowBorder = ({ children }: Props) => {
       const onMouseUp = () => {
         document.removeEventListener("mousemove", onMouseMove);
         document.removeEventListener("mouseup", onMouseUp);
+
+        if (element) {
+          element.style.zIndex = "0";
+        }
       };
+
+      event.preventDefault();
 
       document.addEventListener("mousemove", onMouseMove);
       document.addEventListener("mouseup", onMouseUp);
@@ -84,8 +91,8 @@ const WindowBorder = ({ children }: Props) => {
   return (
     <div
       ref={ref}
-      onMouseDown={onMouseDown}
-      className={`absolute max-w-52 min-w-48 w-fit max-h-72 min-h-48 bg-white`}
+      onMouseDown={(e) => onMouseDown(e)}
+      className={`relative md:absolute md:max-w-52 md:min-w-48 w-full md:w-fit max-h-72 min-h-48 bg-white`}
     >
       {children}
     </div>
