@@ -2,13 +2,14 @@ import { clampNumber } from "@/helpers/functions";
 import { ReactNode, useCallback, useEffect, useRef, useState } from "react";
 
 interface Props {
+  title: string;
   children: ReactNode;
 }
 
 /**
  * The window border that is used for every component used
  */
-const WindowBorder = ({ children }: Props) => {
+const WindowBorder = ({ children, title = "" }: Props) => {
   // CONSTANTS
   const MAXPOS: Position[] = [
     { x: 0, y: 20 },
@@ -92,9 +93,15 @@ const WindowBorder = ({ children }: Props) => {
     <div
       ref={ref}
       onMouseDown={(e) => onMouseDown(e)}
-      className={`relative md:absolute md:max-w-52 md:min-w-48 w-full md:w-fit max-h-72 min-h-48 bg-white`}
+      className={`relative md:absolute md:max-w-full md:min-w-72 w-full md:w-fit max-h-72 min-h-48 bg-white border-4 border-black`}
     >
-      {children}
+      <div className="w-full gap-2 h-fit mx-auto flex justify-between items-center border-b-black border-b-2 py-2 px-3">
+        <div className="border-t-2 h-full border-red border-b-2 bg-red w-full" />
+        <h2 className="text-2xl md:text-4xl text-black"> {title}</h2>
+        <div className="border-t-2 h-full border-red border-b-2 bg-red w-full" />
+      </div>
+
+      <div className="py-4 px-6">{children}</div>
     </div>
   );
 };

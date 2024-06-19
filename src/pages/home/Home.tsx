@@ -3,8 +3,7 @@ import WindowBorder from "@/components/desktop/Window";
 const Home = () => {
   return (
     <>
-      <WindowBorder>Hello</WindowBorder>
-      <WindowBorder>Another one</WindowBorder>
+      <WindowBorder title="Home">Hello</WindowBorder>
     </>
   );
 };
