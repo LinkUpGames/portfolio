@@ -4,17 +4,18 @@ import { ReactNode, useCallback, useEffect, useRef, useState } from "react";
 interface Props {
   title: string;
   children: ReactNode;
+  className?: string;
 }
 
 /**
  * The window border that is used for every component used
  */
-const WindowBorder = ({ children, title = "" }: Props) => {
+const WindowBorder = ({ children, title = "", className = "" }: Props) => {
   // CONSTANTS
   const MAXPOS: Position[] = [
     { x: 0, y: 20 },
     {
-      x: window.innerWidth - window.innerWidth * 0.2,
+      x: window.innerWidth - window.innerWidth * 0.25,
       y: window.innerHeight - window.innerHeight * 0.2,
     },
   ];
@@ -93,7 +94,7 @@ const WindowBorder = ({ children, title = "" }: Props) => {
     <div
       ref={ref}
       onMouseDown={(e) => onMouseDown(e)}
-      className={`relative md:absolute md:max-w-full md:min-w-72 w-full md:w-fit max-h-72 min-h-48 bg-white border-4 border-black`}
+      className={`relative md:absolute md:max-w-[80%] md:min-w-72 w-full max-h-[80%] min-h-[30%] bg-white border-4 border-black rounded-md`}
     >
       <div className="w-full gap-2 h-fit mx-auto flex justify-between items-center border-b-black border-b-2 py-2 px-3">
         <div className="border-t-2 h-full border-red border-b-2 bg-red w-full" />
@@ -101,7 +102,11 @@ const WindowBorder = ({ children, title = "" }: Props) => {
         <div className="border-t-2 h-full border-red border-b-2 bg-red w-full" />
       </div>
 
-      <div className="py-4 px-6">{children}</div>
+      <div
+        className={`py-4 px-2 w-full h-full overflow-y-auto break-words ${className}`}
+      >
+        {children}
+      </div>
     </div>
   );
 };
