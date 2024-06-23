@@ -10,8 +10,8 @@ const Home = () => {
       <WindowBorder title={lang.home.title}>
         {/* Title */}
         <div className="flex flex-col justify-center items-start border-b-blue w-full border-b-2">
-          <h3 className="text-black text-xl">{lang.home.title_card}</h3>
-          <h4 className="text-black text-base">{lang.home.introduction}</h4>
+          <h3 className="text-black text-2xl">{lang.home.title_card}</h3>
+          <h4 className="text-black text-xl">{lang.home.introduction}</h4>
         </div>
 
         {/* Content */}

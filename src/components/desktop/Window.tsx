@@ -94,16 +94,16 @@ const WindowBorder = ({ children, title = "", className = "" }: Props) => {
     <div
       ref={ref}
       onMouseDown={(e) => onMouseDown(e)}
-      className={`relative md:absolute md:max-w-[80%] md:min-w-72 w-full max-h-[80%] min-h-[30%] bg-white border-4 border-black rounded-md`}
+      className={`relative flex flex-col md:absolute md:max-w-[80%] md:min-w-72 w-full max-h-[80%] min-h-[30%] bg-white border-4 border-black rounded-md`}
     >
       <div className="w-full gap-2 h-fit mx-auto flex justify-between items-center border-b-black border-b-2 py-2 px-3">
-        <div className="border-t-2 h-full border-red border-b-2 bg-red w-full" />
+        <div className="border-t-2 h-1/4 border-red border-b-2 bg-red w-full" />
         <h2 className="text-2xl md:text-4xl text-black"> {title}</h2>
-        <div className="border-t-2 h-full border-red border-b-2 bg-red w-full" />
+        <div className="border-t-2 h-1/4 border-red border-b-2 bg-red w-full" />
       </div>
 
       <div
-        className={`py-4 px-2 w-full h-full overflow-y-auto break-words ${className}`}
+        className={`py-4 px-4 w-full flex-grow overflow-y-auto break-words ${className}`}
       >
         {children}
       </div>

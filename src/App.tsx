@@ -4,8 +4,9 @@ import { AppContext } from "./AppContext";
 import { useMemo, useState } from "react";
 
 import StatusBar from "./components/desktop/StatusBar";
+import Launcher from "./components/desktop/Launcher";
 
-import bg from "@/assets/bg.svg";
+import bg from "@/assets/repeating.jpeg";
 import en from "@/text/en.json";
 
 function App() {
@@ -34,12 +35,15 @@ function App() {
         <StatusBar />
 
         <div
-          className="px-4 py-2 bg-write w-full relative h-full rounded-b-md flex flex-col justify-start gap-5 items-center md:block overflow-y-auto md:overflow-hidden"
+          className="px-4 py-2 bg-write w-full relative h-full rounded-b-md flex flex-col justify-start gap-5 items-center overflow-y-auto md:overflow-hidden"
           style={{
             backgroundImage: `url(${bg}`,
           }}
         >
           <Outlet />
+
+          {/* Footer */}
+          <Launcher />
         </div>
       </div>
     </AppContext.Provider>
