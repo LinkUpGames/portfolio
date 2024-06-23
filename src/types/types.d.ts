@@ -1,5 +1,6 @@
 interface Option {
   name: string;
+  component?: JSX.Element;
 }
 
 interface Position {
