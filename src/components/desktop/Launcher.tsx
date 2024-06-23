@@ -85,7 +85,7 @@ const AppIcon = ({ element, mouseX }: AppIconProps) => {
     <motion.li
       ref={ref}
       style={{ width }}
-      className="aspect-square w-10 rounded-full text-center cursor-pointer"
+      className="aspect-square w-10 rounded-full text-center"
     >
       <motion.div
         style={{ scaleX: textScale, scaleY: textScale }}
@@ -96,7 +96,9 @@ const AppIcon = ({ element, mouseX }: AppIconProps) => {
         </motion.h2>
       </motion.div>
 
-      {element.component}
+      <motion.div className="aspect-square cursor-pointer rounded-full">
+        {element.component}
+      </motion.div>
     </motion.li>
   );
 };
