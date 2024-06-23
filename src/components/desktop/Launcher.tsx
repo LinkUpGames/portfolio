@@ -7,6 +7,9 @@ import {
 } from "framer-motion";
 import chatIcon from "pixelarticons/svg/chat.svg";
 import musicIcon from "pixelarticons/svg/music.svg";
+import socialsIcon from "pixelarticons/svg/user.svg";
+import githubIcon from "pixelarticons/svg/github.svg";
+
 import { useRef } from "react";
 
 const Launcher = () => {
@@ -24,16 +27,12 @@ const Launcher = () => {
       component: <img className="" src={musicIcon} />,
     },
     {
-      name: "music",
-      component: <img className="" src={musicIcon} />,
+      name: "socials",
+      component: <img className="" src={socialsIcon} />,
     },
     {
       name: "music",
-      component: <img className="" src={musicIcon} />,
-    },
-    {
-      name: "music",
-      component: <img className="" src={musicIcon} />,
+      component: <img className="" src={githubIcon} />,
     },
   ];
 
@@ -52,18 +51,17 @@ const Launcher = () => {
   );
 };
 
-interface AppIconProps {
-  component: JSX.Element;
-  mouseX: MotionValue;
-}
-
+/**
+ * The app icon that is used in the docker
+ * The use of framer motion allows for smooth animations
+ */
 const AppIcon = ({ component, mouseX }: AppIconProps) => {
   // REFS
   const ref = useRef<HTMLLIElement>(null);
 
   // FRAMER MOTION
   // The distance between the mouse and the actual launcher icon
-  const distance = useTransform(mouseX, (val) => {
+  const distance = useTransform(mouseX, (val: any) => {
     const bounds = ref.current?.getBoundingClientRect() ?? { x: 0, width: 0 };
     const pos = val - bounds.x - bounds.width * 0.5;
 

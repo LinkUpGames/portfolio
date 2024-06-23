@@ -15,3 +15,8 @@ interface MenuText {
     introduction: string;
   };
 }
+
+interface AppIconProps {
+  component: JSX.Element;
+  mouseX: MotionValue;
+}
