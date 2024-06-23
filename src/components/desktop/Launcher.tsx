@@ -6,21 +6,23 @@ const Launcher = () => {
   const elements: Option[] = [
     {
       name: "chat",
-      component: <img className="h-full object-contain" src={chatIcon} />,
+      component: <img className="" src={chatIcon} />,
     },
     {
       name: "music",
-      component: <img className="h-full object-contain" src={musicIcon} />,
+      component: <img className="" src={musicIcon} />,
     },
   ];
 
   return (
-    <div className="fixed bottom-10 mt-auto mx-auto px-5 py-3 w-fit max-w-50 overflow-x-auto h-12 text-center backdrop-blur-sm bg-red bg-opacity-60 rounded-md">
-      <div className="flex flex-row gap-4 h-full">
-        {elements.map((elem) => (
-          <div className="h-full cursor-pointer">{elem.component}</div>
+    <div className="fixed bottom-10 mt-auto">
+      <ul className="backdrop-blur-sm bg-red bg-opacity-60 rounded-md mx-auto flex gap-4 h-16 items-end px-4 pb-3">
+        {elements.map((elem, index) => (
+          <li key={index} className="aspect-square w-10 rounded-full">
+            {elem.component}
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   );
 };
