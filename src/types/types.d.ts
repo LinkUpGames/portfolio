@@ -17,6 +17,6 @@ interface MenuText {
 }
 
 interface AppIconProps {
-  component: JSX.Element;
+  element: Option;
   mouseX: MotionValue;
 }

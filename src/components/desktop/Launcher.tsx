@@ -1,10 +1,4 @@
-import {
-  MotionValue,
-  motion,
-  useMotionValue,
-  useSpring,
-  useTransform,
-} from "framer-motion";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import chatIcon from "pixelarticons/svg/chat.svg";
 import musicIcon from "pixelarticons/svg/music.svg";
 import socialsIcon from "pixelarticons/svg/user.svg";
@@ -44,7 +38,7 @@ const Launcher = () => {
     >
       <motion.ul className="backdrop-blur-sm bg-red bg-opacity-60 rounded-md mx-auto flex gap-4 h-16 items-end px-4 pb-3">
         {elements.map((elem, index) => (
-          <AppIcon key={index} component={elem.component!} mouseX={mouseX} />
+          <AppIcon key={index} element={elem} mouseX={mouseX} />
         ))}
       </motion.ul>
     </div>
@@ -55,7 +49,7 @@ const Launcher = () => {
  * The app icon that is used in the docker
  * The use of framer motion allows for smooth animations
  */
-const AppIcon = ({ component, mouseX }: AppIconProps) => {
+const AppIcon = ({ element, mouseX }: AppIconProps) => {
   // REFS
   const ref = useRef<HTMLLIElement>(null);
 
@@ -76,13 +70,33 @@ const AppIcon = ({ component, mouseX }: AppIconProps) => {
     stiffness: 200,
   });
 
+  // The Scale of the text
+  const textScaleSync = useTransform(
+    distance,
+    [-50, -30, 0, 30, 50],
+    [0, 1, 1, 1, 0],
+  );
+  const textScale = useSpring(textScaleSync, {
+    damping: 10,
+    mass: 0.2,
+  });
+
   return (
     <motion.li
       ref={ref}
       style={{ width }}
-      className="aspect-square w-10 rounded-full"
+      className="aspect-square w-10 rounded-full text-center cursor-pointer"
     >
-      {component}
+      <motion.div
+        style={{ scaleX: textScale, scaleY: textScale }}
+        className="text-2xl text-white bg-red px-4 py-2 flex text-center justify-center items-center rounded-lg"
+      >
+        <motion.h2 style={{ scaleX: textScale, scaleY: textScale }}>
+          {element.name.toUpperCase()}
+        </motion.h2>
+      </motion.div>
+
+      {element.component}
     </motion.li>
   );
 };
