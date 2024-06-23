@@ -31,7 +31,7 @@ const Launcher = () => {
       component: <img className="" src={socialsIcon} />,
     },
     {
-      name: "music",
+      name: "github",
       component: <img className="" src={githubIcon} />,
     },
   ];
