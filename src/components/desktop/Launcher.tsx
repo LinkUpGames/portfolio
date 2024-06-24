@@ -14,19 +14,19 @@ const Launcher = () => {
   const elements: Option[] = [
     {
       name: "chat",
-      component: <img className="" src={chatIcon} />,
+      component: <img className="h-full w-full" src={chatIcon} />,
     },
     {
       name: "music",
-      component: <img className="" src={musicIcon} />,
+      component: <img className="h-full w-full" src={musicIcon} />,
     },
     {
       name: "socials",
-      component: <img className="" src={socialsIcon} />,
+      component: <img className="h-full w-full" src={socialsIcon} />,
     },
     {
       name: "github",
-      component: <img className="" src={githubIcon} />,
+      component: <img className="h-full w-full" src={githubIcon} />,
     },
   ];
 
@@ -85,11 +85,11 @@ const AppIcon = ({ element, mouseX }: AppIconProps) => {
     <motion.li
       ref={ref}
       style={{ width }}
-      className="aspect-square w-10 rounded-full text-center"
+      className="aspect-square w-10 flex rounded-full items-center justify-center text-center relative"
     >
       <motion.div
         style={{ scaleX: textScale, scaleY: textScale }}
-        className="text-2xl text-white bg-red px-4 py-2 flex text-center justify-center items-center rounded-lg"
+        className="text-2xl text-white bg-red px-4 py-2 flex text-center justify-center items-center mx-auto rounded-lg absolute -top-[3.5rem]"
       >
         <motion.h2 style={{ scaleX: textScale, scaleY: textScale }}>
           {element.name.toUpperCase()}
