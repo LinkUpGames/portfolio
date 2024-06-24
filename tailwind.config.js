@@ -16,6 +16,9 @@ module.exports = {
       blue: "#80d2ff",
       red: "#eb5959",
       black: "#383838",
+      green: "#57A773",
+      light: "#EFE9F4",
+      dark: "#484D6D",
     },
     fontFamily: {
       "pixel:": ["Pixelify Sans", "sans-serif"],
