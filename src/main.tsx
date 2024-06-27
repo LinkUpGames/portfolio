@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";
 import Home from "./pages/home/Home";
+import Projects from "./pages/projects/Projects";
 import {
   createBrowserRouter,
   Navigate,
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
       {
         path: "home",
         element: <Home />,
+      },
+      {
+        path: "Projects",
+        element: <Projects />,
       },
     ],
   },
