@@ -34,12 +34,7 @@ function App() {
         {/* Navbar */}
         <StatusBar />
 
-        <div
-          className="px-4 py-2 bg-write w-full relative h-full rounded-b-md flex flex-col justify-start gap-5 items-center overflow-y-auto md:overflow-hidden"
-          style={{
-            backgroundImage: `url(${bg}`,
-          }}
-        >
+        <div className="px-4 py-2 bg-write w-full relative h-full rounded-b-md flex flex-col justify-start gap-5 items-center overflow-y-auto md:overflow-hidden bg-grey">
           <Outlet />
 
           {/* Footer */}
