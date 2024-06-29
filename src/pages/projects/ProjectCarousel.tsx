@@ -15,6 +15,7 @@ const ProjectCarousel = ({ images }: Props) => {
     <Carousel
       className="w-full my-2"
       opts={{
+        align: "start",
         loop: true,
       }}
     >

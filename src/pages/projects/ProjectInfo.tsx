@@ -33,24 +33,26 @@ const ProjectInfo = ({
     <Dialog>
       <DialogTrigger>{children}</DialogTrigger>
 
-      <DialogContent className="w-11/12 rounded-lg border-2 max-h-[80]">
+      <DialogContent className="w-11/12 rounded-lg border-2 max-h-[80%] overflow-y-scroll">
         <DialogHeader>
           <DialogTitle>{info.title}</DialogTitle>
         </DialogHeader>
 
-        <DialogDescription className="flex flex-col w-full h-full overflow-y-auto">
+        <DialogDescription className="flex flex-col w-full h-full">
           <ProjectCarousel images={info.images} />
 
-          <p className="text-base text-black w-full">{info.summary}</p>
+          {/* Text */}
+          <div className="w-full h-full flex flex-col">
+            <p className="text-base text-black w-full">{info.summary}</p>
 
-          <Link
-            to={info.link}
-            target="_blank"
-            className="text-base underline text-center text-red"
-          >
-            Check the project out!
-          </Link>
-          <p>ifjewiofejw</p>
+            <Link
+              to={info.link}
+              target="_blank"
+              className="text-base underline text-center text-red"
+            >
+              Check the project out!
+            </Link>
+          </div>
         </DialogDescription>
       </DialogContent>
     </Dialog>
