@@ -28,6 +28,7 @@ function App() {
       value={{
         menu: menu,
         lang: lang,
+        setMenuItem: setMenu
       }}
     >
       <div className="w-full p-3 h-screen max-h-screen bg-black flex flex-col md:overflow-hidden">

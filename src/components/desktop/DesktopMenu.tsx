@@ -7,7 +7,7 @@ interface Props {
 }
 
 const DesktopMenu = ({ menu }: Props) => {
-  const { menu: menuItem } = useContext(AppContext);
+  const { menu: menuItem, setMenuItem } = useContext(AppContext);
 
   return (
     <div className="flex flex-row items-center w-full gap-4">
@@ -15,6 +15,7 @@ const DesktopMenu = ({ menu }: Props) => {
         <Link
           key={index}
           to={element.name}
+          onClick={() => setMenuItem(index)}
           className={`${index === menuItem ? "text-white bg-black px-2" : "text-black bg-transparent"} text-xl`}
         >
           {element.name}
