@@ -8,6 +8,7 @@ interface Props {
     title: string;
     summary: string;
     link: string;
+    images: string[];
   };
 }
 
@@ -18,6 +19,7 @@ const Icon = ({
     title: "",
     summary: "",
     link: "",
+    images: [],
   },
 }: Props) => {
   return (

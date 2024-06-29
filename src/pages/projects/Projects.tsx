@@ -21,10 +21,13 @@ const Projects = () => {
       image: ur,
       info: {
         title: "Ultimate Reality - A Pixelated Adventure",
-        summary: "This is another thing with a description and a title",
-        link: "",
+        summary:
+          "This is my best game to date. The game was made using GameMaker Studio 2. All the assets, including music, was outsourced.",
+        link: "https://gamejolt.com/games/ultimatereality/406940",
         images: [
           "https://m.gjcdn.net/game-screenshot/600/2221985-t9b739jy-v4.webp",
+          "https://m.gjcdn.net/game-screenshot/600/2411152-jsk7cdgx-v4.webp",
+          "https://m.gjcdn.net/game-screenshot/600/2867848-rggcprjz-v4.webp",
         ],
       },
     },
