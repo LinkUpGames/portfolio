@@ -44,7 +44,6 @@ const Launcher = () => {
     </div>
   );
 };
-
 /**
  * The app icon that is used in the docker
  * The use of framer motion allows for smooth animations

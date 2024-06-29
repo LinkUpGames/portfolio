@@ -6,7 +6,6 @@ import { useMemo, useState } from "react";
 import StatusBar from "./components/desktop/StatusBar";
 import Launcher from "./components/desktop/Launcher";
 
-import bg from "@/assets/repeating.jpeg";
 import en from "@/text/en.json";
 
 function App() {
@@ -28,7 +27,7 @@ function App() {
       value={{
         menu: menu,
         lang: lang,
-        setMenuItem: setMenu
+        setMenuItem: setMenu,
       }}
     >
       <div className="w-full p-3 h-screen max-h-screen bg-black flex flex-col md:overflow-hidden">
