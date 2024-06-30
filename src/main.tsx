@@ -9,11 +9,13 @@ import {
   Navigate,
   RouterProvider,
 } from "react-router-dom";
+import BlueScreenDeath from "./pages/death/BlueScreen.tsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    errorElement: <BlueScreenDeath />,
     children: [
       {
         index: true,
