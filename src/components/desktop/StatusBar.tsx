@@ -1,8 +1,13 @@
+import { useLocation } from "react-router-dom";
 import DesktopMenu from "./DesktopMenu";
 import MobileMenu from "./MobileMenu";
 import { FaCircle } from "react-icons/fa";
+import { useContext, useEffect } from "react";
+import { AppContext } from "@/AppContext";
 
 const StatusBar = () => {
+  const { setMenuItem } = useContext(AppContext);
+
   const menu: Option[] = [
     {
       name: "Home",
@@ -29,6 +34,26 @@ const StatusBar = () => {
       name: "#34fc08",
     },
   ];
+
+  // React Router
+  const location = useLocation();
+  const { pathname } = location;
+
+  // EFFECTS
+  /**
+   * Update the menu index for the correct position of where the website is
+   */
+  useEffect(() => {
+    // Check what option is currently selected
+    menu.forEach((element, i) => {
+      const index = pathname.includes(element.name);
+
+      // String exists, therefore update it
+      if (index) {
+        setMenuItem(i);
+      }
+    })
+  }, []);
 
   return (
     <div

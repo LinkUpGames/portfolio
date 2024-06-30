@@ -33,8 +33,8 @@ const ProjectInfo = ({
     <Dialog>
       <DialogTrigger>{children}</DialogTrigger>
 
-      <DialogContent className="w-11/12 rounded-lg border-2 border-black max-h-[80%] overflow-y-auto bg-dark text-white">
-        <DialogHeader className="border-b-2 border-b-light">
+      <DialogContent className="w-11/12 rounded-lg border-4 border-black max-h-[80%] overflow-y-auto bg-dark text-white">
+        <DialogHeader className="border-b-2 border-b-grey text-blue">
           <DialogTitle>{info.title}</DialogTitle>
         </DialogHeader>
 
