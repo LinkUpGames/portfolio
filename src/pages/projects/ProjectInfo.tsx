@@ -33,8 +33,8 @@ const ProjectInfo = ({
     <Dialog>
       <DialogTrigger>{children}</DialogTrigger>
 
-      <DialogContent className="w-11/12 rounded-lg border-2 max-h-[80%] overflow-y-scroll">
-        <DialogHeader>
+      <DialogContent className="w-11/12 rounded-lg border-2 border-black max-h-[80%] overflow-y-auto bg-dark text-white">
+        <DialogHeader className="border-b-2 border-b-light">
           <DialogTitle>{info.title}</DialogTitle>
         </DialogHeader>
 
@@ -43,7 +43,7 @@ const ProjectInfo = ({
 
           {/* Text */}
           <div className="w-full h-full flex flex-col">
-            <p className="text-base text-black w-full">{info.summary}</p>
+            <p className="text-base w-full">{info.summary}</p>
 
             <Link
               to={info.link}

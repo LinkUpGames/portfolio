@@ -13,7 +13,7 @@ const Projects = () => {
         title: "Hacker.Exe - Hacking Simulator",
         summary: "Hacker.exe is a 2d something bruh",
         link: "",
-        images: [],
+        images: ["https://www.metacritic.com/a/img/catalog/provider/6/12/6-1-684721-52.jpg", "https://i.ytimg.com/vi/A0JYD-w-GFY/maxresdefault.jpg"],
       },
     },
     {

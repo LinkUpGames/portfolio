@@ -30,8 +30,8 @@ const ProjectCarousel = ({ images }: Props) => {
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious className="border-2 -left-4 md:left-0 sm:-left-0" />
-      <CarouselNext className="border-2 -right-4 md:right-0 sm:-right-0" />
+      <CarouselPrevious className="border-2 -left-4 md:left-0 sm:-left-0 text-dark" />
+      <CarouselNext className="border-2 -right-4 md:right-0 sm:-right-0 text-dark" />
     </Carousel>
   );
 };
