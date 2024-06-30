@@ -38,8 +38,8 @@ const Projects = () => {
   return (
     <WindowBorder title="Projects">
       <div className="w-full h-full flex flex-row flex-wrap gap-3 justify-center md:justify-normal">
-        {projects.map((project) => (
-          <Icon name={project.name} image={project.image} info={project.info} />
+        {projects.map((project, index) => (
+          <Icon key={index} name={project.name} image={project.image} info={project.info} />
         ))}
       </div>
     </WindowBorder>
