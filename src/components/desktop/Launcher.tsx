@@ -95,7 +95,9 @@ const AppIcon = ({ element, mouseX }: AppIconProps) => {
         </motion.h2>
       </motion.div>
 
-      <motion.div className="aspect-square cursor-pointer rounded-full">
+      <motion.div className="aspect-square cursor-pointer rounded-full"
+        whileTap={{ scale: 0.8 }}
+      >
         {element.component}
       </motion.div>
     </motion.li>
