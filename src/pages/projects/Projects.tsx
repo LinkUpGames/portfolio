@@ -12,8 +12,9 @@ const Projects = () => {
       info: {
         title: "Hacker.Exe - Hacking Simulator",
         summary: "Hacker.exe is a 2d something bruh",
-        link: "",
+        link: "https://www.linkupgames.com/hacker-exe-home-page",
         images: ["https://www.metacritic.com/a/img/catalog/provider/6/12/6-1-684721-52.jpg", "https://i.ytimg.com/vi/A0JYD-w-GFY/maxresdefault.jpg"],
+        widget: <iframe src="https://widgets.gamejolt.com/package/v1?key=93u6qx5V" height="245"></iframe>
       },
     },
     {
@@ -29,13 +30,14 @@ const Projects = () => {
           "https://m.gjcdn.net/game-screenshot/600/2411152-jsk7cdgx-v4.webp",
           "https://m.gjcdn.net/game-screenshot/600/2867848-rggcprjz-v4.webp",
         ],
+        widget: <iframe src="https://widgets.gamejolt.com/package/v1?key=YTpcvSoi" height="245"></iframe>
       },
     },
   ];
 
   return (
     <WindowBorder title="Projects">
-      <div className="w-full h-full flex flex-col md:flex-row flex-wrap gap-3 justify-center md:justify-normal">
+      <div className="w-full h-full flex flex-row flex-wrap gap-3 justify-center md:justify-normal">
         {projects.map((project) => (
           <Icon name={project.name} image={project.image} info={project.info} />
         ))}

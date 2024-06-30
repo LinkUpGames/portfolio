@@ -9,6 +9,7 @@ interface Props {
     summary: string;
     link: string;
     images: string[];
+    widget: JSX.Element;
   };
 }
 
@@ -20,6 +21,7 @@ const Icon = ({
     summary: "",
     link: "",
     images: [],
+    widget: <></>,
   },
 }: Props) => {
   return (
@@ -35,7 +37,6 @@ const Icon = ({
           type: "tween",
           duration: 0.2,
         }}
-        onTap={(e) => e.preventDefault()}
         className="cursor-pointer flex flex-col justify-center items-center p-2 relative"
       >
         <motion.img

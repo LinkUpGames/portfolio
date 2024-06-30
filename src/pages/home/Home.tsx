@@ -2,6 +2,7 @@ import { AppContext } from "@/AppContext";
 import WindowBorder from "@/components/desktop/Window";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
+import Projects from "../projects/Projects";
 
 const Home = () => {
   const { lang } = useContext(AppContext);

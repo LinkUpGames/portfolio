@@ -17,6 +17,7 @@ interface Props {
     summary: string;
     link: string;
     images: string[];
+    widget: JSX.Element;
   };
 }
 
@@ -27,13 +28,14 @@ const ProjectInfo = ({
     summary: "",
     link: "",
     images: [],
+    widget: <></>,
   },
 }: Props) => {
   return (
     <Dialog>
       <DialogTrigger>{children}</DialogTrigger>
 
-      <DialogContent className="w-11/12 rounded-lg border-4 border-black max-h-[80%] overflow-y-auto bg-dark text-white">
+      <DialogContent className="z-[9999] w-11/12 rounded-lg border-4 border-black max-h-[80%] overflow-y-auto bg-dark text-white">
         <DialogHeader className="border-b-2 border-b-grey text-blue">
           <DialogTitle>{info.title}</DialogTitle>
         </DialogHeader>
@@ -52,7 +54,10 @@ const ProjectInfo = ({
             >
               Check the project out!
             </Link>
+
+            {info.widget}
           </div>
+
         </DialogDescription>
       </DialogContent>
     </Dialog>

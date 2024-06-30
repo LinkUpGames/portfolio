@@ -34,9 +34,9 @@ const Launcher = () => {
     <div
       onMouseMove={(e) => mouseX.set(e.pageX)}
       onMouseLeave={() => mouseX.set(Infinity)}
-      className="fixed bottom-10 mt-auto"
+      className="fixed bottom-0 mb-5"
     >
-      <motion.ul className="backdrop-blur-sm bg-red bg-opacity-60 rounded-md mx-auto flex gap-4 h-16 items-end px-4 pb-3">
+      <motion.ul className="backdrop-blur-sm bg-dark bg-opacity-60 rounded-md mx-auto flex gap-4 h-16 items-end px-4 pb-3">
         {elements.map((elem, index) => (
           <AppIcon key={index} element={elem} mouseX={mouseX} />
         ))}
