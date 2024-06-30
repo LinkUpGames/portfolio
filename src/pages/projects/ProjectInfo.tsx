@@ -1,14 +1,14 @@
-import { ReactNode } from "react";
+import { ReactNode, useContext, useState } from "react";
 import {
   Dialog,
   DialogContent,
   DialogDescription,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
 } from "@/components/ui/dialog";
 import ProjectCarousel from "./ProjectCarousel";
 import { Link } from "react-router-dom";
+import { ProjectContext } from "./ProjectContext";
 
 interface Props {
   children: ReactNode;
@@ -31,9 +31,10 @@ const ProjectInfo = ({
     widget: <></>,
   },
 }: Props) => {
+  const { open, handleOpen } = useContext(ProjectContext);
   return (
-    <Dialog>
-      <DialogTrigger>{children}</DialogTrigger>
+    <Dialog open={open} onOpenChange={handleOpen}>
+      <>{children}</>
 
       <DialogContent className="z-[9999] w-11/12 rounded-lg border-4 border-black max-h-[80%] overflow-y-auto bg-dark text-white">
         <DialogHeader className="border-b-2 border-b-grey text-blue">
