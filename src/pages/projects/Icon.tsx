@@ -6,6 +6,7 @@ import { ProjectContext } from "./ProjectContext";
 interface Props {
   name: string;
   image: string;
+  onHover: () => void;
   info: {
     title: string;
     summary: string;
@@ -18,6 +19,7 @@ interface Props {
 const Icon = ({
   name = "",
   image = "",
+  onHover,
   info = {
     title: "",
     summary: "",
@@ -63,6 +65,7 @@ const Icon = ({
             alt={name}
             draggable={false}
             className="w-28 h-28 md:h-20 md:w-20 object-contain"
+            onHoverStart={onHover}
             src={image}
           />
           <h3 className="text-center text-xl md:text-lg text-dark uppercase underline">

@@ -1,8 +1,13 @@
 import WindowBorder from "@/components/desktop/Window";
+
+import cardIcon from "pixelarticons/svg/card-text.svg";
+import alertIcon from "pixelarticons/svg/alert.svg";
+
 import Icon from "./Icon";
 
 import hacker from "@/assets/icons/hacker_exe_icon.png";
 import ur from "@/assets/icons/ultimate_reality_icon.png";
+import { useState } from "react";
 
 const Projects = () => {
   const projects = [
@@ -35,11 +40,28 @@ const Projects = () => {
     },
   ];
 
+  // STATES
+  const [iconTouch, setIconTouch] = useState<string>("");
+
   return (
-    <WindowBorder title="Projects">
+    <WindowBorder title="Projects" className="flex flex-col gap-2">
+      {/* Header */}
+      <div className="border-4 rounded-md border-dark h-12 flex justify-between items-center flex-row gap-4 p-1">
+        <img src={alertIcon} className="h-full w-auto" />
+
+        {/* Input Bar */}
+        <h2 className="w-full bg-black text-center text-white text-xl md:text-3xl h-full flex justify-center items-center">
+          {iconTouch}
+        </h2>
+
+        <img src={cardIcon} className="h-full w-auto" />
+      </div>
+
+
+      {/* Icons */}
       <div className="w-full h-full flex flex-row flex-wrap gap-3 justify-center md:justify-normal">
         {projects.map((project, index) => (
-          <Icon key={index} name={project.name} image={project.image} info={project.info} />
+          <Icon onHover={() => setIconTouch(project.name)} key={index} name={project.name} image={project.image} info={project.info} />
         ))}
       </div>
     </WindowBorder>
