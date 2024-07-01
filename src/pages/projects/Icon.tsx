@@ -36,14 +36,14 @@ const Icon = ({
   const handleOpen = (e: MouseEvent | TouchEvent | PointerEvent) => {
     e.preventDefault();
     console.log("BRUH");
-    setOpen(prev => !prev)
-  }
+    setOpen((prev) => !prev);
+  };
 
   return (
     <ProjectContext.Provider
       value={{
         open: open,
-        handleOpen: setOpen
+        handleOpen: setOpen,
       }}
     >
       <ProjectInfo info={info}>
@@ -66,6 +66,7 @@ const Icon = ({
             draggable={false}
             className="w-28 h-28 md:h-20 md:w-20 object-contain"
             onHoverStart={onHover}
+            onTap={onHover}
             src={image}
           />
           <h3 className="text-center text-xl md:text-lg text-dark uppercase underline">
