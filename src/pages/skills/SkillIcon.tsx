@@ -7,9 +7,18 @@ interface Props {
 const SkillIcon = ({ name, level, image }: Props) => {
   return (
     <div className="w-full flex items-center justify-between">
-      <h2 className="text-black text-lg md:text-xl text-center">
-        {name}
-      </h2>
+      {/* The name and the image for the skill */}
+      <div className="flex flex-row gap-1 justify-start items-center w-full">
+        <img src={image} className="h-12 w-12 object-contain" />
+        <h2 className="text-black text-lg md:text-xl text-left">
+          {name}
+        </h2>
+      </div>
+
+      {/* Progress for Skill */}
+      <div className="w-full">
+        <div className="w-full border-2 bg-red" />
+      </div>
     </div>
   )
 }
