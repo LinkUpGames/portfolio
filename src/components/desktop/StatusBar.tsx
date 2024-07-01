@@ -16,7 +16,7 @@ const StatusBar = () => {
       name: "Projects",
     },
     {
-      name: "Socials",
+      name: "Skills",
     },
     {
       name: "Experience",
