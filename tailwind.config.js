@@ -22,7 +22,8 @@ module.exports = {
     },
     fontFamily: {
       "pixel:": ["Pixelify Sans", "sans-serif"],
-      normal: ["Roboto", "sans-serif"],
+      "vt": ["VT323", "sans-serif"],
+      normal: ["Chicago", "sans-serif"],
     },
     container: {
       center: true,
