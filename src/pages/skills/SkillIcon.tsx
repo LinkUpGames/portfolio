@@ -16,7 +16,11 @@ const SkillIcon = ({ name, level, image }: Props) => {
     <div className="w-full flex items-center justify-between">
       {/* The name and the image for the skill */}
       <div className="flex flex-row gap-1 justify-start items-center w-full">
-        <img src={image} className="h-12 w-12 object-contain rounded-full" />
+        <img
+          draggable={false}
+          src={image}
+          className="h-12 w-12 object-contain rounded-full"
+        />
         <h2 className="text-black text-base md:text-xl text-left text-wrap">
           {name}
         </h2>
