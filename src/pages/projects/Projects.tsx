@@ -1,13 +1,11 @@
 import WindowBorder from "@/components/desktop/Window";
 
-import cardIcon from "pixelarticons/svg/card-text.svg";
-import alertIcon from "pixelarticons/svg/alert.svg";
-
 import Icon from "./Icon";
 
 import hacker from "@/assets/icons/hacker_exe_icon.png";
 import ur from "@/assets/icons/ultimate_reality_icon.png";
 import { useState } from "react";
+import ProjectHeader from "./ProjectHeader";
 
 const Projects = () => {
   const projects = [
@@ -46,17 +44,7 @@ const Projects = () => {
   return (
     <WindowBorder title="Projects" className="flex flex-col gap-2">
       {/* Header */}
-      <div className="border-4 rounded-md border-dark h-12 flex justify-between items-center flex-row gap-4 p-1">
-        <img src={alertIcon} className="h-full w-auto" />
-
-        {/* Input Bar */}
-        <h2 className="w-full bg-black text-center text-white text-xl md:text-3xl h-full flex justify-center items-center">
-          {iconTouch ? iconTouch : "..."}
-        </h2>
-
-        <img src={cardIcon} className="h-full w-auto" />
-      </div>
-
+      <ProjectHeader iconName={iconTouch} />
 
       {/* Icons */}
       <div className="w-full h-full flex flex-row flex-wrap gap-3 justify-center md:justify-normal">
