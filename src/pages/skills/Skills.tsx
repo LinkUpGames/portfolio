@@ -1,8 +1,10 @@
+import WindowBorder from "@/components/desktop/Window"
 
 const Skills = () => {
   return (
-
-    <div>Skills</div>
+    <WindowBorder title="Skills">
+      {/* Header */}
+    </WindowBorder>
   )
 }
 

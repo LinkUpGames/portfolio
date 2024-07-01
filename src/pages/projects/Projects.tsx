@@ -51,7 +51,7 @@ const Projects = () => {
 
         {/* Input Bar */}
         <h2 className="w-full bg-black text-center text-white text-xl md:text-3xl h-full flex justify-center items-center">
-          {iconTouch}
+          {iconTouch ? iconTouch : "..."}
         </h2>
 
         <img src={cardIcon} className="h-full w-auto" />
