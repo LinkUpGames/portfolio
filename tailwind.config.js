@@ -19,10 +19,11 @@ module.exports = {
       green: "#57A773",
       light: "#EFE9F4",
       dark: "#484D6D",
+      yellow: "#FADF63",
     },
     fontFamily: {
       "pixel:": ["Pixelify Sans", "sans-serif"],
-      "vt": ["VT323", "sans-serif"],
+      vt: ["VT323", "sans-serif"],
       normal: ["Chicago", "sans-serif"],
     },
     container: {
