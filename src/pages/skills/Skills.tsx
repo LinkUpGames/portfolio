@@ -7,7 +7,7 @@ const Skills = () => {
   // SKILLS
   const skills = [
     {
-      name: "Javascript/Node",
+      name: "Node",
       image: "https://www.svgrepo.com/show/376337/node-js.svg",
       level: 0.8
     }, {

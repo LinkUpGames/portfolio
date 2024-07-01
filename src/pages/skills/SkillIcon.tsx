@@ -10,7 +10,7 @@ const SkillIcon = ({ name, level, image }: Props) => {
       {/* The name and the image for the skill */}
       <div className="flex flex-row gap-1 justify-start items-center w-full">
         <img src={image} className="h-12 w-12 object-contain" />
-        <h2 className="text-black text-lg md:text-xl text-left">
+        <h2 className="text-black text-lg md:text-xl text-left text-wrap">
           {name}
         </h2>
       </div>
