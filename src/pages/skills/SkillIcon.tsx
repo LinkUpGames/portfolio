@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 interface Props {
   name: string;
   level: number;
@@ -23,10 +25,18 @@ const SkillIcon = ({ name, level, image }: Props) => {
         <h3>{percentage}</h3>
 
         <div className="w-full border-dark border-2 h-6">
-          <div
+          <motion.div
             className="w-full bg-green h-full"
-            style={{
+            animate={{
               width: `${percentage}%`,
+              transition: {
+                type: "spring",
+                damping: 10,
+                mass: 0.2,
+              },
+            }}
+            style={{
+              width: "0%",
             }}
           />
         </div>
