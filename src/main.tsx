@@ -11,6 +11,7 @@ import {
 } from "react-router-dom";
 import BlueScreenDeath from "./pages/death/BlueScreen.tsx";
 import Skills from "./pages/skills/Skills.tsx";
+import { Experience } from "./pages/experience/Experience.tsx";
 
 const router = createBrowserRouter([
   {
@@ -32,8 +33,12 @@ const router = createBrowserRouter([
       },
       {
         path: "Skills",
-        element: <Skills />
-      }
+        element: <Skills />,
+      },
+      {
+        path: "Experience",
+        element: <Experience />,
+      },
     ],
   },
 ]);
