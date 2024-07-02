@@ -16,7 +16,7 @@ const DesktopMenu = ({ menu }: Props) => {
           key={index}
           to={element.name}
           onClick={() => setMenuItem(index)}
-          className={`${index === menuItem ? "text-white bg-black px-2" : "text-black bg-transparent"} text-xl`}
+          className={`${index === menuItem ? "text-white bg-black px-2" : "text-black bg-transparent"} text-xl hover:text-red transition-all duration-300`}
         >
           {element.name}
         </Link>
