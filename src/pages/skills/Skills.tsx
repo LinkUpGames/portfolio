@@ -47,6 +47,18 @@ const Skills = () => {
       level: 0.64,
     },
     {
+      name: "C#",
+      image:
+        "https://banner2.cleanpng.com/20180831/iua/kisspng-c-programming-language-logo-microsoft-visual-stud-atlas-portfolio-5b89919299aab1.1956912415357423546294.jpg",
+      level: 0.85,
+    },
+    {
+      name: "GraphQL",
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/GraphQL_Logo.svg/1024px-GraphQL_Logo.svg.png",
+      level: 0.93,
+    },
+    {
       name: "Go Lang",
       image:
         "https://pbs.twimg.com/profile_images/1142154201444823041/O6AczwfV_400x400.png",
