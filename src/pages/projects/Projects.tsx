@@ -16,8 +16,17 @@ const Projects = () => {
         title: "Hacker.Exe - Hacking Simulator",
         summary: "Hacker.exe is a 2d something bruh",
         link: "https://www.linkupgames.com/hacker-exe-home-page",
-        images: ["https://www.metacritic.com/a/img/catalog/provider/6/12/6-1-684721-52.jpg", "https://i.ytimg.com/vi/A0JYD-w-GFY/maxresdefault.jpg"],
-        widget: <iframe src="https://widgets.gamejolt.com/package/v1?key=93u6qx5V" height="245"></iframe>
+        images: [
+          "https://www.metacritic.com/a/img/catalog/provider/6/12/6-1-684721-52.jpg",
+          "https://i.ytimg.com/vi/A0JYD-w-GFY/maxresdefault.jpg",
+        ],
+        widget: (
+          <iframe
+            src="https://widgets.gamejolt.com/package/v1?key=93u6qx5V"
+            width="100%"
+            height="245"
+          ></iframe>
+        ),
       },
     },
     {
@@ -33,7 +42,13 @@ const Projects = () => {
           "https://m.gjcdn.net/game-screenshot/600/2411152-jsk7cdgx-v4.webp",
           "https://m.gjcdn.net/game-screenshot/600/2867848-rggcprjz-v4.webp",
         ],
-        widget: <iframe src="https://widgets.gamejolt.com/package/v1?key=YTpcvSoi" height="245"></iframe>
+        widget: (
+          <iframe
+            src="https://widgets.gamejolt.com/package/v1?key=YTpcvSoi"
+            width="100%"
+            height="245"
+          ></iframe>
+        ),
       },
     },
   ];
@@ -49,7 +64,13 @@ const Projects = () => {
       {/* Icons */}
       <div className="w-full h-full flex flex-row flex-wrap gap-3 justify-center md:justify-normal">
         {projects.map((project, index) => (
-          <Icon onHover={() => setIconTouch(project.name)} key={index} name={project.name} image={project.image} info={project.info} />
+          <Icon
+            onHover={() => setIconTouch(project.name)}
+            key={index}
+            name={project.name}
+            image={project.image}
+            info={project.info}
+          />
         ))}
       </div>
     </WindowBorder>

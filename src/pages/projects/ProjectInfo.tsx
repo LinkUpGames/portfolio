@@ -38,7 +38,9 @@ const ProjectInfo = ({
 
       <DialogContent className="z-[9999] w-11/12 rounded-lg border-4 border-black max-h-[80%] overflow-y-auto bg-dark text-white">
         <DialogHeader className="border-b-2 border-b-grey text-blue">
-          <DialogTitle>{info.title}</DialogTitle>
+          <DialogTitle className="text-sm sm:text-lg text-left sm:text-center">
+            {info.title}
+          </DialogTitle>
         </DialogHeader>
 
         <DialogDescription className="flex flex-col w-full h-full">
@@ -56,9 +58,8 @@ const ProjectInfo = ({
               Check the project out!
             </Link>
 
-            {info.widget}
+            <div className="max-w-full">{info.widget}</div>
           </div>
-
         </DialogDescription>
       </DialogContent>
     </Dialog>
