@@ -20,3 +20,10 @@ interface AppIconProps {
   element: Option;
   mouseX: MotionValue;
 }
+
+interface Experience {
+  company: string;
+  job: string;
+  time: string;
+  img: string;
+}
