@@ -26,4 +26,20 @@ interface Experience {
   job: string;
   time: string;
   img: string;
+  description: string;
+}
+
+interface Directory {
+  name: string;
+  files: JSX.Element[];
+  directories: Directory[];
+}
+
+interface File {
+  name: string;
+  experience: Experience;
+}
+
+interface FileSystemStructure {
+  directory: Directory;
 }

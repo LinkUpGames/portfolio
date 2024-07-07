@@ -3,8 +3,28 @@ import ExperienceHeader from "./ExperienceHeader";
 import { ExperienceContext } from "./ExperienceContext";
 
 export const Experience = () => {
+  // FILE SYSTEM
+  const filesystem: Directory = {
+    name: "Experience",
+    files: [],
+    directories: [
+      // Fill it Forward
+      {
+        name: "Fill it Forward",
+        files: [],
+        directories: [
+          {
+            name: "Projects",
+            files: [],
+            directories: [],
+          },
+        ],
+      },
+    ],
+  };
+
   // EXPERIENCES
-  const experiences = [
+  const experiences: Experience[] = [
     {
       company: "Fill it Forward",
       job: "Junior Software Engineer",
