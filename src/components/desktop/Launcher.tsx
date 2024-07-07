@@ -34,7 +34,7 @@ const Launcher = () => {
     <div
       onMouseMove={(e) => mouseX.set(e.pageX)}
       onMouseLeave={() => mouseX.set(Infinity)}
-      className="fixed bottom-0 mb-5"
+      className="md:fixed md:bottom-0 md:mb-5 flex justify-end"
     >
       <motion.ul className="backdrop-blur-sm bg-dark bg-opacity-60 rounded-md mx-auto flex gap-4 h-16 items-end px-4 pb-3">
         {elements.map((elem, index) => (
@@ -95,7 +95,8 @@ const AppIcon = ({ element, mouseX }: AppIconProps) => {
         </motion.h2>
       </motion.div>
 
-      <motion.div className="aspect-square cursor-pointer rounded-full"
+      <motion.div
+        className="aspect-square cursor-pointer rounded-full"
         whileTap={{ scale: 0.8 }}
       >
         {element.component}

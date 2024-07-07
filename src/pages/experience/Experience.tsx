@@ -1,5 +1,6 @@
 import WindowBorder from "@/components/desktop/Window";
 import ExperienceHeader from "./ExperienceHeader";
+import { ExperienceContext } from "./ExperienceContext";
 
 export const Experience = () => {
   // EXPERIENCES
@@ -30,8 +31,10 @@ export const Experience = () => {
     },
   ];
   return (
-    <WindowBorder title="Experience">
-      <ExperienceHeader />
-    </WindowBorder>
+    <ExperienceContext.Provider value={{}}>
+      <WindowBorder title="Experience" className="relative">
+        <ExperienceHeader />
+      </WindowBorder>
+    </ExperienceContext.Provider>
   );
 };
