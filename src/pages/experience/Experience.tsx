@@ -1,4 +1,5 @@
 import WindowBorder from "@/components/desktop/Window";
+import ExperienceHeader from "./ExperienceHeader";
 
 export const Experience = () => {
   // EXPERIENCES
@@ -28,5 +29,9 @@ export const Experience = () => {
       img: "",
     },
   ];
-  return <WindowBorder title="Experience">Hello</WindowBorder>;
+  return (
+    <WindowBorder title="Experience">
+      <ExperienceHeader />
+    </WindowBorder>
+  );
 };

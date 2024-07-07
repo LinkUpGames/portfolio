@@ -13,7 +13,7 @@ const SkillIcon = ({ name, level, image }: Props) => {
     percentage >= 85 ? "bg-green" : percentage >= 65 ? "bg-yellow" : "bg-red";
 
   return (
-    <div className="w-full flex items-center justify-between">
+    <div className="w-full flex flex-col md:flex-row items-center justify-center md:justify-between gap-3 md:gap-0">
       {/* The name and the image for the skill */}
       <div className="flex flex-row gap-1 justify-start items-center w-full">
         <img

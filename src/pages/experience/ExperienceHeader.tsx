@@ -1,5 +1,5 @@
 const ExperienceHeader = () => {
-  return <div>ExperienceHeader</div>;
+  return <div className="w-full bg-yellow">bruh</div>;
 };
 
 export default ExperienceHeader;
