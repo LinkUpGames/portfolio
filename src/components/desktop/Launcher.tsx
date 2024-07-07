@@ -34,7 +34,7 @@ const Launcher = () => {
     <div
       onMouseMove={(e) => mouseX.set(e.pageX)}
       onMouseLeave={() => mouseX.set(Infinity)}
-      className="md:fixed md:bottom-0 md:mb-5 flex justify-end"
+      className="mt-auto md:fixed md:bottom-0 md:mb-5 flex justify-end"
     >
       <motion.ul className="backdrop-blur-sm bg-dark bg-opacity-60 rounded-md mx-auto flex gap-4 h-16 items-end px-4 pb-3">
         {elements.map((elem, index) => (
