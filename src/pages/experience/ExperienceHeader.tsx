@@ -6,7 +6,7 @@ const ExperienceHeader = () => {
   const { filesystem } = useContext(ExperienceContext);
 
   return (
-    <div className="h-full w-fit bg-yellow absolute top-0 left-0 max-w-md overflow-x-auto py-2">
+    <div className="h-full w-fit bg-yellow max-w-md overflow-x-auto py-2 border-r-2 border-r-green">
       {/* Recursive Filesystem */}
       <ExperienceDirectory directory={filesystem} />
     </div>
