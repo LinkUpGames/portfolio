@@ -1,12 +1,18 @@
 import WindowBorder from "@/components/desktop/Window";
 import ExperienceHeader from "./ExperienceHeader";
 import { ExperienceContext } from "./ExperienceContext";
+import ExperienceFile from "./ExperienceFile";
 
 export const Experience = () => {
   // FILE SYSTEM
   const filesystem: Directory = {
     name: "Experience",
-    files: [],
+    files: [
+      {
+        name: "Intro.exe",
+        content: <>bruh</>,
+      },
+    ],
     directories: [
       // Fill it Forward
       {
@@ -15,7 +21,12 @@ export const Experience = () => {
         directories: [
           {
             name: "Projects",
-            files: [],
+            files: [
+              {
+                name: "Portal.iso",
+                content: <></>,
+              },
+            ],
             directories: [],
           },
         ],

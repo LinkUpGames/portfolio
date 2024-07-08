@@ -1,4 +1,5 @@
 import folderIcon from "pixelarticons/svg/folder.svg";
+import ExperienceFileDescription from "./ExperienceFileDescription";
 
 interface Props {
   directory: Directory;
@@ -10,23 +11,25 @@ const ExperienceDirectory = ({ directory }: Props) => {
   const childDirectories = directory.directories;
 
   return (
-    <div className="w-full h-full px-4 py-2 border-l-2 border-l-black">
+    <div className="w-full h-fit border-l-2 border-l-black">
       {/* Logo and Directory name */}
-      <div className="w-full p-2 flex gap-2 items-center text-black">
+      <button className="w-full flex gap-2 items-center text-black mb-2">
         <img src={folderIcon} className="w-6 h-6 object-fit" />
 
         <h2 className="text-base">{name}</h2>
-      </div>
+      </button>
 
       {/* Content */}
-      <div className="w-full flex flex-col justify-start items-center">
+      <div className="w-full flex flex-col justify-start items-center px-4 gap-2">
+        {/* Files */}
+        {files.map((file) => (
+          <ExperienceFileDescription file={file} />
+        ))}
+
         {/* Directories */}
         {childDirectories.map((dir) => (
           <ExperienceDirectory directory={dir} />
         ))}
-
-        {/* Files */}
-        {files.map((file) => file)}
       </div>
     </div>
   );

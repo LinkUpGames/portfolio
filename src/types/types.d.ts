@@ -31,13 +31,13 @@ interface Experience {
 
 interface Directory {
   name: string;
-  files: JSX.Element[];
+  files: SysFile[];
   directories: Directory[];
 }
 
-interface File {
+interface SysFile {
   name: string;
-  experience: Experience;
+  content: JSX.Element;
 }
 
 interface FileSystemStructure {
