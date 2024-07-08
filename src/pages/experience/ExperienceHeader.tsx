@@ -1,23 +1,15 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FaFolder, FaFolderOpen } from "react-icons/fa";
-
-interface Directory {
-  name: string;
-  open: boolean;
-  file: string;
-  directories: Directory[];
-}
-
-interface File {
-  name: string;
-  experience: Experience;
-}
+import { ExperienceContext } from "./ExperienceContext";
+import ExperienceDirectory from "./ExperienceDirectory";
 
 const ExperienceHeader = () => {
+  const { filesystem } = useContext(ExperienceContext);
+
   return (
-    <div className="h-full w-fit bg-yellow absolute top-0 left-0 px-4 py-2">
-      {/* Folder Icon */}
-      brh
+    <div className="h-full w-fit bg-yellow absolute top-0 left-0 max-w-md overflow-x-auto">
+      {/* Recursive Filesystem */}
+      <ExperienceDirectory directory={filesystem} />
     </div>
   );
 };

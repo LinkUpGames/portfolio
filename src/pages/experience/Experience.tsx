@@ -50,8 +50,15 @@ export const Experience = () => {
       img: "",
     },
   ];
+
+  // TSX FUNCTION
+  // const [] =
   return (
-    <ExperienceContext.Provider value={{}}>
+    <ExperienceContext.Provider
+      value={{
+        filesystem: filesystem,
+      }}
+    >
       <WindowBorder title="Experience" className="relative">
         <ExperienceHeader />
       </WindowBorder>
