@@ -37,7 +37,9 @@ const DEFAULT_FILESYSTEM_STATE: Directory = {
 
 export const Experience = () => {
   // FILE SYSTEM
-  const [filesystem, setFilesystem] = useState(DEFAULT_FILESYSTEM_STATE);
+  const [filesystem, setFilesystem] = useState<Directory>(
+    DEFAULT_FILESYSTEM_STATE,
+  );
 
   // EXPERIENCES
   const experiences: Experience[] = [
@@ -83,9 +85,36 @@ export const Experience = () => {
    * @param dirName The directory to update
    * @param value The value for the directory
    */
+  const _updateDirectoryState = (
+    dirName: string,
+    value: boolean,
+    directory: Directory,
+  ) => {
+    // Recursively go down the tree and find the folder we want
+    if (directory === undefined || directory === null) {
+      console.log("NOt FOUND");
+      return;
+    }
+
+    if (directory.name === dirName) {
+      directory.open = value;
+      console.log("Directory found!");
+      setFilesystem({ ...filesystem });
+      return;
+    } else {
+      directory.directories.forEach((dir) => {
+        _updateDirectoryState(dirName, value, dir);
+      });
+    }
+  };
+
+  /**
+   * Wrapper function that initializes the search
+   * @param dirName The name of the directory
+   * @param value The value (open or not open?)
+   */
   const updateDirectoryState = (dirName: string, value: boolean) => {
-    // TODO: Continue here
-    console.log("YEP");
+    _updateDirectoryState(dirName, value, filesystem);
   };
 
   return (

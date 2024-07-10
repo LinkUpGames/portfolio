@@ -1,6 +1,7 @@
 import folderIcon from "pixelarticons/svg/folder.svg";
 import ExperienceFileDescription from "./ExperienceFileDescription";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { ExperienceContext } from "./ExperienceContext";
 
 interface Props {
   directory: Directory;
@@ -8,6 +9,7 @@ interface Props {
 
 const ExperienceDirectory = ({ directory }: Props) => {
   // CONTANTS
+  const { updateDirectoryState } = useContext(ExperienceContext);
   const name = directory.name;
   const files = directory.files;
   const childDirectories = directory.directories;
@@ -15,11 +17,17 @@ const ExperienceDirectory = ({ directory }: Props) => {
   // STATES
   const [open, setOpen] = useState<boolean>(false);
 
+  // FUNCTIONS
+  const handleClick = () => {
+    updateDirectoryState(name, open);
+    setOpen((prev) => !prev);
+  };
+
   return (
     <div className="w-full h-fit border-l-2 border-l-black">
       {/* Logo and Directory name */}
       <button
-        onClick={() => setOpen((prev) => !prev)}
+        onClick={handleClick}
         className="w-full flex gap-2 items-center text-black mb-2"
       >
         <img src={folderIcon} className="w-6 h-6 object-fit" />
@@ -32,12 +40,12 @@ const ExperienceDirectory = ({ directory }: Props) => {
         <div className="w-full flex flex-col justify-start items-center px-4 gap-2">
           {/* Files */}
           {files.map((file) => (
-            <ExperienceFileDescription file={file} />
+            <ExperienceFileDescription key={file.name} file={file} />
           ))}
 
           {/* Directories */}
           {childDirectories.map((dir) => (
-            <ExperienceDirectory directory={dir} />
+            <ExperienceDirectory key={dir.name} directory={dir} />
           ))}
         </div>
       )}
