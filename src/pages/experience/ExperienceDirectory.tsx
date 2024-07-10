@@ -1,6 +1,6 @@
 import folderIcon from "pixelarticons/svg/folder.svg";
 import ExperienceFileDescription from "./ExperienceFileDescription";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ExperienceContext } from "./ExperienceContext";
 
 interface Props {
@@ -17,10 +17,16 @@ const ExperienceDirectory = ({ directory }: Props) => {
   // STATES
   const [open, setOpen] = useState<boolean>(false);
 
+  // EFFECTS
+  useEffect(() => {
+    console.log("Changes", directory);
+    console.log("Name", directory.name);
+    setOpen(directory.open);
+  }, [directory]);
+
   // FUNCTIONS
   const handleClick = () => {
     updateDirectoryState(name, open);
-    setOpen((prev) => !prev);
   };
 
   return (

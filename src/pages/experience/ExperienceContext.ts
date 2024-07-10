@@ -11,10 +11,12 @@ interface ExperienceContextProps {
   filesystem: Directory;
   showContent: (element: JSX.Element) => void;
   updateDirectoryState: (dirName: string, value: boolean) => void;
+  getDirectoryState: (dirName: string) => boolean;
 }
 
 export const ExperienceContext = createContext<ExperienceContextProps>({
   filesystem: DUMMY_DIRECTORY,
   showContent: () => {},
   updateDirectoryState: () => {},
+  getDirectoryState: () => false,
 });

@@ -92,13 +92,12 @@ export const Experience = () => {
   ) => {
     // Recursively go down the tree and find the folder we want
     if (directory === undefined || directory === null) {
-      console.log("NOt FOUND");
+      // TODO: Throw the error and go to the error screen
       return;
     }
 
     if (directory.name === dirName) {
       directory.open = value;
-      console.log("Directory found!");
       setFilesystem({ ...filesystem });
       return;
     } else {
@@ -106,6 +105,41 @@ export const Experience = () => {
         _updateDirectoryState(dirName, value, dir);
       });
     }
+  };
+
+  /**
+   * Get the state of the directory based on the name given
+   * @param dirName The name of the directory to query
+   * @param directory The subdirectory that we are going to be using
+   */
+  const _getDirectoryState = (
+    dirName: string,
+    directory: Directory,
+  ): boolean => {
+    if (directory === undefined || directory === null) {
+      // TODO: Throw the error and go to the error screen
+      console.log("Directory not found");
+      return false;
+    }
+
+    // Recursivey go down and get the folder we want
+    if (directory.name === dirName) {
+      return directory.open;
+    } else {
+      directory.directories.forEach((dir) => {
+        _getDirectoryState(dirName, dir);
+      });
+    }
+
+    return false;
+  };
+
+  /**
+   * Get the state of a directory given its name
+   * @param dirName The name of the directory
+   */
+  const getDirectoryState = (dirName: string) => {
+    return _getDirectoryState(dirName, filesystem);
   };
 
   /**
@@ -122,6 +156,7 @@ export const Experience = () => {
       value={{
         showContent: showContent,
         updateDirectoryState: updateDirectoryState,
+        getDirectoryState: getDirectoryState,
         filesystem: filesystem,
       }}
     >
