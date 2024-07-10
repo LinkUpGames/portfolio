@@ -33,6 +33,7 @@ interface Directory {
   name: string;
   files: SysFile[];
   directories: Directory[];
+  open: boolean;
 }
 
 interface SysFile {

@@ -3,36 +3,41 @@ import ExperienceHeader from "./ExperienceHeader";
 import { ExperienceContext } from "./ExperienceContext";
 import { useState } from "react";
 
+const DEFAULT_FILESYSTEM_STATE: Directory = {
+  name: "Experience",
+  files: [
+    {
+      name: "Intro.exe",
+      content: <>bruh</>,
+    },
+  ],
+  open: true,
+  directories: [
+    // Fill it Forward
+    {
+      name: "Fill it Forward",
+      open: false,
+      files: [],
+      directories: [
+        {
+          name: "Projects",
+          open: false,
+          files: [
+            {
+              name: "Portal.iso",
+              content: <></>,
+            },
+          ],
+          directories: [],
+        },
+      ],
+    },
+  ],
+};
+
 export const Experience = () => {
   // FILE SYSTEM
-  const filesystem: Directory = {
-    name: "Experience",
-    files: [
-      {
-        name: "Intro.exe",
-        content: <>bruh</>,
-      },
-    ],
-    directories: [
-      // Fill it Forward
-      {
-        name: "Fill it Forward",
-        files: [],
-        directories: [
-          {
-            name: "Projects",
-            files: [
-              {
-                name: "Portal.iso",
-                content: <></>,
-              },
-            ],
-            directories: [],
-          },
-        ],
-      },
-    ],
-  };
+  const [filesystem, setFilesystem] = useState(DEFAULT_FILESYSTEM_STATE);
 
   // EXPERIENCES
   const experiences: Experience[] = [
@@ -66,14 +71,28 @@ export const Experience = () => {
   const [content, setContent] = useState<JSX.Element>(<> hello</>); // The content to be shown on the right hand of the directory tree
 
   // FUNCTIONS
+  /**
+   * The content to display on the side
+   */
   const showContent = (element: JSX.Element) => {
     setContent(element);
+  };
+
+  /**
+   * Update the directory state by showing it and not hiding it
+   * @param dirName The directory to update
+   * @param value The value for the directory
+   */
+  const updateDirectoryState = (dirName: string, value: boolean) => {
+    // TODO: Continue here
+    console.log("YEP");
   };
 
   return (
     <ExperienceContext.Provider
       value={{
         showContent: showContent,
+        updateDirectoryState: updateDirectoryState,
         filesystem: filesystem,
       }}
     >
