@@ -1,8 +1,7 @@
 import WindowBorder from "@/components/desktop/Window";
 import ExperienceHeader from "./ExperienceHeader";
 import { ExperienceContext } from "./ExperienceContext";
-import ExperienceFile from "./ExperienceFile";
-import { useEffect, useMemo, useState } from "react";
+import { useState } from "react";
 
 export const Experience = () => {
   // FILE SYSTEM
@@ -66,13 +65,22 @@ export const Experience = () => {
   // STATES
   const [content, setContent] = useState<JSX.Element>(<> hello</>); // The content to be shown on the right hand of the directory tree
 
+  // FUNCTIONS
+  const showContent = (element: JSX.Element) => {
+    setContent(element);
+  };
+
   return (
     <ExperienceContext.Provider
       value={{
+        showContent: showContent,
         filesystem: filesystem,
       }}
     >
-      <WindowBorder title="Experience" className="relative !p-0 flex flex-row">
+      <WindowBorder
+        title="Experience"
+        className="relative !p-0 flex flex-row h-full w-full"
+      >
         <ExperienceHeader />
 
         <div>{content}</div>
