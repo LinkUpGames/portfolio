@@ -79,11 +79,13 @@ export const Experience = () => {
     >
       <WindowBorder
         title="Experience"
-        className="relative !p-0 flex flex-row h-full w-full"
+        className="!p-0 flex flex-row h-full w-full"
       >
-        <ExperienceHeader />
+        <div>
+          <ExperienceHeader />
+        </div>
 
-        <div>{content}</div>
+        <div className="flex-grow">{content}</div>
       </WindowBorder>
     </ExperienceContext.Provider>
   );
