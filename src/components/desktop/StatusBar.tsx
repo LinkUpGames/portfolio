@@ -1,7 +1,6 @@
 import { useLocation } from "react-router-dom";
 import DesktopMenu from "./DesktopMenu";
 import MobileMenu from "./MobileMenu";
-import { FaCircle } from "react-icons/fa";
 import { useContext, useEffect } from "react";
 import { AppContext } from "@/AppContext";
 import TimeWidget from "./Widget/TimeWidget";
@@ -27,15 +26,15 @@ const StatusBar = () => {
   const options: Option[] = [
     {
       name: "#ff0000",
-      component: <TimeWidget />,
+      component: <TimeWidget key={"time"} />,
     },
     {
       name: "#fcf00a",
-      component: <></>,
+      component: <div key={"bruh"} />,
     },
     {
       name: "#34fc08",
-      component: <></>,
+      component: <div key={"ro"} />,
     },
   ];
 
@@ -73,11 +72,9 @@ const StatusBar = () => {
         <DesktopMenu menu={menu} />
       </div>
 
-      {/* Window Leave */}
-      <div className="flex flex-row gap-4">
-        {options.map((option, index) => (
-          <FaCircle key={index} color={option.name} />
-        ))}
+      {/* Widgets */}
+      <div className="flex flex-row">
+        {options.map((option) => option.component)}
       </div>
     </div>
   );

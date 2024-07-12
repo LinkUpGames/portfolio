@@ -2,10 +2,11 @@ import { ReactNode } from "react";
 
 interface Props {
   children: ReactNode;
+  className?: string;
 }
 
-const Widget = ({ children }: Props) => {
-  return <div className="w-6 h-6">{children}</div>;
+const Widget = ({ children, className = "" }: Props) => {
+  return <div className={`${className}`}>{children}</div>;
 };
 
 export default Widget;
