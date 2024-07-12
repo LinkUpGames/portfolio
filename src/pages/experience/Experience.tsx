@@ -132,7 +132,6 @@ export const Experience = () => {
   ): boolean => {
     if (directory === undefined || directory === null) {
       // TODO: Throw the error and go to the error screen
-      console.log("Directory not found");
       return false;
     }
 
@@ -179,9 +178,9 @@ export const Experience = () => {
     >
       <WindowBorder
         title="Experience"
-        className="!p-0 flex flex-row h-full w-full"
+        className="!p-0 flex sm:flex-row flex-col h-full w-full"
       >
-        <div>
+        <div className="w-fit">
           <ExperienceHeader />
         </div>
 

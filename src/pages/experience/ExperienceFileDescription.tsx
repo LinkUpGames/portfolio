@@ -1,6 +1,7 @@
 import fileIcon from "pixelarticons/svg/file.svg";
 import { useContext } from "react";
 import { ExperienceContext } from "./ExperienceContext";
+import { motion } from "framer-motion";
 
 interface Props {
   file: SysFile;
@@ -21,16 +22,19 @@ const ExperienceFileDescription = ({ file }: Props) => {
   };
 
   return (
-    <button
+    <motion.button
       onClick={handleClick}
       className="flex flex-row text-left justify-start items-center w-full gap-2 text-black"
+      whileTap={{
+        scale: 0.9,
+      }}
     >
       {/* Logo */}
       <img src={fileIcon} className="w-6 h-6 object-contain" alt="File Logo" />
 
       {/* Name */}
       <h2>{name}</h2>
-    </button>
+    </motion.button>
   );
 };
 
