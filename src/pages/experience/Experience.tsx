@@ -180,7 +180,7 @@ export const Experience = () => {
         title="Experience"
         className="!p-0 flex sm:flex-row flex-col h-full w-full"
       >
-        <div className="w-fit">
+        <div className="min-w-fit w-fit">
           <ExperienceHeader />
         </div>
 
