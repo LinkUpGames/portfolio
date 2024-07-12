@@ -26,6 +26,7 @@ const ExperienceDirectory = ({ directory }: Props) => {
 
   // FUNCTIONS
   const handleClick = () => {
+    console.log("Directory: ", name);
     updateDirectoryState(name, open);
   };
 

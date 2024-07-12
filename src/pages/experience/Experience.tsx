@@ -97,8 +97,13 @@ export const Experience = () => {
     }
 
     if (directory.name === dirName) {
+      console.log("Found it!", directory.name);
+      console.log("Found Directory: ", directory);
       directory.open = value;
-      setFilesystem({ ...filesystem });
+
+      setFilesystem((prev) => {
+        // const directory = directory =
+      });
       return;
     } else {
       directory.directories.forEach((dir) => {
