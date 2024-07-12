@@ -178,13 +178,13 @@ export const Experience = () => {
     >
       <WindowBorder
         title="Experience"
-        className="!p-0 flex sm:flex-row flex-col h-full w-full"
+        className="!p-0 flex md:flex-row flex-col h-full w-full"
       >
-        <div className="min-w-fit w-fit">
+        <div className="md:min-w-fit md:w-fit max-h-52 md:max-h-full">
           <ExperienceHeader />
         </div>
 
-        <div className="flex-grow">{content}</div>
+        <div className="flex-grow p-4 border-2 border-red">{content}</div>
       </WindowBorder>
     </ExperienceContext.Provider>
   );

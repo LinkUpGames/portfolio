@@ -43,7 +43,7 @@ const ExperienceDirectory = ({ directory }: Props) => {
       {/* Logo and Directory name */}
       <motion.button
         onClick={handleClick}
-        className="w-full flex gap-2 items-center text-black mb-2"
+        className="w-full flex gap-2 items-center text-black mb-2 hover:border-b-2 hover:border-black border-0"
         whileTap={{
           scale: 0.9,
         }}

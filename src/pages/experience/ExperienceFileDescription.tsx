@@ -24,7 +24,7 @@ const ExperienceFileDescription = ({ file }: Props) => {
   return (
     <motion.button
       onClick={handleClick}
-      className="flex flex-row text-left justify-start items-center w-full gap-2 text-black"
+      className="flex flex-row text-left justify-start items-center w-full gap-2 text-black hover:border-black hover:border-2 border-0"
       whileTap={{
         scale: 0.9,
       }}
