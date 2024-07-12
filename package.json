@@ -18,6 +18,7 @@
     "embla-carousel-react": "^8.1.5",
     "framer-motion": "^11.2.11",
     "lucide-react": "^0.395.0",
+    "luxon": "^3.4.4",
     "pixelarticons": "^1.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

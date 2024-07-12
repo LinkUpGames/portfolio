@@ -4,6 +4,7 @@ import MobileMenu from "./MobileMenu";
 import { FaCircle } from "react-icons/fa";
 import { useContext, useEffect } from "react";
 import { AppContext } from "@/AppContext";
+import TimeWidget from "./Widget/TimeWidget";
 
 const StatusBar = () => {
   const { setMenuItem } = useContext(AppContext);
@@ -26,12 +27,15 @@ const StatusBar = () => {
   const options: Option[] = [
     {
       name: "#ff0000",
+      component: <TimeWidget />,
     },
     {
       name: "#fcf00a",
+      component: <></>,
     },
     {
       name: "#34fc08",
+      component: <></>,
     },
   ];
 
@@ -52,7 +56,7 @@ const StatusBar = () => {
       if (index) {
         setMenuItem(i);
       }
-    })
+    });
   }, []);
 
   return (
