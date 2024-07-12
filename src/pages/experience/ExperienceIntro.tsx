@@ -33,7 +33,7 @@ const ExperienceIntro = () => {
         <h3 className="text-xl text-black text-left underline">Resume</h3>
 
         {/* Pdf */}
-        <iframe src={pdf} width="100%" height="900px" />
+        <embed src={pdf} width="100%" height="900px" />
       </div>
     </div>
   );
