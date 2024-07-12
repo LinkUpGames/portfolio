@@ -180,11 +180,13 @@ export const Experience = () => {
         title="Experience"
         className="!p-0 flex md:flex-row flex-col h-full w-full"
       >
-        <div className="md:min-w-fit md:w-fit max-h-52 md:max-h-full">
+        <div className="md:min-w-fit md:w-fit min-h-36 md:min-h-full max-h-52 md:max-h-full overflow-y-auto">
           <ExperienceHeader />
         </div>
 
-        <div className="flex-grow p-4 border-2 border-red">{content}</div>
+        <div className="flex-grow p-4 border-2 border-red overflow-y-auto">
+          {content}
+        </div>
       </WindowBorder>
     </ExperienceContext.Provider>
   );

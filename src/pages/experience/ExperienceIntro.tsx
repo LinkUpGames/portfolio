@@ -1,20 +1,8 @@
-import { useState } from "react";
 import pdf from "@/assets/resume.pdf";
 
 const ExperienceIntro = () => {
-  // STATES
-  const [pageNumber, setPageNumber] = useState<number>(1);
-
-  // FUNCTIONS
-  /**
-   * Check that the pdf has successfully loaded
-   */
-  const onDocumentLoadSuccess = ({ numPages }: { numPages: number }) => {
-    // TODO: Add something here I guess
-  };
-
   return (
-    <div className="flex flex-col gap-2 justify-center items-center h-full">
+    <div className="flex flex-col gap-2 justify-center items-center">
       <h2 className="text-lg sm:text-xl md:text-2xl text-black underline text-center mb-2">
         Check Out My Experience!
       </h2>
@@ -29,11 +17,11 @@ const ExperienceIntro = () => {
       </p>
 
       {/* Resume */}
-      <div className="w-full mt-4 h-full overflow-y-auto">
+      <div className="w-full mt-4 h-full">
         <h3 className="text-xl text-black text-left underline">Resume</h3>
 
         {/* Pdf */}
-        <embed src={pdf} width="100%" height="900px" />
+        <iframe src={pdf} width="100%" height="650px" />
       </div>
     </div>
   );
