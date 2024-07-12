@@ -85,30 +85,34 @@ export const Experience = () => {
    * @param dirName The directory to update
    * @param value The value for the directory
    */
+
   const _updateDirectoryState = (
     dirName: string,
     value: boolean,
     directory: Directory,
-  ) => {
+  ): Directory => {
     // Recursively go down the tree and find the folder we want
-    if (directory === undefined || directory === null) {
-      // TODO: Throw the error and go to the error screen
-      return;
+    if (!directory) {
+      // Handle the case where directory is undefined or null
+      return directory;
     }
 
     if (directory.name === dirName) {
-      console.log("Found it!", directory.name);
-      console.log("Found Directory: ", directory);
-      directory.open = value;
+      // If this is the directory we want to update
+      const updatedDirectory: Directory = { ...directory, open: value };
+      console.log("Found it!", updatedDirectory.name);
+      console.log("Updated Directory: ", updatedDirectory);
 
-      setFilesystem((prev) => {
-        // const directory = directory =
-      });
-      return;
+      // Return the updated directory
+      return updatedDirectory;
     } else {
-      directory.directories.forEach((dir) => {
-        _updateDirectoryState(dirName, value, dir);
-      });
+      // Recursively update directories within this directory
+      const updatedDirectories = directory.directories.map((dir) =>
+        _updateDirectoryState(dirName, value, dir),
+      );
+
+      // Return a new directory object with updated directories
+      return { ...directory, directories: updatedDirectories };
     }
   };
 
@@ -153,7 +157,10 @@ export const Experience = () => {
    * @param value The value (open or not open?)
    */
   const updateDirectoryState = (dirName: string, value: boolean) => {
-    _updateDirectoryState(dirName, value, filesystem);
+    const updatedFileSystem = _updateDirectoryState(dirName, value, filesystem);
+
+    // Update the actual updated filesystem
+    setFilesystem(updatedFileSystem);
   };
 
   return (

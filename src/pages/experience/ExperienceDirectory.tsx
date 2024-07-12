@@ -18,16 +18,25 @@ const ExperienceDirectory = ({ directory }: Props) => {
   const [open, setOpen] = useState<boolean>(false);
 
   // EFFECTS
+  /**
+   * Change the value of the open state based on the changes to the directory
+   */
   useEffect(() => {
-    console.log("Changes", directory);
-    console.log("Name", directory.name);
+    console.log("Directory Open: ", directory.open);
+    console.log("Direcotyr Name: ", directory.name);
     setOpen(directory.open);
   }, [directory]);
 
   // FUNCTIONS
+  /**
+   * Update the status of the folder value
+   *
+   * This will update everything
+   */
   const handleClick = () => {
-    console.log("Directory: ", name);
-    updateDirectoryState(name, open);
+    const newOpenValue = !open;
+
+    updateDirectoryState(name, newOpenValue);
   };
 
   return (
