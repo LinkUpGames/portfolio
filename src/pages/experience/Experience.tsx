@@ -2,13 +2,43 @@ import WindowBorder from "@/components/desktop/Window";
 import ExperienceHeader from "./ExperienceHeader";
 import { ExperienceContext } from "./ExperienceContext";
 import { useState } from "react";
+import ExperienceCard from "./ExperienceCard";
+import ExperienceFile from "./ExperienceFile";
+
+// EXPERIENCES
+const experiences: Record<string, Experience> = {
+  fif: {
+    company: "Fill it Forward",
+    job: "Junior Software Engineer",
+    time: "May 2023 - Present",
+    description:
+      "Create, deploy and form full stack web applications that support our infrastructure and our services",
+    img: "",
+  },
+  ooi: {
+    company: "Other Ocean Interactive",
+    job: "Programmer",
+    time: "April 2022 - Sept 2022",
+    description:
+      "Video Game Engineer creating tooling for the Unity game dev framework",
+    img: "",
+  },
+  lug: {
+    company: "LinkUp Games",
+    job: "Video Game Developer",
+    time: "February 2019 - Present",
+    description:
+      "Building video games using different game engines, including Game Maker Studio and Godot",
+    img: "",
+  },
+};
 
 const DEFAULT_FILESYSTEM_STATE: Directory = {
   name: "Experience",
   files: [
     {
       name: "Intro.exe",
-      content: <>bruh</>,
+      content: <ExperienceFile />,
     },
   ],
   open: true,
@@ -17,7 +47,12 @@ const DEFAULT_FILESYSTEM_STATE: Directory = {
     {
       name: "Fill it Forward",
       open: false,
-      files: [],
+      files: [
+        {
+          name: "Experience.txt",
+          content: <ExperienceCard experience={experiences.fif} />,
+        },
+      ],
       directories: [
         {
           name: "Projects",
@@ -40,34 +75,6 @@ export const Experience = () => {
   const [filesystem, setFilesystem] = useState<Directory>(
     DEFAULT_FILESYSTEM_STATE,
   );
-
-  // EXPERIENCES
-  const experiences: Experience[] = [
-    {
-      company: "Fill it Forward",
-      job: "Junior Software Engineer",
-      time: "May 2023 - Present",
-      description:
-        "Create, deploy and form full stack web applications that support our infrastructure and our services",
-      img: "",
-    },
-    {
-      company: "Other Ocean Interactive",
-      job: "Programmer",
-      time: "April 2022 - Sept 2022",
-      description:
-        "Video Game Engineer creating tooling for the Unity game dev framework",
-      img: "",
-    },
-    {
-      company: "LinkUp Games",
-      job: "Video Game Developer",
-      time: "February 2019 - Present",
-      description:
-        "Building video games using different game engines, including Game Maker Studio and Godot",
-      img: "",
-    },
-  ];
 
   // STATES
   const [content, setContent] = useState<JSX.Element>(<> hello</>); // The content to be shown on the right hand of the directory tree

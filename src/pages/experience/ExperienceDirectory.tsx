@@ -22,8 +22,6 @@ const ExperienceDirectory = ({ directory }: Props) => {
    * Change the value of the open state based on the changes to the directory
    */
   useEffect(() => {
-    console.log("Directory Open: ", directory.open);
-    console.log("Direcotyr Name: ", directory.name);
     setOpen(directory.open);
   }, [directory]);
 

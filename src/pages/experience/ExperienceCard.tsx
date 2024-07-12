@@ -3,7 +3,7 @@ interface Props {
 }
 
 const ExperienceCard = ({ experience }: Props) => {
-  return <div>ExperienceCard</div>;
+  return <div>{experience.description}</div>;
 };
 
 export default ExperienceCard;
