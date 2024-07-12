@@ -3,7 +3,7 @@ import ExperienceHeader from "./ExperienceHeader";
 import { ExperienceContext } from "./ExperienceContext";
 import { useState } from "react";
 import ExperienceCard from "./ExperienceCard";
-import ExperienceFile from "./ExperienceFile";
+import ExperienceIntro from "./ExperienceIntro";
 
 // EXPERIENCES
 const experiences: Record<string, Experience> = {
@@ -37,8 +37,8 @@ const DEFAULT_FILESYSTEM_STATE: Directory = {
   name: "Experience",
   files: [
     {
-      name: "Intro.exe",
-      content: <ExperienceFile />,
+      name: "Intro.txt",
+      content: <ExperienceIntro />,
     },
   ],
   open: true,
