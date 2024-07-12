@@ -100,8 +100,6 @@ export const Experience = () => {
     if (directory.name === dirName) {
       // If this is the directory we want to update
       const updatedDirectory: Directory = { ...directory, open: value };
-      console.log("Found it!", updatedDirectory.name);
-      console.log("Updated Directory: ", updatedDirectory);
 
       // Return the updated directory
       return updatedDirectory;
