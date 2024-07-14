@@ -10,6 +10,7 @@ module.exports = {
   prefix: "",
   theme: {
     colors: {
+      background: "#737794",
       transparent: "transparent",
       white: "#ffffff",
       grey: "#d1d1d1",

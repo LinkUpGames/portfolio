@@ -9,8 +9,8 @@ const SkillHeader = () => {
 
         <div className="flex flex-col text-black gap-0">
           <h2 className="text-lg md:text-3xl text-white"> Skills</h2>
-          <h4 className="text-base md:text-lg">
-            The skills I have aquired over the years
+          <h4 className="text-base text-yellow md:text-lg">
+            My Accumulated Skills Over the Years
           </h4>
         </div>
       </div>

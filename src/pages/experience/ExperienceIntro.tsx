@@ -8,7 +8,7 @@ const ExperienceIntro = () => {
       </h2>
 
       {/* Content */}
-      <p className="text-base text-black text-left">
+      <p className="text-base text-black text-justify">
         Explore my professional journey through the organized folders below!
         Each folder is arranged chronologically to showcase my experience. Dive
         into the files within each folder for detailed insights. I've also
