@@ -5,6 +5,9 @@ import { useEffect, useState } from "react";
 import ExperienceCard from "./ExperienceCard";
 import ExperienceIntro from "./ExperienceIntro";
 import { useSearchParams } from "react-router-dom";
+import cornerIconLeft from "pixelarticons/svg/corner-down-left.svg";
+import cornerIconDown from "pixelarticons/svg/corner-left-down.svg";
+import { motion } from "framer-motion";
 
 // EXPERIENCES
 const experiences: Record<string, Experience> = {
@@ -82,6 +85,7 @@ export const Experience = () => {
 
   // STATES
   const [content, setContent] = useState<JSX.Element>(<> hello</>); // The content to be shown on the right hand of the directory tree
+  const [fileTreeClosed, setFileTreeClosed] = useState<boolean>(false); // We default the file tree to opened
 
   // FUNCTIONS
   /**
@@ -265,7 +269,22 @@ export const Experience = () => {
         title="Experience"
         className="!p-0 flex md:flex-row flex-col h-full w-full"
       >
-        <div className="md:min-w-fit md:w-fit min-h-20 md:min-h-full max-h-52 h-fit md:max-h-full overflow-y-auto">
+        <div
+          className={`md:min-w-fit ${fileTreeClosed ? "h-16" : "h-full"} transition-all duration-150 md:h-auto md:min-h-full md:w-fit overflow-y-auto relative`}
+        >
+          {/* The Button To open and Close */}
+          <motion.img
+            whileHover={{
+              scale: 1.3,
+            }}
+            whileTap={{
+              scale: 1.3,
+            }}
+            onClick={() => setFileTreeClosed((prev) => !prev)}
+            className="absolute w-8 h-8 top-0 right-3 cursor-pointer block md:hidden"
+            src={fileTreeClosed ? cornerIconLeft : cornerIconDown}
+          />
+
           <ExperienceHeader />
         </div>
 
