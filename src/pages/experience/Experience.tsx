@@ -265,7 +265,7 @@ export const Experience = () => {
         title="Experience"
         className="!p-0 flex md:flex-row flex-col h-full w-full"
       >
-        <div className="md:min-w-fit md:w-fit min-h-36 md:min-h-full max-h-52 md:max-h-full overflow-y-auto">
+        <div className="md:min-w-fit md:w-fit min-h-20 md:min-h-full max-h-52 h-fit md:max-h-full overflow-y-auto">
           <ExperienceHeader />
         </div>
 

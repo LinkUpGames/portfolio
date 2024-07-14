@@ -1,6 +1,7 @@
 import fileIcon from "pixelarticons/svg/file.svg";
 import { motion } from "framer-motion";
 import { useSearchParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 interface Props {
   file: SysFile;
@@ -8,7 +9,10 @@ interface Props {
 
 const ExperienceFileDescription = ({ file }: Props) => {
   const name = file.name;
-  const [_searchParams, setSearchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  // STATES
+  const [textColor, setTextColor] = useState("black"); // The color of the text based on highlight
 
   // FUNCTIONS
   /**
@@ -22,6 +26,19 @@ const ExperienceFileDescription = ({ file }: Props) => {
     }));
   };
 
+  /**
+   * Highligh if the file is highlighted in the url params
+   */
+  useEffect(() => {
+    const fileName = searchParams.get("file");
+
+    if (fileName && fileName === name) {
+      setTextColor("red");
+    } else {
+      setTextColor("black");
+    }
+  }, [searchParams]);
+
   return (
     <motion.button
       onClick={handleClick}
@@ -34,7 +51,9 @@ const ExperienceFileDescription = ({ file }: Props) => {
       <img src={fileIcon} className="w-6 h-6 object-contain" alt="File Logo" />
 
       {/* Name */}
-      <h2>{name}</h2>
+      <h2 className={`text-base text-${textColor} duration-200 transition-all`}>
+        {name}
+      </h2>
     </motion.button>
   );
 };
