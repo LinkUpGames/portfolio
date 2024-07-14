@@ -3,7 +3,6 @@ import ExperienceFileDescription from "./ExperienceFileDescription";
 import { useContext, useEffect, useState } from "react";
 import { ExperienceContext } from "./ExperienceContext";
 import { motion } from "framer-motion";
-import { useSearchParams } from "react-router-dom";
 
 interface Props {
   directory: Directory;
@@ -15,7 +14,6 @@ const ExperienceDirectory = ({ directory }: Props) => {
   const name = directory.name;
   const files = directory.files;
   const childDirectories = directory.directories;
-  const [searchParams, setSearchParams] = useSearchParams();
 
   // STATES
   const [open, setOpen] = useState<boolean>(false);
@@ -27,11 +25,6 @@ const ExperienceDirectory = ({ directory }: Props) => {
   useEffect(() => {
     setOpen(directory.open);
   }, [directory]);
-
-  /**
-   * Get the correct params from the url to display the correct file
-   */
-  useEffect(() => {});
 
   // FUNCTIONS
   /**

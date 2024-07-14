@@ -1,9 +1,10 @@
 import WindowBorder from "@/components/desktop/Window";
 import ExperienceHeader from "./ExperienceHeader";
 import { ExperienceContext } from "./ExperienceContext";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ExperienceCard from "./ExperienceCard";
 import ExperienceIntro from "./ExperienceIntro";
+import { useSearchParams } from "react-router-dom";
 
 // EXPERIENCES
 const experiences: Record<string, Experience> = {
@@ -75,6 +76,9 @@ export const Experience = () => {
   const [filesystem, setFilesystem] = useState<Directory>(
     DEFAULT_FILESYSTEM_STATE,
   );
+
+  // SEARCH PARAMS
+  const [searchParams, setSearchParams] = useSearchParams();
 
   // STATES
   const [content, setContent] = useState<JSX.Element>(<> hello</>); // The content to be shown on the right hand of the directory tree
@@ -166,6 +170,72 @@ export const Experience = () => {
     // Update the actual updated filesystem
     setFilesystem(updatedFileSystem);
   };
+
+  /**
+   * The function that recursively searches for the file based on the files in the file system
+   */
+  const _getFileFromDirectory = (fileName: string, directory: Directory) => {
+    if (
+      directory === undefined ||
+      directory === null ||
+      directory.files.length === 0
+    ) {
+      return null;
+    }
+
+    // Search through the directory for the file
+    for (const file of directory.files) {
+      if (file.name === fileName) {
+        // Found it
+        return file;
+      }
+    }
+
+    _getFileFromDirectory(fileName, directory);
+
+    return null;
+  };
+
+  /**
+   * Get a particular file from the system based on the name
+   * @param fileName The name of the file we are searching for
+   */
+  const getFileFromDirectory = (fileName: string) => {
+    const file: SysFile | null = _getFileFromDirectory(fileName, filesystem);
+
+    return file;
+  };
+
+  /**
+   * Get the current file based on the query string in the url
+   */
+  const getCurrentFile = () => {
+    // Get the file name
+    const DEFAULT_FILE = "Intro.txt";
+    const fileName = searchParams.get("file");
+
+    // Iterate over the file system and get the correct file to display
+    const file = getFileFromDirectory(fileName);
+
+    // Render the file int the screen
+    if (file) {
+      showContent(file.content);
+    } else {
+      // Default to the Intro txt
+      setSearchParams((prev) => ({
+        ...prev,
+        file: DEFAULT_FILE,
+      }));
+    }
+  };
+
+  // EFFECTS
+  /**
+   * Check if there is a file param in the url
+   */
+  useEffect(() => {
+    getCurrentFile();
+  }, [searchParams]);
 
   return (
     <ExperienceContext.Provider

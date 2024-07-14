@@ -1,7 +1,6 @@
 import fileIcon from "pixelarticons/svg/file.svg";
-import { useContext } from "react";
-import { ExperienceContext } from "./ExperienceContext";
 import { motion } from "framer-motion";
+import { useSearchParams } from "react-router-dom";
 
 interface Props {
   file: SysFile;
@@ -9,16 +8,18 @@ interface Props {
 
 const ExperienceFileDescription = ({ file }: Props) => {
   const name = file.name;
-  const content = file.content;
-
-  const { showContent } = useContext(ExperienceContext);
+  const [_searchParams, setSearchParams] = useSearchParams();
 
   // FUNCTIONS
   /**
    * Update the content displayed based on the file selected
    */
   const handleClick = () => {
-    showContent(content);
+    // Add the file to the query paora
+    setSearchParams((prev) => ({
+      ...prev,
+      file: name,
+    }));
   };
 
   return (
