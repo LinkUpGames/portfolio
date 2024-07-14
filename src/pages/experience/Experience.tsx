@@ -174,24 +174,39 @@ export const Experience = () => {
   /**
    * The function that recursively searches for the file based on the files in the file system
    */
-  const _getFileFromDirectory = (fileName: string, directory: Directory) => {
+  const _getFileFromDirectory = (
+    fileName: string,
+    directory: Directory,
+  ): SysFile | null => {
     if (
       directory === undefined ||
       directory === null ||
       directory.files.length === 0
     ) {
       return null;
-    }
+    } else {
+      // Search through the directory for the file
+      for (const file of directory.files) {
+        if (file.name === fileName) {
+          // Found it
+          console.log("FOUND IT");
+          console.log("FILE NAME: ", file.name);
+          return file;
+        }
+      }
 
-    // Search through the directory for the file
-    for (const file of directory.files) {
-      if (file.name === fileName) {
-        // Found it
-        return file;
+      /**
+       * NOTE: You cannot use any array function as it creates it's own scope and when returning
+       * we cannot return the original conetxt back up
+       */
+      for (const dir of directory.directories) {
+        const file = _getFileFromDirectory(fileName, dir);
+
+        if (file !== null) {
+          return file;
+        }
       }
     }
-
-    _getFileFromDirectory(fileName, directory);
 
     return null;
   };
@@ -215,7 +230,7 @@ export const Experience = () => {
     const fileName = searchParams.get("file");
 
     // Iterate over the file system and get the correct file to display
-    const file = getFileFromDirectory(fileName);
+    const file = getFileFromDirectory(fileName ?? DEFAULT_FILE);
 
     // Render the file int the screen
     if (file) {
