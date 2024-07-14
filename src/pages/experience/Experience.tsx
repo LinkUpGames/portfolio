@@ -281,7 +281,7 @@ export const Experience = () => {
               scale: 1.3,
             }}
             onClick={() => setFileTreeClosed((prev) => !prev)}
-            className="absolute w-8 h-8 top-0 right-3 cursor-pointerblock md:hidden"
+            className="absolute w-8 h-8 top-0 right-3 cursor-pointer block md:hidden"
             src={fileTreeClosed ? cornerIconLeft : cornerIconDown}
           />
 
