@@ -193,8 +193,6 @@ export const Experience = () => {
       for (const file of directory.files) {
         if (file.name === fileName) {
           // Found it
-          console.log("FOUND IT");
-          console.log("FILE NAME: ", file.name);
           return file;
         }
       }
@@ -234,7 +232,7 @@ export const Experience = () => {
     const fileName = searchParams.get("file");
 
     // Iterate over the file system and get the correct file to display
-    const file = getFileFromDirectory(fileName ?? DEFAULT_FILE);
+    const file = getFileFromDirectory(fileName ?? "");
 
     // Render the file int the screen
     if (file) {
