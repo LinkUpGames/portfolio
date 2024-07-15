@@ -60,7 +60,7 @@ const StatusBar = () => {
 
   return (
     <div
-      className={`z-[1000] w-full flex items-center rounded-t-md justify-between h-fit px-4 py-2 bg-white border-b-black border-b-2`}
+      className={`z-[1000] w-full flex items-center rounded-t-md justify-between h-fit px-4 py-2 bg-white border-b-black border-b-2 select-none`}
     >
       {/* Mobile Version */}
       <div className="md:hidden cursor-pointer">
