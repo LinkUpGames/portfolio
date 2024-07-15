@@ -44,8 +44,15 @@ const Projects = () => {
       image: ur,
       info: {
         title: "Ultimate Reality - A Pixelated Adventure",
-        summary:
-          "This is my best game to date. The game was made using GameMaker Studio 2. All the assets, including music, was outsourced.",
+        summary: `This game fueled my passion for indie games. I learned a lot about pixel art games with this game. This game is a platform beat'em up created in GameMaker Studio 2. Save the multiverse from an evil entity that threatens to control all that there is!
+
+        More Info:
+        * Game was inspired by a comic book character created when I was a kid
+        * The soundtrack was outsourced and has many different genre's incorporated
+        * The game takes inspiration from the combat style in Marvel's Spiderman
+
+        This game became popular in GameJolt and was featured as a prominent game in their website. The game has also gotten picked up by VoxPop Games as a VoxPop game exclusive.
+        `,
         link: "https://gamejolt.com/games/ultimatereality/406940",
         images: [
           "https://m.gjcdn.net/game-screenshot/600/2221985-t9b739jy-v4.webp",
