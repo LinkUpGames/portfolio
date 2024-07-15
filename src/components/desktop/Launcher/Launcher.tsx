@@ -11,22 +11,26 @@ const Launcher = () => {
   let mouseX = useMotionValue(Infinity);
 
   // The elements that are being shown at the button
-  const elements: Option[] = [
+  const elements: LauncherIcon[] = [
     {
       name: "chat",
-      component: <img className="h-full w-full" src={chatIcon} />,
+      icon: <img className="h-full w-full" src={chatIcon} />,
+      component: <div />,
     },
     {
       name: "music",
-      component: <img className="h-full w-full" src={musicIcon} />,
+      icon: <img className="h-full w-full" src={musicIcon} />,
+      component: <div />,
     },
     {
       name: "socials",
-      component: <img className="h-full w-full" src={socialsIcon} />,
+      icon: <img className="h-full w-full" src={socialsIcon} />,
+      component: <div />,
     },
     {
       name: "github",
-      component: <img className="h-full w-full" src={githubIcon} />,
+      icon: <img className="h-full w-full" src={githubIcon} />,
+      component: <div />,
     },
   ];
 
@@ -99,7 +103,7 @@ const AppIcon = ({ element, mouseX }: AppIconProps) => {
         className="aspect-square cursor-pointer rounded-full"
         whileTap={{ scale: 0.8 }}
       >
-        {element.component}
+        {element.icon}
       </motion.div>
     </motion.li>
   );
