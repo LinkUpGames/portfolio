@@ -14,7 +14,7 @@ const Launcher = () => {
   const elements: LauncherIcon[] = [
     {
       name: "chat",
-      icon: <img className="h-full w-full" src={chatIcon} />,
+      icon: <img draggable={false} className="h-full w-full" src={chatIcon} />,
       component: <div />,
     },
     {
@@ -100,7 +100,7 @@ const AppIcon = ({ element, mouseX }: AppIconProps) => {
       </motion.div>
 
       <motion.div
-        className="aspect-square cursor-pointer rounded-full"
+        className="aspect-square cursor-pointer rounded-full select-none"
         whileTap={{ scale: 0.8 }}
       >
         {element.icon}
