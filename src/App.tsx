@@ -4,7 +4,7 @@ import { AppContext } from "./AppContext";
 import { useMemo, useState } from "react";
 
 import StatusBar from "./components/desktop/StatusBar";
-import Launcher from "./components/desktop/Launcher";
+import Launcher from "./components/desktop/Launcher/Launcher";
 
 import en from "@/text/en.json";
 
