@@ -2,7 +2,6 @@ import { AppContext } from "@/AppContext";
 import WindowBorder from "@/components/desktop/Window";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import Projects from "../projects/Projects";
 
 const Home = () => {
   const { lang } = useContext(AppContext);
@@ -33,8 +32,8 @@ const Home = () => {
               >
                 Ecuador
               </Link>
-              &nbsp;living in Canada. As an avid enjoyer of video games. I'm a big
-              tech enthusiast with a love for gaming, coding adventures and
+              &nbsp;living in Canada. As an avid enjoyer of video games. I'm a
+              big tech enthusiast with a love for gaming, coding adventures and
               staying active. Here's a glimpse into what makes me tick!
             </p>
           </div>
@@ -55,8 +54,9 @@ const Home = () => {
                 Apex Legends
               </Link>
               ,&nbsp; grinding out ranked or bringing my ideas to life with my
-              most <span className="underline">used game engines</span>. Over the
-              years, I have crafted my ideas to life, some of which include&nbsp;
+              most <span className="underline">used game engines</span>. Over
+              the years, I have crafted my ideas to life, some of which
+              include&nbsp;
               <Link
                 to="https://gamejolt.com/games/ultimatereality/406940"
                 target="_blank"
@@ -77,9 +77,9 @@ const Home = () => {
             </h5>
 
             <p className="text-lg md:text-xl">
-              When I'm not gaming, I'm tinkering with tech. I don't want to sound
-              like a broken record, but I swear by Neovim and the increased
-              productivity it offers. <br />
+              When I'm not gaming, I'm tinkering with tech. I don't want to
+              sound like a broken record, but I swear by Neovim and the
+              increased productivity it offers. <br />
               My daily driver is Fedora. I enjoy using Fedora because of the
               stability it offers while also including the latest packages. It's
               no Arch distro, but it's a really good distro!
@@ -92,8 +92,8 @@ const Home = () => {
               >
                 Fill it Forward
               </Link>
-              &nbsp;. I enjoy combining sleek design with powerful APIs that work
-              flawlessly.
+              &nbsp;. I enjoy combining sleek design with powerful APIs that
+              work flawlessly.
             </p>
           </div>
 
@@ -107,9 +107,9 @@ const Home = () => {
               I'm always up for a new chanllenge and learning things. Recently,
               I've been very intrigued with understanding how Language Server
               Protocol (LSP) and experimenting with building one using the{" "}
-              <span className="text-blue">Go </span>programming language. Projects
-              where I don't have much experience in make me excited to learn and
-              understand different facets of programming in general.
+              <span className="text-blue">Go </span>programming language.
+              Projects where I don't have much experience in make me excited to
+              learn and understand different facets of programming in general.
             </p>
           </div>
 

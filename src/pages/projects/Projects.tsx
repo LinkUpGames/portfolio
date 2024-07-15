@@ -14,7 +14,17 @@ const Projects = () => {
       image: hacker,
       info: {
         title: "Hacker.Exe - Hacking Simulator",
-        summary: "Hacker.exe is a 2d something bruh",
+        summary: `This was my first ever game. Although this game had very mixed reviews, it taught me a lot about video games and how much effort and though goes into making them. The creation of this game took roughly 3 months, during my sophomore summer break in high school.
+
+          More About The Game:
+          * The game is heavily inspired by point and click horror games
+
+          * All of the graphics were made by me
+
+          * The game was made using the GameMaker Studio 2 game engine
+
+          This game also garnered around 100,000 downloads on the google play store before it got taken down due to deprecated api's.
+        `,
         link: "https://www.linkupgames.com/hacker-exe-home-page",
         images: [
           "https://www.metacritic.com/a/img/catalog/provider/6/12/6-1-684721-52.jpg",

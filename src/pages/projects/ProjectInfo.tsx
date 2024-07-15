@@ -47,13 +47,13 @@ const ProjectInfo = ({
           <ProjectCarousel images={info.images} />
 
           {/* Text */}
-          <div className="w-full h-full flex flex-col">
-            <p className="text-base w-full">{info.summary}</p>
+          <div className="w-full h-full flex flex-col gap-4">
+            <p className="text-base w-full whitespace-pre-line">{`${info.summary}`}</p>
 
             <Link
               to={info.link}
               target="_blank"
-              className="text-base underline text-center text-red"
+              className="text-base underline text-center mx-auto text-red rounded-lg border-2 border-red w-fit p-2 hover:text-green transition-colors duration-300"
             >
               Check the project out!
             </Link>
