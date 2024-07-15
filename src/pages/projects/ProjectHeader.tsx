@@ -11,7 +11,7 @@ const ProjectHeader = ({ iconName }: Props) => {
       <img src={alertIcon} className="h-full w-auto" />
 
       {/* Input Bar */}
-      <h2 className="w-full bg-black text-center text-white text-xl md:text-3xl h-full whitespace-nowrap text-ellipsis overflow-x-hidden">
+      <h2 className="w-full bg-black text-center text-white text-xl md:text-3xl h-auto whitespace-nowrap text-ellipsis overflow-x-hidden overflow-y-hidden">
         {iconName ? iconName : "..."}
       </h2>
 
