@@ -19,17 +19,21 @@ const Launcher = () => {
     },
     {
       name: "music",
-      icon: <img className="h-full w-full" src={musicIcon} />,
+      icon: <img draggable={false} className="h-full w-full" src={musicIcon} />,
       component: <div />,
     },
     {
       name: "socials",
-      icon: <img className="h-full w-full" src={socialsIcon} />,
+      icon: (
+        <img draggable={false} className="h-full w-full" src={socialsIcon} />
+      ),
       component: <div />,
     },
     {
       name: "github",
-      icon: <img className="h-full w-full" src={githubIcon} />,
+      icon: (
+        <img draggable={false} className="h-full w-full" src={githubIcon} />
+      ),
       component: <div />,
     },
   ];
@@ -88,7 +92,7 @@ const AppIcon = ({ element, mouseX }: AppIconProps) => {
     <motion.li
       ref={ref}
       style={{ width }}
-      className="aspect-square w-10 flex rounded-full items-center justify-center text-center relative"
+      className="aspect-square w-10 flex rounded-full items-center justify-center text-center relative select-none"
     >
       <motion.div
         style={{ scaleX: textScale, scaleY: textScale }}
@@ -100,7 +104,7 @@ const AppIcon = ({ element, mouseX }: AppIconProps) => {
       </motion.div>
 
       <motion.div
-        className="aspect-square cursor-pointer rounded-full select-none"
+        className="aspect-square cursor-pointer rounded-full"
         whileTap={{ scale: 0.8 }}
       >
         {element.icon}
