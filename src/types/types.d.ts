@@ -16,8 +16,14 @@ interface MenuText {
   };
 }
 
+interface LauncherIcon {
+  name: string;
+  icon: JSX.Element;
+  component: JSX.Element;
+}
+
 interface AppIconProps {
-  element: Option;
+  element: LauncherIcon;
   mouseX: MotionValue;
 }
 
