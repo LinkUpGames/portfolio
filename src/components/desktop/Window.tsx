@@ -5,12 +5,18 @@ interface Props {
   title: string;
   children: ReactNode;
   className?: string;
+  windowClassName?: string;
 }
 
 /**
  * The window border that is used for every component used
  */
-const WindowBorder = ({ children, title = "", className = "" }: Props) => {
+const WindowBorder = ({
+  children,
+  title = "",
+  className = "",
+  windowClassName = "",
+}: Props) => {
   // CONSTANTS
   const MAXPOS: Position[] = [
     { x: 0, y: 20 },
@@ -94,7 +100,7 @@ const WindowBorder = ({ children, title = "", className = "" }: Props) => {
     <div
       ref={ref}
       // onMouseDown={(e) => onMouseDown(e)}
-      className={`relative flex flex-col md:absolute md:max-w-[90%] md:min-w-72 w-full max-h-[90%] md:max-h-[85%] min-h-[30%] bg-white border-4 border-black rounded-md`}
+      className={`relative flex flex-col md:absolute md:max-w-[90%] md:min-w-72 w-full max-h-[90%] md:max-h-[85%] min-h-[30%] bg-white border-4 border-black rounded-md ${windowClassName}`}
     >
       <div className="w-full gap-2 h-fit mx-auto flex justify-between items-center border-b-black border-b-2 py-2 px-3">
         <div className="border-t-2 h-1/6 border-red border-b-2 bg-red w-full" />
