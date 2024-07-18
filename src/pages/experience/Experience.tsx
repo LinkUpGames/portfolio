@@ -268,6 +268,7 @@ export const Experience = () => {
       <WindowBorder
         title="Experience"
         className="!p-0 flex md:flex-row flex-col h-full w-full"
+        windowClassName="h-full"
       >
         <div
           className={`md:min-w-fit ${fileTreeClosed ? "h-16" : "h-full"} transition-all duration-150 md:h-auto md:min-h-full md:w-fit overflow-y-auto relative`}
