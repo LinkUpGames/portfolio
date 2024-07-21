@@ -7,6 +7,7 @@ import StatusBar from "./components/desktop/StatusBar";
 import Launcher from "./components/desktop/Launcher/Launcher";
 
 import en from "@/text/en.json";
+import Popup from "./components/desktop/Popup";
 
 function App() {
   // REF
@@ -44,6 +45,7 @@ function App() {
         >
           <Outlet />
 
+          <Popup />
           {/* Footer */}
           <Launcher />
         </div>
