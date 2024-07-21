@@ -15,10 +15,21 @@ const ExperienceCard = ({ experience }: Props) => {
       {/* Description */}
       <div className="w-full flex flex-col">
         <h6 className="text-xl md:text-base text-green">{experience.job}</h6>
-        <h4 className="text-base md:text-sm text-black">
-          {experience.description}
+        <h4 className="text-base md:text-sm text-black whitespace-pre-line">
+          {`${experience.description}`}
         </h4>
       </div>
+
+      {/* Image */}
+      {experience.img && (
+        <div className="w-full">
+          <img
+            className="w-auto object-contain h-56 mx-auto border-red border-2 rounded-lg"
+            src={experience.img}
+            alt="Experience Image"
+          />
+        </div>
+      )}
     </div>
   );
 };
