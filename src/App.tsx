@@ -15,6 +15,7 @@ function App() {
 
   // STATES
   const [menu, setMenu] = useState<number>(0);
+  const [popup, setPopup] = useState<JSX.Element | null>(null); // The popup (e.g. Chat, Music Player)
 
   // MEMOS
   /*
@@ -26,6 +27,15 @@ function App() {
     return data!;
   }, []);
 
+  // FUNCTION
+  /**
+   * Handle the popup that we want to display For extended purposes
+   * @param component The component that we wish to display
+   */
+  const handlePopup = (component: JSX.Element) => {
+    setPopup(component);
+  };
+
   return (
     <AppContext.Provider
       value={{
@@ -33,6 +43,7 @@ function App() {
         menu: menu,
         lang: lang,
         setMenuItem: setMenu,
+        changePopup: handlePopup,
       }}
     >
       <div className="w-full p-3 h-screen max-h-screen bg-black flex flex-col md:overflow-hidden">
@@ -45,7 +56,7 @@ function App() {
         >
           <Outlet />
 
-          <Popup />
+          <Popup componentRender={popup} />
           {/* Footer */}
           <Launcher />
         </div>

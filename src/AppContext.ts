@@ -5,6 +5,7 @@ interface AppContextProps {
   menu: number;
   setMenuItem: (index: number) => void;
   lang: MenuText;
+  changePopup: (component: JSX.Element) => void;
 }
 
 export const AppContext = createContext<AppContextProps>({
@@ -12,4 +13,5 @@ export const AppContext = createContext<AppContextProps>({
   lang: {} as MenuText,
   ref: null,
   setMenuItem: () => {},
+  changePopup: () => {},
 });

@@ -4,7 +4,8 @@ import musicIcon from "pixelarticons/svg/music.svg";
 import socialsIcon from "pixelarticons/svg/user.svg";
 import githubIcon from "pixelarticons/svg/github.svg";
 
-import { useRef } from "react";
+import { useContext, useRef } from "react";
+import { AppContext } from "@/AppContext";
 
 const Launcher = () => {
   // Framer Motion
@@ -57,6 +58,9 @@ const Launcher = () => {
  * The use of framer motion allows for smooth animations
  */
 const AppIcon = ({ element, mouseX }: AppIconProps) => {
+  // APP CONTEXT
+  const { changePopup } = useContext(AppContext);
+
   // REFS
   const ref = useRef<HTMLLIElement>(null);
 
@@ -106,6 +110,7 @@ const AppIcon = ({ element, mouseX }: AppIconProps) => {
       <motion.div
         className="aspect-square cursor-pointer rounded-full w-full"
         whileTap={{ scale: 0.8 }}
+        onTap={() => changePopup(element.component)}
       >
         {element.icon}
       </motion.div>

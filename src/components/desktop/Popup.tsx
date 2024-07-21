@@ -1,23 +1,23 @@
-import { AppContext } from "@/AppContext";
-import { useContext, useEffect, useMemo, useState } from "react";
+import { useMemo } from "react";
 
-const Popup = () => {
-  // APP CONTEXT
-  const {} = useContext(AppContext);
+interface Props {
+  componentRender: JSX.Element | null;
+}
 
+const Popup = ({ componentRender }: Props) => {
   // MEMOS
   /**
    * The component we want to render
    */
   const component = useMemo<JSX.Element | null>(() => {
-    return null;
-  }, []);
+    return componentRender;
+  }, [componentRender]);
 
   return (
     <div
       className={`${component ? "flex" : "hidden"} z-[9999] bg-red h-screen w-full`}
     >
-      hello
+      {component && component}
     </div>
   );
 };
