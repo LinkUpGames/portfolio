@@ -50,3 +50,9 @@ interface SysFile {
 interface FileSystemStructure {
   directory: Directory;
 }
+
+interface Message {
+  icon: string;
+  color: string;
+  text: string;
+}
