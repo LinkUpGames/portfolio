@@ -54,5 +54,6 @@ interface FileSystemStructure {
 interface Message {
   icon: string;
   color: string;
+  sender: number;
   text: string;
 }
