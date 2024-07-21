@@ -6,6 +6,7 @@ import githubIcon from "pixelarticons/svg/github.svg";
 
 import { useContext, useRef } from "react";
 import { AppContext } from "@/AppContext";
+import Chat from "../Chat/Chat";
 
 const Launcher = () => {
   // Framer Motion
@@ -16,7 +17,7 @@ const Launcher = () => {
     {
       name: "chat",
       icon: <img draggable={false} className="h-full w-full" src={chatIcon} />,
-      component: <div />,
+      component: <Chat />,
     },
     {
       name: "music",

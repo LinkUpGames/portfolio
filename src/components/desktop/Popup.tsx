@@ -15,9 +15,13 @@ const Popup = ({ componentRender }: Props) => {
 
   return (
     <div
-      className={`${component ? "flex" : "hidden"} z-[9999] bg-red h-screen w-full`}
+      className={`${component ? "absolute" : "hidden"} z-[9999] bg-none h-screen w-full`}
     >
-      {component && component}
+      <div className="flex justify-center items-center w-full h-full ">
+        <div className="max-w-[80%] max-h-[80%] overflow-y-auto">
+          {component && component}
+        </div>
+      </div>
     </div>
   );
 };
