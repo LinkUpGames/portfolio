@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 const Messages = () => {
   // STATES
@@ -42,6 +42,14 @@ const Messages = () => {
       },
       2,
     );
+  }, []);
+
+  // MEMOS
+  /**
+   * The messages to display
+   */
+  const messageDisplays = useMemo(() => {
+    // TODO: Continue from here
   }, []);
 
   return <div>Messages</div>;
