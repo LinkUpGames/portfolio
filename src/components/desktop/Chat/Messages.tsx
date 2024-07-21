@@ -44,15 +44,7 @@ const Messages = () => {
     );
   }, []);
 
-  // MEMOS
-  /**
-   * The messages to display
-   */
-  const messageDisplays = useMemo(() => {
-    // TODO: Continue from here
-  }, []);
-
-  return <div>Messages</div>;
+  return <div>bruh moment</div>;
 };
 
 export default Messages;
