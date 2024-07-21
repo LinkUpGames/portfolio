@@ -1,6 +1,7 @@
 import { createContext } from "react";
 
 interface AppContextProps {
+  ref: HTMLDivElement | null;
   menu: number;
   setMenuItem: (index: number) => void;
   lang: MenuText;
@@ -9,5 +10,6 @@ interface AppContextProps {
 export const AppContext = createContext<AppContextProps>({
   menu: 0,
   lang: {} as MenuText,
-  setMenuItem: () => { },
+  ref: null,
+  setMenuItem: () => {},
 });

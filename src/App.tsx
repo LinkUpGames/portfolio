@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import "./App.css";
 import { AppContext } from "./AppContext";
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 
 import StatusBar from "./components/desktop/StatusBar";
 import Launcher from "./components/desktop/Launcher/Launcher";
@@ -9,6 +9,9 @@ import Launcher from "./components/desktop/Launcher/Launcher";
 import en from "@/text/en.json";
 
 function App() {
+  // REF
+  const ref = useRef<HTMLDivElement>(null);
+
   // STATES
   const [menu, setMenu] = useState<number>(0);
 
@@ -25,6 +28,7 @@ function App() {
   return (
     <AppContext.Provider
       value={{
+        ref: ref.current,
         menu: menu,
         lang: lang,
         setMenuItem: setMenu,
@@ -34,7 +38,10 @@ function App() {
         {/* Navbar */}
         <StatusBar />
 
-        <div className="px-4 py-2 bg-background w-full relative h-full rounded-b-md flex flex-col justify-start gap-5 items-center overflow-y-auto md:overflow-hidden">
+        <div
+          className="px-4 py-2 bg-background w-full relative h-full rounded-b-md flex flex-col justify-start gap-5 items-center overflow-y-auto md:overflow-hidden"
+          ref={ref}
+        >
           <Outlet />
 
           {/* Footer */}
