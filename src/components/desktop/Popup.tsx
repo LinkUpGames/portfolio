@@ -18,7 +18,7 @@ const Popup = ({ componentRender }: Props) => {
       className={`${component ? "absolute" : "hidden"} z-[9999] h-[95%] w-full`}
     >
       <div className="flex justify-center items-center w-full h-full">
-        <div className="max-w-[80%] max-h-[80%] overflow-y-auto">
+        <div className="max-w-[80%] max-h-[80%] overflow-auto">
           {component && component}
         </div>
       </div>

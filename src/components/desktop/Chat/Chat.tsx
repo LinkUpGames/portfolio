@@ -16,7 +16,7 @@ const Chat = () => {
       </div>
 
       {/* Message Conversation */}
-      <div className="overflow-y-scroll whitespace-pre-line max-h-40 w-full">
+      <div className="overflow-y-scroll whitespace-pre-line w-full flex-1">
         <Messages />
         {`bruh
           jdsioadajsoj
@@ -29,6 +29,30 @@ const Chat = () => {
           iojd osd
           jodsiajf aoijf (asdf iasodfjasodifj 
           jijfaoifjds
+          iojd osd
+          iojd osd
+          iojd osd
+          jodsiajf aoijf (asdf
+          jijfaoifjds
+          asd) => { second }
+          dsfs
+          jdsioadajsoj
+          iojd osd
+          jodsiajf aoijf (asdf iasodfjasodifj 
+          jodsiajf aoijf (asdf
+          jijfaoifjds
+          asd) => { second }
+          dsfs
+          jdsioadajsoj
+          iojd osd
+          jodsiajf aoijf (asdf iasodfjasodifj 
+          jodsiajf aoijf (asdf
+          jijfaoifjds
+          asd) => { second }
+          dsfs
+          jdsioadajsoj
+          iojd osd
+          jodsiajf aoijf (asdf iasodfjasodifj 
       `}
       </div>
     </div>
