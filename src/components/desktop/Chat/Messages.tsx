@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 
 const Messages = () => {
   // STATES
@@ -43,6 +43,12 @@ const Messages = () => {
       2,
     );
   }, []);
+
+  // MEMOS
+  /**
+   * // TODO: COntinue from here
+   */
+  const messagesToDisplay = useMemo(() => {}, [messages]);
 
   return <div>bruh moment</div>;
 };

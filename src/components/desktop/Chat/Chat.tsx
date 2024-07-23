@@ -17,7 +17,7 @@ const Chat = () => {
       </div>
 
       {/* Message Conversation */}
-      <div className="mt-2 flex flex-1 flex-col justify-start whitespace-pre-line w-full gap-3 max-h-full">
+      <div className="mt-2 block justify-start whitespace-pre-line w-full gap-3 max-h-full overflow-y-auto">
         {/* <Messages /> */}
 
         <div className="h-fit bg-blue flex mr-auto w-fit max-w-[80%] items-center justify-start overflow-x-auto">
@@ -59,6 +59,39 @@ const Chat = () => {
           </p>
           <img src={humanHandupIcon} className="h-6 w-6 object-contain" />
         </div>
+
+        <div className="h-fit bg-blue flex mr-auto w-fit max-w-[80%] items-center justify-start overflow-x-auto">
+          <img src={humanNormalIcon} className="h-6 w-6 object-contain" />
+
+          <p className="text-xl text-left">
+            this this is something else that can be said. Yeaaaaa
+          </p>
+        </div>
+
+        <div className="bg-green flex ml-auto w-fit max-w-[80%] items-center justify-end overflow-x-auto">
+          <p className="text-xl text-left">
+            this is my message bask to you dawg. I am going to make it so so
+            long for you forever
+          </p>
+          <img src={humanHandupIcon} className="h-6 w-6 object-contain" />
+        </div>
+
+        <div className="h-fit bg-blue flex mr-auto w-fit max-w-[80%] items-center justify-start overflow-x-auto">
+          <img src={humanNormalIcon} className="h-6 w-6 object-contain" />
+
+          <p className="text-xl text-left">
+            this this is something else that can be said. Yeaaaaa
+          </p>
+        </div>
+
+        <div className="bg-green flex ml-auto w-fit max-w-[80%] items-center justify-end overflow-x-auto">
+          <p className="text-xl text-left">
+            this is my message bask to you dawg. I am going to make it so so
+            long for you forever
+          </p>
+          <img src={humanHandupIcon} className="h-6 w-6 object-contain" />
+        </div>
+
         {/* Ending */}
       </div>
     </div>
