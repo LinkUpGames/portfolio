@@ -1,10 +1,10 @@
-import { useContext, useEffect, useMemo } from "react";
+import { useContext, useMemo } from "react";
 import humanNormalIcon from "pixelarticons/svg/human.svg";
 import { ChatContext } from "./ChatContext";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Messages = () => {
-  const { addMessage, messages } = useContext(ChatContext);
+  const { messages } = useContext(ChatContext);
   // MEMOS
   /**
    * The messages that are going to be displayed in the messages app section
@@ -44,7 +44,7 @@ const Messages = () => {
     return displayedMessages;
   }, [messages]);
 
-  return <>{messagesToDisplay}</>;
+  return <AnimatePresence>{messagesToDisplay}</AnimatePresence>;
 };
 
 export default Messages;

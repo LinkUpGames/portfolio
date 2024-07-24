@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Messages from "./Messages";
 import { ChatContext } from "./ChatContext";
+import InputBox from "./InputBox";
 
 const Chat = () => {
   // STATES
@@ -68,6 +69,9 @@ const Chat = () => {
         <div className="block justify-start whitespace-pre-line w-full gap-3 max-h-full overflow-y-auto">
           <Messages />
         </div>
+
+        {/* The Input Box */}
+        <InputBox />
       </div>
     </ChatContext.Provider>
   );
