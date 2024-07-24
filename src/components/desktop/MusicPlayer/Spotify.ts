@@ -6,16 +6,32 @@ import { DateTime } from "luxon";
  */
 const checkAuthToken = async () => {
   let token = localStorage.getItem("spotify-token");
-  let expire = localStorage.getItem("spotify-token-expire");
+  let expire = parseInt(localStorage.getItem("spotify-token-expire") ?? "-1");
 
   // We don't have a token available
-  if (!expire) {
-  } else {
-    const now = DateTime.now();
-    const expireDate = DateTime.fromMillis(parseInt(expire));
+  if (expire === -1) {
+    const { access_token: newToken, expires_in: newExpire } =
+      await getAuthToken(); // Get a new token
 
+    token = newToken;
+    expire = DateTime.now().plus({ minute: newExpire }).toMillis();
+
+    localStorage.setItem("spotify-token", token);
+    localStorage.setItem("spotify-token-expire", expire.toString());
+  } else {
+    // Check if we need a new token
+    const now = DateTime.now();
+    const expireDate = DateTime.fromMillis(expire);
+
+    // The token has expired
     if (now > expireDate) {
-      const { access_token: newToken } = await getAuthToken(); // Get a new auth token
+      const { access_token: newToken, expires_in: newExpire } =
+        await getAuthToken(); // Get a new auth token
+      token = newToken;
+      expire = DateTime.now().plus({ minute: newExpire }).toMillis();
+
+      localStorage.setItem("spotify-token", token);
+      localStorage.setItem("spotify-token-expire", expire.toString());
     }
   }
 
@@ -30,6 +46,7 @@ const checkAuthToken = async () => {
  */
 export const getAuthToken = async () => {
   let access_token = "";
+  let expires_in = -1;
   try {
     const token = btoa(
       `${import.meta.env.VITE_CLIENT_ID}:${import.meta.env.VITE_CLIENT_SECRET}`,
@@ -51,14 +68,14 @@ export const getAuthToken = async () => {
     const data = response.data;
 
     access_token = data.access_token;
-
-    console.log("Data: ", response.data);
+    expires_in = data.expires_in;
   } catch (error) {
     console.error("Error sending auth request to spotimeme: ", error);
   }
 
   return {
     access_token: access_token,
+    expires_in: expires_in,
   };
 };
 
@@ -87,9 +104,29 @@ export const getRefreshToken = async (refreshToken: string) => {
     return {
       refresh_token: data.refresh_token,
     };
-
-    console.log("Data: ", response.data);
   } catch (error) {
     console.error("Error refreshing token: ", error);
   }
+};
+
+/**
+ * Get the playlist based on id
+ * @param id The playlist
+ */
+export const getPlaylist = async (id: string) => {
+  const { token } = await checkAuthToken();
+
+  const response = await axios.get(
+    "https://api.spotify.com/v1/playlists/6Zhw3L9LG0jKIPvZheyIjf",
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+      params: {
+        fields: "name,id,tracks.items(track(name,href,id))",
+      },
+    },
+  );
+
+  console.log("response: ", response.data);
 };

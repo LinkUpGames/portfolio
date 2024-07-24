@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { getAuthToken, getRefreshToken } from "./Spotify";
+import { getAuthToken, getPlaylist, getRefreshToken } from "./Spotify";
 
 const MusicPlayer = () => {
   // STATES
@@ -10,24 +10,12 @@ const MusicPlayer = () => {
   useEffect(() => {}, []);
 
   const bruh = async () => {
-    const { access_token } = await getAuthToken();
-
-    const response = await axios.get(
-      "https://api.spotify.com/v1/playlists/6Zhw3L9LG0jKIPvZheyIjf",
-      {
-        headers: {
-          Authorization: `Bearer ${access_token}`,
-        },
-      },
-    );
-
-    console.log("response: ", response.data);
+    const yea = await getPlaylist("6Zhw3L9LG0jKIPvZheyIjf");
   };
 
   return (
     <div>
-      <button onClick={getAuthToken}> Click me</button>
-      <button onClick={bruh}> Refresh Token</button>
+      <button onClick={bruh}> Click me</button>
     </div>
   );
 };
