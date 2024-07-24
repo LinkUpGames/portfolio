@@ -1,9 +1,35 @@
 import axios from "axios";
+import { DateTime } from "luxon";
+
+/**
+ * Checks if we have an auth token from spotify or if we need to request one
+ */
+const checkAuthToken = async () => {
+  let token = localStorage.getItem("spotify-token");
+  let expire = localStorage.getItem("spotify-token-expire");
+
+  // We don't have a token available
+  if (!expire) {
+  } else {
+    const now = DateTime.now();
+    const expireDate = DateTime.fromMillis(parseInt(expire));
+
+    if (now > expireDate) {
+      const { access_token: newToken } = await getAuthToken(); // Get a new auth token
+    }
+  }
+
+  return {
+    token: token,
+    expire: expire,
+  };
+};
 
 /*
  * Requests an auth token from spotify and it's ttl
  */
 export const getAuthToken = async () => {
+  let access_token = "";
   try {
     const token = btoa(
       `${import.meta.env.VITE_CLIENT_ID}:${import.meta.env.VITE_CLIENT_SECRET}`,
@@ -24,14 +50,16 @@ export const getAuthToken = async () => {
 
     const data = response.data;
 
-    return {
-      access_token: data.access_token,
-    };
+    access_token = data.access_token;
 
     console.log("Data: ", response.data);
   } catch (error) {
     console.error("Error sending auth request to spotimeme: ", error);
   }
+
+  return {
+    access_token: access_token,
+  };
 };
 
 /**
