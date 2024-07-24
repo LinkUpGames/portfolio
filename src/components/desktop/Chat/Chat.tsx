@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Messages from "./Messages";
 import { ChatContext } from "./ChatContext";
 
@@ -21,6 +21,32 @@ const Chat = () => {
       setMessages((prev) => [...prev, message]);
     }
   };
+
+  // EFFECTS
+  /**
+   * Prefill with the messages that I probably would've said in this conversation
+   */
+  useEffect(() => {
+    addMessage(
+      {
+        sender: 0,
+        color: "#ad463b",
+        icon: "https://i.pinimg.com/originals/f4/20/0a/f4200a828929aaa0261aed306bf1c0e5.jpg",
+        text: "Hey! Thank you for contacting me!",
+      },
+      Math.random() * 3000,
+    );
+
+    addMessage(
+      {
+        sender: 0,
+        color: "#ad463b",
+        icon: "https://i.pinimg.com/originals/f4/20/0a/f4200a828929aaa0261aed306bf1c0e5.jpg",
+        text: "You can send me a message through here and I'll recieve it!",
+      },
+      Math.random() * 6000,
+    );
+  }, []);
 
   return (
     <ChatContext.Provider
