@@ -66,7 +66,7 @@ const Chat = () => {
         </div>
 
         {/* Message Conversation */}
-        <div className="block justify-start whitespace-pre-line w-full gap-3 max-h-full overflow-y-auto">
+        <div className="justify-start whitespace-pre-line w-full gap-3 overflow-y-auto flex flex-col flex-grow">
           <Messages />
         </div>
 
