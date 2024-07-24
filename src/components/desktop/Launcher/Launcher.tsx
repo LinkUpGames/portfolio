@@ -7,6 +7,7 @@ import githubIcon from "pixelarticons/svg/github.svg";
 import { useContext, useRef } from "react";
 import { AppContext } from "@/AppContext";
 import Chat from "../Chat/Chat";
+import MusicPlayer from "../MusicPlayer/MusicPlayer";
 
 const Launcher = () => {
   // Framer Motion
@@ -22,7 +23,7 @@ const Launcher = () => {
     {
       name: "music",
       icon: <img draggable={false} className="h-full w-full" src={musicIcon} />,
-      component: <div />,
+      component: <MusicPlayer />,
     },
     {
       name: "socials",
