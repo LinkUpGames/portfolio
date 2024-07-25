@@ -20,7 +20,6 @@ const checkAuthToken = async () => {
           headers: {
             Authorization: `Bearer ${token}`,
           },
-          params: {},
         },
       );
     }
@@ -117,7 +116,9 @@ export const getRefreshToken = async (refreshToken: string) => {
  * Get the playlist based on id
  * @param id The playlist
  */
-export const getPlaylist = async (id: string) => {
+export const getPlaylist = async (
+  id: string,
+): Promise<MusicPlaylist | null> => {
   try {
     const { token } = await checkAuthToken();
 
@@ -135,8 +136,20 @@ export const getPlaylist = async (id: string) => {
 
     const data = response.data;
 
-    console.log("response: ", data);
+    const playlist: MusicPlaylist = {
+      name: data.name,
+      id: data.id,
+      tracks: data.tracks.items.map((item: any) => ({
+        link: item.track.href,
+        id: item.track.id,
+        name: item.track.name,
+      })),
+    };
+
+    return playlist;
   } catch (error) {
     console.error("Error getting the playlist: ", error);
+
+    return null;
   }
 };

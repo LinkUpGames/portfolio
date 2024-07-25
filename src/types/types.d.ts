@@ -57,3 +57,15 @@ interface Message {
   sender: number;
   text: string;
 }
+
+interface MusicPlaylist {
+  tracks: MusicTrack[];
+  name: string;
+  id: string;
+}
+
+interface MusicTrack {
+  name: string;
+  link: string;
+  id: string;
+}
