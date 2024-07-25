@@ -22,6 +22,10 @@ module.exports = {
       dark: "#484D6D",
       yellow: "#FADF63",
       gray: "#b5b5b5",
+      salmon: "#FCB5AC",
+      teal: "#3D5B59",
+      fresia: "#EFE7BC",
+      gold: "#E1A140",
     },
     fontFamily: {
       "pixel:": ["Pixelify Sans", "sans-serif"],

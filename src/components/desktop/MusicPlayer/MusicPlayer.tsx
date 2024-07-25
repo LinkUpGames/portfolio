@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import { getPlaylist } from "./Spotify";
 import { DUMMY_PLAYLIST, MusicPlayerContext } from "./MusicContext";
 import Library from "./Library";
+import MixTape from "./MixTape";
 
 const MusicPlayer = () => {
   // STATES
@@ -33,7 +34,11 @@ const MusicPlayer = () => {
         playlist: playlist,
       }}
     >
-      <Library />
+      <div className="flex flex-col rounded-lg bg-fresia border-2 border-dark h-full w-full justify-start items-center">
+        <MixTape />
+
+        <Library />
+      </div>
     </MusicPlayerContext.Provider>
   );
 };
