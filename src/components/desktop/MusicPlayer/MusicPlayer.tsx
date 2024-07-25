@@ -1,21 +1,29 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
-import { getAuthToken, getPlaylist, getRefreshToken } from "./Spotify";
+import { useCallback, useEffect, useState } from "react";
+import { getPlaylist } from "./Spotify";
 
 const MusicPlayer = () => {
   // STATES
-  const [authToken, setAuthToken] = useState("");
-  const [refreshToken, setRefreshToken] = useState("");
 
-  useEffect(() => {}, []);
+  // FUNCTIONS
+  /**
+   * Function that fetches the playlist that we want to plei
+   */
+  const fetchPlaylist = useCallback(async () => {
+    const data = await getPlaylist("6Zhw3L9LG0jKIPvZheyIjf");
+  }, []);
 
-  const bruh = async () => {
-    const yea = await getPlaylist("6Zhw3L9LG0jKIPvZheyIjf");
-  };
+  // EFFECTS
+  /**
+   * Make sure to fetch the playlist as soon as we have loaded
+   */
+  useEffect(() => {
+    fetchPlaylist();
+  }, [fetchPlaylist]);
 
   return (
     <div>
-      <button onClick={bruh}> Click me</button>
+      hello
+      {/* <button onClick={bruh}> Click me</button> */}
     </div>
   );
 };
