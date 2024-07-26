@@ -156,8 +156,7 @@ export const getPlaylist = async (
       const status = error.response?.status;
 
       if (status === 401) {
-        console.log("BRUH MOMENT");
-        // localStorage.removeItem("spotify-token");
+        localStorage.removeItem("spotify-token");
       }
     }
 
