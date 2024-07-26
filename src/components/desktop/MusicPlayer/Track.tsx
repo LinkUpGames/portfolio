@@ -31,10 +31,10 @@ const Track = ({ track }: TrackProps) => {
           scale: 0.8,
         }}
         src={image}
-        className="w-auto h-24 md:h-40 rounded-lg border-2 border-black cursor-pointer"
+        className="w-auto h-24 md:h-40 rounded-lg border-2 border-black cursor-pointer select-none"
       />
 
-      <p className="text-xs text-center text-teal bg-salmon rounded-full p-2 text-ellipsis max-w-40 truncate border-2 border-teal select-none">
+      <p className="text-xs md:text-sm text-center text-teal bg-salmon rounded-full p-2 text-ellipsis max-w-40 truncate border-2 border-teal select-none">
         {track.name}
       </p>
     </div>
