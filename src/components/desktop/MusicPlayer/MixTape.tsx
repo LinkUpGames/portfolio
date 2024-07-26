@@ -8,16 +8,24 @@ import { IoPauseCircle } from "react-icons/io5";
 const MixTape = () => {
   const controls = [
     {
-      component: <IoPlayBackCircle size={35} />,
+      component: (
+        <IoPlayBackCircle className="text-[2.8rem] sm:text-[2.5rem] md:text-[2rem]" />
+      ),
     },
     {
-      component: <IoPauseCircle size={35} />,
+      component: (
+        <IoPauseCircle className="text-[2.8rem] sm:text-[2.5rem] md:text-[2rem]" />
+      ),
     },
     {
-      component: <IoPlayCircle size={35} />,
+      component: (
+        <IoPlayCircle className="text-[2.8rem] sm:text-[2.5rem] md:text-[2rem]" />
+      ),
     },
     {
-      component: <IoPlayForwardCircle size={35} />,
+      component: (
+        <IoPlayForwardCircle className="text-[2.8rem] sm:text-[2.5rem] md:text-[2rem]" />
+      ),
     },
   ];
 
@@ -34,11 +42,14 @@ const MixTape = () => {
         }}
         className="mx-auto w-fit"
       >
-        <PiVinylRecordFill size={100} />
+        <PiVinylRecordFill
+          // size={100}
+          className="text-[9rem] sm:text-[8rem]"
+        />
       </motion.div>
 
       {/* Media Control Icons */}
-      <div className="w-full px-5 flex gap-2 justify-center items-center">
+      <div className="w-full px-5 flex gap-6 md:gap-2 justify-center items-center">
         {controls.map((control, i) => (
           <motion.button
             key={i}
