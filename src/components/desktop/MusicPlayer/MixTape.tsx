@@ -4,6 +4,7 @@ import { IoPlayCircle } from "react-icons/io5";
 import { IoPlayForwardCircle } from "react-icons/io5";
 import { IoPlayBackCircle } from "react-icons/io5";
 import { IoPauseCircle } from "react-icons/io5";
+import SpotifyWidget from "./SpotifyWidget";
 
 const MixTape = () => {
   const controls = [
@@ -47,6 +48,9 @@ const MixTape = () => {
           className="text-[9rem] sm:text-[8rem]"
         />
       </motion.div>
+
+      {/* Widget */}
+      <SpotifyWidget />
 
       {/* Media Control Icons */}
       <div className="w-full px-5 flex gap-6 md:gap-2 justify-center items-center">
