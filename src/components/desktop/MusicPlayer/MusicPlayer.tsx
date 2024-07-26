@@ -34,7 +34,7 @@ const MusicPlayer = () => {
         playlist: playlist,
       }}
     >
-      <div className="flex flex-col rounded-lg bg-fresia border-2 border-dark h-full w-full justify-start items-center">
+      <div className="flex flex-col rounded-lg bg-fresia border-2 border-dark h-full w-full justify-start items-center py-2">
         <MixTape />
 
         <Library />

@@ -1,4 +1,4 @@
-import cassetteIcon from "@/assets/icons/cassette-player.png";
+import { PiVinylRecordFill } from "react-icons/pi";
 import { motion } from "framer-motion";
 import { IoPlayCircle } from "react-icons/io5";
 import { IoPlayForwardCircle } from "react-icons/io5";
@@ -22,14 +22,26 @@ const MixTape = () => {
   ];
 
   return (
-    <div>
+    <div className="my-3">
       {/* Cassette Player Image */}
-      <img src={cassetteIcon} className="w-auto h-44 object-contain" />
+      <motion.div
+        animate={{ rotate: 360 }}
+        transition={{
+          repeat: Infinity,
+          repeatType: "loop",
+          duration: 2,
+          ease: "linear",
+        }}
+        className="mx-auto w-fit"
+      >
+        <PiVinylRecordFill size={100} />
+      </motion.div>
 
       {/* Media Control Icons */}
       <div className="w-full px-5 flex gap-2 justify-center items-center">
-        {controls.map((control) => (
+        {controls.map((control, i) => (
           <motion.button
+            key={i}
             whileTap={{
               scale: 0.7,
             }}

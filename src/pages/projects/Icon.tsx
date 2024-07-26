@@ -35,7 +35,6 @@ const Icon = ({
   // FUNCTIONS
   const handleOpen = (e: MouseEvent | TouchEvent | PointerEvent) => {
     e.preventDefault();
-    console.log("BRUH");
     setOpen((prev) => !prev);
   };
 

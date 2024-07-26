@@ -1,13 +1,14 @@
 import { useContext } from "react";
 import { MusicPlayerContext } from "./MusicContext";
+import Track from "./Track";
 
 const Library = () => {
   const { playlist } = useContext(MusicPlayerContext);
 
   return (
-    <div className="w-full grid grid-cols-3">
-      {playlist.tracks.map((track) => (
-        <div key={track.name}>{track.name}</div>
+    <div className="w-[95%] justify-items-center grid grid-cols-2 md:grid-cols-3 overflow-y-auto gap-4 px-2 py-1 border-4 border-s-teal rounded-lg">
+      {playlist.tracks.map((track, i) => (
+        <Track track={track} key={i} />
       ))}
     </div>
   );

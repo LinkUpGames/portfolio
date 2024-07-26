@@ -68,4 +68,11 @@ interface MusicTrack {
   name: string;
   link: string;
   id: string;
+  images: MusicTrackImage[];
+}
+
+interface MusicTrackImage {
+  url: string;
+  height: number;
+  width: number;
 }

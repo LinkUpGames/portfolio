@@ -12,7 +12,7 @@ const checkAuthToken = async () => {
 
       token = newToken;
 
-      localStorage.setItem("spotify-token", token);
+      localStorage.setItem("spotify-token", newToken);
     } else {
       await axios.get(
         "https://api.spotify.com/v1/tracks/11dFghVXANMlKmJXsNCbNl",
@@ -28,6 +28,7 @@ const checkAuthToken = async () => {
       const status = error.response?.status;
 
       if (status === 401) {
+        console.log("HERE");
         const { access_token: newToken } = await getAuthToken();
 
         token = newToken;
@@ -129,7 +130,7 @@ export const getPlaylist = async (
           Authorization: `Bearer ${token}`,
         },
         params: {
-          fields: "name,id,tracks.items(track(name,href,id))",
+          fields: "name,id,tracks.items(track(name,href,id,album(images))",
         },
       },
     );
@@ -143,12 +144,22 @@ export const getPlaylist = async (
         link: item.track.href,
         id: item.track.id,
         name: item.track.name,
+        images: item.track.album.images,
       })),
     };
 
     return playlist;
   } catch (error) {
     console.error("Error getting the playlist: ", error);
+
+    if (error instanceof AxiosError) {
+      const status = error.response?.status;
+
+      if (status === 401) {
+        console.log("BRUH MOMENT");
+        // localStorage.removeItem("spotify-token");
+      }
+    }
 
     return null;
   }
