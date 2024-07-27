@@ -16,7 +16,9 @@ const SpotifyWidget = () => {
         // TODO: Do something with emdbed controller
       };
 
-      IFrameAPI.createController(element, options, callback);
+      if (element) {
+        IFrameAPI.createController(element, options, callback);
+      }
     };
   });
 
