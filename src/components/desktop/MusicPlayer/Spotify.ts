@@ -163,3 +163,30 @@ export const getPlaylist = async (
     return null;
   }
 };
+
+/**
+ * Get the track info so that we can play it
+ * @param id The track spotify id
+ */
+export const getTrackUri = async (id: string): Promise<string> => {
+  try {
+    const { token } = await checkAuthToken();
+
+    const response = await axios.get(
+      `https://api.spotify.com/v1/tracks/${id}`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      },
+    );
+
+    const data = response.data;
+
+    return data.uri;
+  } catch (error) {
+    console.error("Error in getTrack: ", error);
+
+    return "";
+  }
+};

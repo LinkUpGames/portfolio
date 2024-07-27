@@ -2,6 +2,9 @@ import { useEffect } from "react";
 
 const SpotifyWidget = () => {
   // EFFECTS
+  /**
+   * Initialze the iframe spotify api
+   */
   useEffect(() => {
     window.onSpotifyIframeApiReady = (IFrameAPI: any) => {
       const element = document.getElementById("spotify-widget");
@@ -12,7 +15,7 @@ const SpotifyWidget = () => {
         height: 60,
       };
 
-      const callback = (EmbedController) => {
+      const callback = (EmbedController: any) => {
         // TODO: Do something with emdbed controller
       };
 
