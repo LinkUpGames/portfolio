@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { useMemo } from "react";
-import { getTrackUri } from "./Spotify";
 
 interface TrackProps {
   track: MusicTrack;
@@ -18,18 +17,10 @@ const Track = ({ track }: TrackProps) => {
     }
   }, [track.images]);
 
-  /**
-   * Get the track uri so that can change the track
-   */
-  const handleClick = async () => {
-    const uri = await getTrackUri(track.id);
-    console.log("URI: ", uri);
-  };
-
   return (
     <div
-      onClick={handleClick}
-      className="relative w-fit flex flex-col justify-center items-center gap-2"
+      data-spotify-id={track.link}
+      className="relative w-fit flex flex-col justify-center items-center gap-2 track"
     >
       <motion.img
         whileHover={{

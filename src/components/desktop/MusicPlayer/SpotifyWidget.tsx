@@ -1,6 +1,10 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
+import { MusicPlayerContext } from "./MusicContext";
 
 const SpotifyWidget = () => {
+  // CONTEXT
+  const { playlist } = useContext(MusicPlayerContext);
+
   // EFFECTS
   /**
    * Initialze the iframe spotify api
@@ -16,14 +20,20 @@ const SpotifyWidget = () => {
       };
 
       const callback = (EmbedController: any) => {
-        // TODO: Do something with emdbed controller
+        const tracks = document.querySelectorAll(".track");
+        console.log("tracks: ", tracks);
+        // document.querySelectorAll(".track").forEach((track) => {
+        //   track.addEventListener("click", () => {
+        //     EmbedController.loadUri(track.dataset.spotifyId);
+        //   });
+        // });
       };
 
       if (element) {
         IFrameAPI.createController(element, options, callback);
       }
     };
-  });
+  }, [playlist]);
 
   return (
     <div className="w-full">

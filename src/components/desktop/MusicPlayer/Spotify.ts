@@ -130,7 +130,7 @@ export const getPlaylist = async (
           Authorization: `Bearer ${token}`,
         },
         params: {
-          fields: "name,id,tracks.items(track(name,href,id,album(images))",
+          fields: "name,id,tracks.items(track(name,uri,id,album(images))",
         },
       },
     );
@@ -141,7 +141,7 @@ export const getPlaylist = async (
       name: data.name,
       id: data.id,
       tracks: data.tracks.items.map((item: any) => ({
-        link: item.track.href,
+        link: item.track.uri,
         id: item.track.id,
         name: item.track.name,
         images: item.track.album.images,
