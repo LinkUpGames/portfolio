@@ -6,11 +6,20 @@ export const DUMMY_PLAYLIST: MusicPlaylist = {
   name: "",
 };
 
+export const DUMMY_TRACK: MusicTrack = {
+  id: "",
+  link: "",
+  images: [],
+  name: "",
+};
+
 interface MusicPlayerContextProps {
   playlist: MusicPlaylist;
   loading: boolean;
-  playerWidget: MutableRefObject<any>;
-  playerController: MutableRefObject<any>;
+  playerWidget: MutableRefObject<SpotifyIFrame | null>;
+  playerController: MutableRefObject<SpotifyController | null>;
+  currentTrack: MusicTrack;
+  playTrack: (track: MusicTrack) => void;
 }
 
 export const MusicPlayerContext = createContext<MusicPlayerContextProps>({
@@ -18,4 +27,6 @@ export const MusicPlayerContext = createContext<MusicPlayerContextProps>({
   loading: false,
   playerWidget: { current: null },
   playerController: { current: null },
+  currentTrack: DUMMY_TRACK,
+  playTrack: () => {},
 });

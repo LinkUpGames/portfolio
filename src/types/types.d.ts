@@ -1,3 +1,8 @@
+// NOTE: This is to extend the current window to use the global script for the spotify api
+interface Window {
+  onSpotifyIframeApiReady: (IFrameApi: any) => void;
+}
+
 interface Option {
   name: string;
   component?: JSX.Element;
@@ -87,4 +92,5 @@ interface SpotifyIFrame {
 
 interface SpotifyController {
   loadUri: (uri: string) => void;
+  play: () => void;
 }

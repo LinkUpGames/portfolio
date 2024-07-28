@@ -1,6 +1,10 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { getPlaylist } from "./Spotify";
-import { DUMMY_PLAYLIST, MusicPlayerContext } from "./MusicContext";
+import {
+  DUMMY_PLAYLIST,
+  DUMMY_TRACK,
+  MusicPlayerContext,
+} from "./MusicContext";
 import Library from "./Library";
 import MixTape from "./MixTape";
 
@@ -8,6 +12,7 @@ const MusicPlayer = () => {
   // STATES
   const [loading, setLoading] = useState<boolean>(true); // Check if we are loading any external information
   const [playlist, setPlaylist] = useState<MusicPlaylist>(DUMMY_PLAYLIST); // The music track that we want to display
+  const [track, setTrack] = useState<MusicTrack>(DUMMY_TRACK); // The current track playing
 
   // NOTE: https://developer.spotify.com/documentation/embeds/references/iframe-api#embedcontrollertoggleplay
   const playerWidget = useRef<SpotifyIFrame | null>(null); // This is the  player widget that will be added to the music player
@@ -28,6 +33,24 @@ const MusicPlayer = () => {
 
     setLoading(false);
   }, []);
+
+  /**
+   * Update the song playing by passing the current track to play
+   */
+  const playTrack = (track: MusicTrack) => {
+    const controller = playerController.current;
+
+    if (controller) {
+      const uri = track.link;
+
+      // NOTE: This seems to be working and allows the music to play seamlessly
+      controller.loadUri(uri);
+      controller.play();
+
+      // Update the current track playing
+      setTrack(track);
+    }
+  };
 
   // EFFECTS
   /**
@@ -80,6 +103,8 @@ const MusicPlayer = () => {
         loading: loading,
         playerController: playerController,
         playerWidget: playerWidget,
+        currentTrack: track,
+        playTrack: playTrack,
       }}
     >
       <div className="rounded-lg bg-fresia border-2 border-dark h-full w-full justify-start items-center py-2 overflow-y-auto gap-3 px-4">

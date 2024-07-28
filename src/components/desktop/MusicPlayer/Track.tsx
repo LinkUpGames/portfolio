@@ -7,7 +7,7 @@ interface TrackProps {
 }
 
 const Track = ({ track }: TrackProps) => {
-  const { playerController } = useContext(MusicPlayerContext);
+  const { playTrack, currentTrack } = useContext(MusicPlayerContext);
 
   /**
    * The image to display for this track
@@ -24,15 +24,11 @@ const Track = ({ track }: TrackProps) => {
    * Update the track that is to be played here
    */
   const handleClick = () => {
-    // Guess we can never be too careful
-    if (playerController.current) {
-      const controller = playerController.current;
+    const myName = track.name;
+    const otherName = currentTrack.name;
 
-      controller.loadUri(track.link);
-
-      // play the track
-      // NOTE: This seems to be working and allows the music to play seamlessly
-      controller.play();
+    if (myName !== otherName) {
+      playTrack(track);
     }
   };
 

@@ -14,7 +14,7 @@ const MixTape = () => {
           duration: 2,
           ease: "linear",
         }}
-        className="mx-auto w-fit"
+        className="mx-auto w-fit mb-4"
       >
         <PiVinylRecordFill
           // size={100}
