@@ -29,6 +29,10 @@ const Track = ({ track }: TrackProps) => {
       const controller = playerController.current;
 
       controller.loadUri(track.link);
+
+      // play the track
+      // NOTE: This seems to be working and allows the music to play seamlessly
+      controller.play();
     }
   };
 
