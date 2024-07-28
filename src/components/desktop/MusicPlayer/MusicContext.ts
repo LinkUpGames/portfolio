@@ -8,8 +8,10 @@ export const DUMMY_PLAYLIST: MusicPlaylist = {
 
 interface MusicPlayerContextProps {
   playlist: MusicPlaylist;
+  loading: boolean;
 }
 
 export const MusicPlayerContext = createContext<MusicPlayerContextProps>({
   playlist: DUMMY_PLAYLIST,
+  loading: false,
 });

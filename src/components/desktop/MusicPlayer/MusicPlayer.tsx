@@ -6,6 +6,7 @@ import MixTape from "./MixTape";
 
 const MusicPlayer = () => {
   // STATES
+  const [loading, setLoading] = useState<boolean>(true); // Check if we are loading any external information
   const [playlist, setPlaylist] = useState<MusicPlaylist>(DUMMY_PLAYLIST); // The music track that we want to display
 
   // FUNCTIONS
@@ -13,11 +14,15 @@ const MusicPlayer = () => {
    * Function that fetches the playlist that we want to plei
    */
   const fetchPlaylist = useCallback(async () => {
+    setLoading(true);
+
     const data = await getPlaylist("5Zr8lFNUaSzadkZZBTbHKt");
 
     if (data) {
       setPlaylist(data);
     }
+
+    setLoading(false);
   }, []);
 
   // EFFECTS
@@ -32,9 +37,10 @@ const MusicPlayer = () => {
     <MusicPlayerContext.Provider
       value={{
         playlist: playlist,
+        loading: loading,
       }}
     >
-      <div className="flex flex-col rounded-lg bg-fresia border-2 border-dark h-full w-full justify-start items-center py-2">
+      <div className="rounded-lg bg-fresia border-2 border-dark h-full w-full justify-start items-center py-2 overflow-y-auto gap-3 px-4">
         <MixTape />
 
         <Library />

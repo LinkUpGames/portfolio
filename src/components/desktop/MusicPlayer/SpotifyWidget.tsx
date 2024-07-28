@@ -3,7 +3,7 @@ import { MusicPlayerContext } from "./MusicContext";
 
 const SpotifyWidget = () => {
   // CONTEXT
-  const { playlist } = useContext(MusicPlayerContext);
+  const { playlist, loading } = useContext(MusicPlayerContext);
 
   // EFFECTS
   /**
@@ -12,32 +12,29 @@ const SpotifyWidget = () => {
   useEffect(() => {
     window.onSpotifyIframeApiReady = (IFrameAPI: any) => {
       const element = document.getElementById("spotify-widget");
-
       const options = {
-        uri: "spotify:episode:7makk4oTQel546B0PZlDM5",
+        uri: "",
         width: "100%",
-        height: 60,
+        height: "100%",
       };
 
       const callback = (EmbedController: any) => {
-        const tracks = document.querySelectorAll(".track");
-        console.log("tracks: ", tracks);
-        document.querySelectorAll(".track").forEach((track) => {
+        document.querySelectorAll(".track").forEach((track: any) => {
           track.addEventListener("click", () => {
             EmbedController.loadUri(track.dataset.spotifyId);
           });
         });
       };
 
-      if (element) {
+      if (element && !loading) {
         IFrameAPI.createController(element, options, callback);
       }
     };
-  }, [playlist]);
+  }, [playlist, loading]);
 
   return (
-    <div className="w-full">
-      <div id="spotify-widget"></div>
+    <div className="max-w-full sm:w-[50%] sm:max-w-96 md:max-w-[30rem] mx-auto h-full">
+      <div id="spotify-widget" className="w-full"></div>
     </div>
   );
 };
