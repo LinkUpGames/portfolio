@@ -76,3 +76,15 @@ interface MusicTrackImage {
   height: number;
   width: number;
 }
+
+interface SpotifyIFrame {
+  createController: (
+    element: HTMLElement,
+    options: any,
+    callback: (a: any) => void,
+  ) => void;
+}
+
+interface SpotifyController {
+  loadUri: (uri: string) => void;
+}

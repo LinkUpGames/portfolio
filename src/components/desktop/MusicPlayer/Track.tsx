@@ -1,11 +1,14 @@
 import { motion } from "framer-motion";
-import { useMemo } from "react";
+import { useContext, useMemo } from "react";
+import { MusicPlayerContext } from "./MusicContext";
 
 interface TrackProps {
   track: MusicTrack;
 }
 
 const Track = ({ track }: TrackProps) => {
+  const { playerController } = useContext(MusicPlayerContext);
+
   /**
    * The image to display for this track
    */
@@ -17,12 +20,25 @@ const Track = ({ track }: TrackProps) => {
     }
   }, [track.images]);
 
+  /**
+   * Update the track that is to be played here
+   */
+  const handleClick = () => {
+    // Guess we can never be too careful
+    if (playerController.current) {
+      const controller = playerController.current;
+
+      controller.loadUri(track.link);
+    }
+  };
+
   return (
     <div
       data-spotify-id={track.link}
       className="relative w-fit flex flex-col justify-center items-center gap-2 track"
     >
       <motion.img
+        onClick={handleClick}
         whileHover={{
           scale: 1.2,
           transition: {

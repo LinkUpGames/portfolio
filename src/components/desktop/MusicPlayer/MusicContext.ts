@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext, MutableRefObject } from "react";
 
 export const DUMMY_PLAYLIST: MusicPlaylist = {
   id: "",
@@ -9,9 +9,13 @@ export const DUMMY_PLAYLIST: MusicPlaylist = {
 interface MusicPlayerContextProps {
   playlist: MusicPlaylist;
   loading: boolean;
+  playerWidget: MutableRefObject<any>;
+  playerController: MutableRefObject<any>;
 }
 
 export const MusicPlayerContext = createContext<MusicPlayerContextProps>({
   playlist: DUMMY_PLAYLIST,
   loading: false,
+  playerWidget: { current: null },
+  playerController: { current: null },
 });
