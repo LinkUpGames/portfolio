@@ -22,11 +22,11 @@ const SpotifyWidget = () => {
       const callback = (EmbedController: any) => {
         const tracks = document.querySelectorAll(".track");
         console.log("tracks: ", tracks);
-        // document.querySelectorAll(".track").forEach((track) => {
-        //   track.addEventListener("click", () => {
-        //     EmbedController.loadUri(track.dataset.spotifyId);
-        //   });
-        // });
+        document.querySelectorAll(".track").forEach((track) => {
+          track.addEventListener("click", () => {
+            EmbedController.loadUri(track.dataset.spotifyId);
+          });
+        });
       };
 
       if (element) {
