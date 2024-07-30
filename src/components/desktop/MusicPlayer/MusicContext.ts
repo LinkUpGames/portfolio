@@ -19,6 +19,7 @@ interface MusicPlayerContextProps {
   playerWidget: MutableRefObject<SpotifyIFrame | null>;
   playerController: MutableRefObject<SpotifyController | null>;
   currentTrack: MusicTrack;
+  closeWidget: () => void;
   playTrack: (track: MusicTrack) => void;
 }
 
@@ -28,5 +29,6 @@ export const MusicPlayerContext = createContext<MusicPlayerContextProps>({
   playerWidget: { current: null },
   playerController: { current: null },
   currentTrack: DUMMY_TRACK,
+  closeWidget: () => {},
   playTrack: () => {},
 });

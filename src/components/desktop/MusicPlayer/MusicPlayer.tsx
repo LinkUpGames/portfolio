@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useContext, useEffect, useRef, useState } from "react";
 import { getPlaylist } from "./Spotify";
 import {
   DUMMY_PLAYLIST,
@@ -7,8 +7,13 @@ import {
 } from "./MusicContext";
 import Library from "./Library";
 import MixTape from "./MixTape";
+import MusicHeader from "./MusicHeader";
+import { AppContext } from "@/AppContext";
 
 const MusicPlayer = () => {
+  // CONTEXT
+  const { changePopup } = useContext(AppContext);
+
   // STATES
   const [loading, setLoading] = useState<boolean>(true); // Check if we are loading any external information
   const [playlist, setPlaylist] = useState<MusicPlaylist>(DUMMY_PLAYLIST); // The music track that we want to display
@@ -19,6 +24,13 @@ const MusicPlayer = () => {
   const playerController = useRef<SpotifyController | null>(null); // This is the player controller responsible for moving the widget values
 
   // FUNCTIONS
+  /**
+   * Close the music player by assigning the popup to null
+   */
+  const closeWidget = () => {
+    changePopup(null);
+  };
+
   /**
    * Function that fetches the playlist that we want to plei
    */
@@ -104,10 +116,13 @@ const MusicPlayer = () => {
         playerController: playerController,
         playerWidget: playerWidget,
         currentTrack: track,
+        closeWidget: closeWidget,
         playTrack: playTrack,
       }}
     >
-      <div className="rounded-lg bg-fresia border-2 border-dark h-full w-full justify-start items-center py-2 overflow-y-auto gap-3 px-4">
+      <div className="rounded-lg bg-fresia border-2 border-dark h-full w-full justify-start items-center py-2 overflow-y-auto gap-3 px-4 backdrop-blur-sm bg-opacity-65">
+        <MusicHeader />
+
         <MixTape />
 
         <Library />
