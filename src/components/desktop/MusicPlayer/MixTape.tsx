@@ -10,7 +10,7 @@ const MixTape = () => {
   const { loading } = useContext(MusicPlayerContext);
 
   return (
-    <div className={`mt-3 w-full ${loading ? "" : "h-full"}`}>
+    <div className={`mt-3 w-full`}>
       {/* Cassette Player Image */}
       <motion.div
         animate={{ rotate: 360 }}

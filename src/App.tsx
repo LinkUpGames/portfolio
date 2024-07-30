@@ -32,7 +32,7 @@ function App() {
    * Handle the popup that we want to display For extended purposes
    * @param component The component that we wish to display
    */
-  const handlePopup = (component: JSX.Element) => {
+  const handlePopup = (component: JSX.Element | null) => {
     setPopup(component);
   };
 
