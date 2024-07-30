@@ -53,7 +53,7 @@ const Track = ({ track }: TrackProps) => {
         className="w-auto h-24 md:h-40 border-2 border-black cursor-pointer select-none"
       />
 
-      <p className="text-xs md:text-sm text-center text-teal bg-salmon rounded-full p-2 text-ellipsis max-w-40 truncate border-2 border-teal select-none">
+      <p className="text-xs md:text-sm text-center text-teal bg-salmon rounded-full p-2 text-ellipsis max-w-36 md:max-w-44 truncate border-2 border-teal select-none">
         {track.name}
       </p>
     </div>
