@@ -1,0 +1,9 @@
+name: Test
+run-name: ${{ github.actor }} is testing out Github Actions
+on: [push]
+jobs:
+  Explore:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "The job has been triggered"
+      - run: echo "Trigger Person ${{ github.event_name }}"
