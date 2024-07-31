@@ -33,7 +33,7 @@ jobs:
       - name: Upload Build Files
         uses: actions/upload-artifact@v4
         with:
-          name: files
+          name: github-pages
           path: ./dist
 
   deploy:
@@ -50,7 +50,7 @@ jobs:
       - name: Download Artifact
         uses: actions/download-artifact@v4
         with:
-          name: files
+          name: github-pages
           path: ./dist
 
       - name: Setup Pages
