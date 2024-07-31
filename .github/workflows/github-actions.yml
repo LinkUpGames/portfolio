@@ -30,9 +30,6 @@ jobs:
       - name: Building Project
         run: sh .github/scripts/build.sh
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-
       - name: Upload Build Files
         uses: actions/upload-artifact@v4
         with:
@@ -41,7 +38,7 @@ jobs:
 
   deploy:
     name: Deploy
-    needs: Build
+    needs: build
 
     environment:
       name: github-pages
@@ -55,6 +52,9 @@ jobs:
         with:
           name: files
           path: ./dist
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
 
       - name: Deploy Site
         id: deployment
