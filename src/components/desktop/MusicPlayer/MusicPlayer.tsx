@@ -56,8 +56,10 @@ const MusicPlayer = () => {
       const uri = track.link;
 
       // NOTE: This seems to be working and allows the music to play seamlessly
-      controller.loadUri(uri);
-      controller.play();
+      setTimeout(() => {
+        controller.loadUri(uri);
+        controller.play();
+      }, 500);
 
       // Update the current track playing
       setTrack(track);
