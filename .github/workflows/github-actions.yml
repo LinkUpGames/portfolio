@@ -1,6 +1,5 @@
-name: Test
-run-name: ${{ github.actor }} is testing out Github Actions
-
+name: Deploy Site
+run-name: ${{ github.actor }} is deploying website
 on: 
   push:
     branches:
