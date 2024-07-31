@@ -110,6 +110,18 @@ const MusicPlayer = () => {
     }
   }, [playerWidget, loading]);
 
+  /**
+   * Unmount and destory the controller when we exit the music player
+   */
+  useEffect(() => {
+    return () => {
+      if (playerController.current) {
+        console.log("BRUH");
+        playerController.current.destroy();
+      }
+    };
+  }, []);
+
   return (
     <MusicPlayerContext.Provider
       value={{

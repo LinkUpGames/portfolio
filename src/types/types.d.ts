@@ -93,4 +93,5 @@ interface SpotifyIFrame {
 interface SpotifyController {
   loadUri: (uri: string) => void;
   play: () => void;
+  destroy: () => void;
 }
