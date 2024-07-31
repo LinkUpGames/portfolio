@@ -1,4 +1,4 @@
-import path from "path";
+import path, { resolve } from "path";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
@@ -12,4 +12,12 @@ export default defineConfig({
     },
   },
   base: "/portfolio/",
+  build: {
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, "index.html"),
+        404: resolve(__dirname, "public/404.html"),
+      },
+    },
+  },
 });
