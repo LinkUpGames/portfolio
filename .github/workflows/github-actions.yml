@@ -10,6 +10,10 @@ permissions:
   pages: write
   id-token: write
 
+env:
+  VITE_CLIENT_ID: ${{ secrets.VITE_CLIENT_ID }}
+  VITE_CLIENT_SECRET: ${{ secrets.VITE_CLIENT_SECRET }}
+
 jobs:
   build:
     name: Build
@@ -28,9 +32,6 @@ jobs:
 
       - name: Building Project
         run: sh .github/scripts/build.sh
-        env:
-          VITE_CLIENT_ID: ${{ secrets.VITE_CLIENT_ID }}
-          VITE_CLIENT_SECRET: ${{ secrets.VITE_CLIENT_SECRET }}
 
       - name: Upload Build Files
         uses: actions/upload-pages-artifact@v3
