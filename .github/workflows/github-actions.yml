@@ -30,8 +30,6 @@ jobs:
       - name: State Person
         run: echo "Build started by ${{ github.event_name }}"
 
-      - run: echo "ID ${{ secrets.VITE_CLIENT_ID }}"
-
       - name: Building Project
         run: sh .github/scripts/build.sh
 
