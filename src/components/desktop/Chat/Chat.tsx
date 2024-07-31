@@ -2,8 +2,9 @@ import { useContext, useEffect, useState } from "react";
 import Messages from "./Messages";
 import { ChatContext } from "./ChatContext";
 import InputBox from "./InputBox";
-import { IoCloseCircleSharp } from "react-icons/io5";
 import { AppContext } from "@/AppContext";
+import { getRandomNumber } from "@/helpers/functions";
+import ChatHeader from "./ChatHeader";
 
 const Chat = () => {
   // CONTEXT
@@ -31,7 +32,7 @@ const Chat = () => {
   /**
    * Exit the chat app
    */
-  const handleClick = () => {
+  const closePopup = () => {
     changePopup(null);
   };
 
@@ -47,7 +48,7 @@ const Chat = () => {
         icon: "https://i.pinimg.com/originals/f4/20/0a/f4200a828929aaa0261aed306bf1c0e5.jpg",
         text: "Hey! Thank you for contacting me!",
       },
-      Math.random() * 3000,
+      getRandomNumber(0, 2000),
     );
 
     addMessage(
@@ -57,7 +58,7 @@ const Chat = () => {
         icon: "https://i.pinimg.com/originals/f4/20/0a/f4200a828929aaa0261aed306bf1c0e5.jpg",
         text: "You can send me a message through here and I'll recieve it!",
       },
-      Math.random() * 8000,
+      getRandomNumber(6000, 10000),
     );
   }, []);
 
@@ -66,26 +67,15 @@ const Chat = () => {
       value={{
         messages: messages,
         addMessage: addMessage,
+        closePopup: closePopup,
       }}
     >
-      <div className="flex flex-col rounded-lg bg-gradient-to-r from-grey to-grey border-2 border-dark h-full w-full">
+      <div className="flex flex-col rounded-lg bg-fresia backdrop-blur-md bg-opacity-60 border-2 border-dark h-full w-full">
         {/* Header */}
-        <div className="flex text-3xl bg-white text-black w-full justify-center items-center relative">
-          {/* Profile Icon */}
-
-          {/* Useless Icons on the right */}
-          <h2 className="uppercase text-2xl p-6 text-center">Messages</h2>
-
-          {/* Exit Icon */}
-          <button onClick={handleClick} className="absolute right-4 top-6">
-            <IoCloseCircleSharp size={30} />
-          </button>
-        </div>
+        <ChatHeader />
 
         {/* Message Conversation */}
-        <div className="justify-start whitespace-pre-line w-full gap-3 overflow-y-auto flex flex-col flex-grow">
-          <Messages />
-        </div>
+        <Messages />
 
         {/* The Input Box */}
         <InputBox />

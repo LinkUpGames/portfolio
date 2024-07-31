@@ -17,7 +17,7 @@ const Messages = () => {
       const jsx = (
         <motion.div
           key={i}
-          className={`mt-6 h-fit px-4 py-2 sm:py-1 ${index === 0 ? "rounded-tr-full rounded-br-full" : "rounded-tl-full rounded-bl-full"} ${index === 0 ? "bg-blue" : "bg-green"} flex ${index === 0 ? "mr-auto" : "ml-auto"} ${index === 0 ? "justify-start" : "justify-end"} ${index === 0 ? "flex-row" : "flex-row-reverse"} w-fit max-w-[80%] items-center overflow-x-auto flex gap-4 flex-shrink-0`}
+          className={`mt-6 h-fit px-4 py-2 sm:py-1 ${index === 0 ? "rounded-tr-full rounded-br-full" : "rounded-tl-full rounded-bl-full"} ${index === 0 ? "bg-gold" : "bg-teal"} flex ${index === 0 ? "mr-auto" : "ml-auto"} ${index === 0 ? "justify-start" : "justify-end"} ${index === 0 ? "flex-row" : "flex-row-reverse"} w-fit max-w-[80%] items-center overflow-x-auto flex gap-4 flex-shrink-0`}
           initial={{
             x: slideInFrom,
           }}
@@ -46,7 +46,11 @@ const Messages = () => {
     return displayedMessages;
   }, [messages]);
 
-  return <AnimatePresence>{messagesToDisplay}</AnimatePresence>;
+  return (
+    <div className="justify-start whitespace-pre-line w-full gap-3 overflow-y-auto flex flex-col flex-grow my-2">
+      <AnimatePresence>{messagesToDisplay}</AnimatePresence>
+    </div>
+  );
 };
 
 export default Messages;
