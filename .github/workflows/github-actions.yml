@@ -24,8 +24,11 @@ jobs:
           node-version: 20
           cache: 'npm'
 
-      - name: Building Project
+      - name: State Person
         run: sh .github/scripts/build.sh
+
+      - name: Building Project
+        run: echo "Build started by ${{ github.event_name }}"
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
