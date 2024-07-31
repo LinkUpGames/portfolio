@@ -48,7 +48,7 @@ const router = createBrowserRouter(
     },
   ],
   {
-    basename: "/portfolio/",
+    basename: import.meta.env.BASE_URL,
   },
 );
 
