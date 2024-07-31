@@ -21,27 +21,32 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Navigate to="/home" replace />,
+        element: <Navigate to="/portfolio/home" replace />,
       },
       {
         path: "portfolio",
-        element: <Navigate to="/home" replace />,
-      },
-      {
-        path: "home",
-        element: <Home />,
-      },
-      {
-        path: "Projects",
-        element: <Projects />,
-      },
-      {
-        path: "Skills",
-        element: <Skills />,
-      },
-      {
-        path: "Experience",
-        element: <Experience />,
+        children: [
+          {
+            index: true,
+            element: <Navigate to="home" replace />,
+          },
+          {
+            path: "home",
+            element: <Home />,
+          },
+          {
+            path: "Projects",
+            element: <Projects />,
+          },
+          {
+            path: "Skills",
+            element: <Skills />,
+          },
+          {
+            path: "Experience",
+            element: <Experience />,
+          },
+        ],
       },
     ],
   },
