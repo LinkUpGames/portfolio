@@ -25,10 +25,10 @@ jobs:
           cache: 'npm'
 
       - name: State Person
-        run: sh .github/scripts/build.sh
+        run: echo "Build started by ${{ github.event_name }}"
 
       - name: Building Project
-        run: echo "Build started by ${{ github.event_name }}"
+        run: sh .github/scripts/build.sh
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
