@@ -13,44 +13,44 @@ import BlueScreenDeath from "./pages/death/BlueScreen.tsx";
 import Skills from "./pages/skills/Skills.tsx";
 import { Experience } from "./pages/experience/Experience.tsx";
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <App />,
+      errorElement: <BlueScreenDeath />,
+      children: [
+        {
+          index: true,
+          element: <Navigate to="/home" replace />,
+        },
+        {
+          path: "portfolio",
+          element: <Navigate to="/home" replace />,
+        },
+        {
+          path: "home",
+          element: <Home />,
+        },
+        {
+          path: "Projects",
+          element: <Projects />,
+        },
+        {
+          path: "Skills",
+          element: <Skills />,
+        },
+        {
+          path: "Experience",
+          element: <Experience />,
+        },
+      ],
+    },
+  ],
   {
-    path: "/",
-    element: <App />,
-    errorElement: <BlueScreenDeath />,
-    children: [
-      {
-        index: true,
-        element: <Navigate to="/portfolio/home" replace />,
-      },
-      {
-        path: "portfolio",
-        children: [
-          {
-            index: true,
-            element: <Navigate to="home" replace />,
-          },
-          {
-            path: "home",
-            element: <Home />,
-          },
-          {
-            path: "Projects",
-            element: <Projects />,
-          },
-          {
-            path: "Skills",
-            element: <Skills />,
-          },
-          {
-            path: "Experience",
-            element: <Experience />,
-          },
-        ],
-      },
-    ],
+    basename: "/portfolio/",
   },
-]);
+);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
