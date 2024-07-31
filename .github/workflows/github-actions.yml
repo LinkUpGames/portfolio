@@ -3,7 +3,7 @@ run-name: ${{ github.actor }} is deploying website
 on: 
   push:
     branches:
-      - dev
+      - main
 
 permissions:
   contents: read

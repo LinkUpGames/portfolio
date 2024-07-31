@@ -108,8 +108,6 @@ const MusicPlayer = () => {
     }
   }, [playerWidget, loading]);
 
-  console.log("ID: ", import.meta.env.VITE_CLIENT_ID);
-
   return (
     <MusicPlayerContext.Provider
       value={{
