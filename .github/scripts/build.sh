@@ -2,6 +2,7 @@
 
 # Build the file from the specific runner
 echo "Installing Project Dependencies"
+echo "Vite ID: $VITE_CLIENT_ID"
 
 # Install Dependencies
 npm ci
