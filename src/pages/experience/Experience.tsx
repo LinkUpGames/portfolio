@@ -245,6 +245,14 @@ export const Experience = () => {
     }
   };
 
+  /**
+   * Update the whole directory with a new version
+   * @param dir The new directory that we will replace it with
+   */
+  const updateDirectory = (dir: Directory) => {
+    setFilesystem(dir);
+  };
+
   // EFFECTS
   /**
    * Check if there is a file param in the url
@@ -259,6 +267,7 @@ export const Experience = () => {
         showContent: showContent,
         updateDirectoryState: updateDirectoryState,
         getDirectoryState: getDirectoryState,
+        updateDirectory: updateDirectory,
         filesystem: filesystem,
       }}
     >
