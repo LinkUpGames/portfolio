@@ -7,27 +7,40 @@ const ExperienceHeader = () => {
   const { filesystem, updateDirectory } = useContext(ExperienceContext);
 
   // SEARCH PARAMS
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams, _setSearchParams] = useSearchParams();
 
   // FUNCTIONS
   /**
    * Updates the folders by going through it and checking which folder to open completely
    */
-  const updateFolders = (dir: Directory, filename: string) => {
-    // todo: recurse through file structure and open the appropriate directories
-    const files = dir.files;
+  const updateFolders = (directory: Directory, filename: string): Directory => {
+    if (!directory) {
+      return directory;
+    }
 
-    for (const file of files) {
+    // Check if the file exists in the current directory we are in
+    for (const file of directory.files) {
       if (file.name === filename) {
-        console.log("FOUND IT HERE");
-      } else {
-        const childDirs = dir.directories;
-
-        for (const childDir of childDirs) {
-          updateFolders(childDir, filename);
-        }
+        return { ...directory, open: true };
       }
     }
+
+    // Recursively updated other directories
+    let found = false; // Check if the file exists in the current directory
+    const updatedDirectories = directory.directories.map((dir) => {
+      const updatedDir = updateFolders(dir, filename);
+
+      found = updatedDir.open;
+
+      return updatedDir;
+    });
+
+    // Propogate the open up the parent directory
+    if (found) {
+      return { ...directory, directories: updatedDirectories, open: true };
+    }
+
+    return { ...directory, directories: updatedDirectories };
   };
 
   /**
@@ -37,7 +50,8 @@ const ExperienceHeader = () => {
   const searchForDirectory = (file: string) => {
     // Copy the file System so that we can start going down the rabbit whole
     const newFileSystem: Directory = updateFolders(filesystem, file);
-    // updateDirectory(newFileSystem);
+
+    updateDirectory(newFileSystem);
   };
 
   // EFFECTS
@@ -46,11 +60,9 @@ const ExperienceHeader = () => {
    * website is opened at first
    */
   useEffect(() => {
-    // TODO: Continue from here
     const fileName = searchParams.get("file") ?? "";
 
     searchForDirectory(fileName);
-    console.log("FILENAME: ", fileName);
   }, []);
 
   return (
