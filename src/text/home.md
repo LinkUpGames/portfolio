@@ -10,6 +10,11 @@
 
 ### Header 6
 
+-----
+
+<!--![This is an image](src/assets/icons/hacker_exe_icon.png)-->
+<img src="src/assets/icons/hacker_exe_icon.png" alt="HELLO" />
+
 <!--# Home Page Texts-->
 <!---->
 <!--## Ecclesiastes 9:10-->
