@@ -24,7 +24,8 @@ const Home = () => {
             </h5>
 
             <p className="text-lg md:text-xl">
-              Hey! I am a software developer from &nbsp;
+              Hi! I'm Marcos and I am in my final year at the University of
+              Guelph. I am from Ecuador and currently living in Guelph, Canada.
               <Link
                 to="https://www.lonelyplanet.com/articles/top-things-to-do-in-ecuador"
                 target="_blank"
