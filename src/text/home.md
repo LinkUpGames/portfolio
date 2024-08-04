@@ -4,16 +4,24 @@
 
 ### Header 3
 
-### Header 4
+#### Header 4
 
-### Header 5
+##### Header 5
 
-### Header 6
+###### Header 6
 
 -----
+This
+
+```typescript
+const bruh = "";
+
+console.log("BRUH");
+
+```
 
 <!--![This is an image](src/assets/icons/hacker_exe_icon.png)-->
-<img src="src/assets/icons/hacker_exe_icon.png" alt="HELLO" />
+<img src="src/assets/icons/hacker_exe_icon.png" alt="HELLO" width="200px" height="200px" />
 
 <!--# Home Page Texts-->
 <!---->
