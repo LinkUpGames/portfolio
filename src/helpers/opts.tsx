@@ -59,4 +59,24 @@ export const markdownComponents: Partial<Components> = {
 
     return <p className="font-normal text-base text-black" {...rest} />;
   },
+  a(props) {
+    const { node, ...rest } = props;
+
+    return <a className="underline text-dark-blue" target="_blank" {...rest} />;
+  },
+  blockquote(props) {
+    const { node, ...rest } = props;
+
+    return <blockquote className="border-l-4 border-l-red pl-2" {...rest} />;
+  },
+  ul(props) {
+    const { node, ...rest } = props;
+
+    return <ul className="list-disc ml-2" {...rest} />;
+  },
+  ol(props) {
+    const { node, ...rest } = props;
+
+    return <ol className="list-decimal ml-3" {...rest} />;
+  },
 };

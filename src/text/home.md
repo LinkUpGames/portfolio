@@ -23,6 +23,18 @@ console.log("BRUH");
 <!--![This is an image](src/assets/icons/hacker_exe_icon.png)-->
 <img src="src/assets/icons/hacker_exe_icon.png" alt="HELLO" width="200px" height="200px" />
 
+[link](https://www.linkupgames.com)
+
+> This is a quote For you to see
+
+- first
+- second
+- third
+
+1. first
+2. second
+3. third
+
 <!--# Home Page Texts-->
 <!---->
 <!--## Ecclesiastes 9:10-->
