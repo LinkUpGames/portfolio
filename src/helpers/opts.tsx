@@ -17,17 +17,17 @@ export const markdownComponents: Partial<Components> = {
   h3(props) {
     const { node, ...rest } = props;
 
-    return <h3 className="font-bold text-3xl text-yellow" {...rest} />;
+    return <h3 className="font-bold text-3xl text-green" {...rest} />;
   },
   h4(props) {
     const { node, ...rest } = props;
 
-    return <h4 className="font-bold text-2xl text-black" {...rest} />;
+    return <h4 className="font-bold text-2xl text-salmon" {...rest} />;
   },
   h5(props) {
     const { node, ...rest } = props;
 
-    return <h5 className="font-bold text-xl text-black" {...rest} />;
+    return <h5 className="font-bold text-xl text-gold" {...rest} />;
   },
   h6(props) {
     const { node, ...rest } = props;
