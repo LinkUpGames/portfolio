@@ -37,7 +37,7 @@ export const markdownComponents: Partial<Components> = {
   hr(props) {
     const { node, ...rest } = props;
 
-    return <hr className="text-dark border-[1px]" {...rest} />;
+    return <hr className="text-dark border-[1px] my-2" {...rest} />;
   },
   code(props) {
     const { node, ...rest } = props;
