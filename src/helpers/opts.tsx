@@ -22,7 +22,7 @@ export const markdownComponents: Partial<Components> = {
   h4(props) {
     const { node, ...rest } = props;
 
-    return <h4 className="font-bold text-2xl text-salmon" {...rest} />;
+    return <h4 className="font-bold text-2xl text-blue" {...rest} />;
   },
   h5(props) {
     const { node, ...rest } = props;
@@ -37,7 +37,7 @@ export const markdownComponents: Partial<Components> = {
   hr(props) {
     const { node, ...rest } = props;
 
-    return <hr className="text-dark" {...rest} />;
+    return <hr className="text-dark border-[1px]" {...rest} />;
   },
   code(props) {
     const { node, ...rest } = props;
@@ -57,7 +57,9 @@ export const markdownComponents: Partial<Components> = {
   p(props) {
     const { node, ...rest } = props;
 
-    return <p className="font-normal text-base text-black" {...rest} />;
+    return (
+      <p className="font-normal text-base md:text-lg text-black" {...rest} />
+    );
   },
   a(props) {
     const { node, ...rest } = props;
