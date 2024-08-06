@@ -12,7 +12,7 @@ export const markdownComponents: Partial<Components> = {
   h2(props) {
     const { node, ...rest } = props;
 
-    return <h2 className="font-bold text-4xl text-blue" {...rest} />;
+    return <h2 className="font-bold text-4xl text-dark" {...rest} />;
   },
   h3(props) {
     const { node, ...rest } = props;
@@ -62,7 +62,7 @@ export const markdownComponents: Partial<Components> = {
   a(props) {
     const { node, ...rest } = props;
 
-    return <a className="underline text-dark-blue" target="_blank" {...rest} />;
+    return <a className="underline text-links" target="_blank" {...rest} />;
   },
   blockquote(props) {
     const { node, ...rest } = props;
