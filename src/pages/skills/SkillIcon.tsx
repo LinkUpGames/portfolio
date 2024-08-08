@@ -10,7 +10,7 @@ const SkillIcon = ({ name, level, image }: Props) => {
   const percentage = +(level * 100).toFixed(2);
 
   const color =
-    percentage >= 85 ? "bg-green" : percentage >= 65 ? "bg-yellow" : "bg-red";
+    percentage >= 85 ? "bg-green" : percentage >= 60 ? "bg-yellow" : "bg-red";
 
   return (
     <div className="w-full flex flex-col md:flex-row items-center justify-center md:justify-between gap-3 md:gap-0">

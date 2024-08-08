@@ -7,6 +7,24 @@ const Skills = () => {
   // SKILLS
   const skills = [
     {
+      name: "C",
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/C_Programming_Language.svg/695px-C_Programming_Language.svg.png",
+      level: 0.85,
+    },
+    {
+      name: "Java",
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1a0WBC7gzH2m5vruS5y6ITiFyhgd4-2iPIw&s",
+      level: 0.89,
+    },
+    {
+      name: "Fortran",
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Fortran_logo.svg/255px-Fortran_logo.svg.png?20201010021443",
+      level: 0.75,
+    },
+    {
       name: "React",
       image:
         "https://cdn.iconscout.com/icon/free/png-256/free-react-1-282599.png?f=webp&w=256",
@@ -16,18 +34,6 @@ const Skills = () => {
       name: "Node",
       image: "https://www.svgrepo.com/show/376337/node-js.svg",
       level: 0.9,
-    },
-    {
-      name: "Java",
-      image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1a0WBC7gzH2m5vruS5y6ITiFyhgd4-2iPIw&s",
-      level: 0.89,
-    },
-    {
-      name: "C",
-      image:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/C_Programming_Language.svg/695px-C_Programming_Language.svg.png",
-      level: 0.85,
     },
     {
       name: "Godot",
