@@ -79,7 +79,7 @@ const Projects = () => {
       <ProjectHeader iconName={iconTouch} />
 
       {/* Icons */}
-      <div className="w-full h-full flex flex-row flex-wrap gap-3 justify-center md:justify-normal">
+      <div className="w-full h-full flex flex-row flex-wrap gap-3 justify-center md:justify-normal flex-1">
         {projects.map((project, index) => (
           <Icon
             onHover={() => setIconTouch(project.name)}

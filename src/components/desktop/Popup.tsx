@@ -1,5 +1,5 @@
-import { motion, useAnimation } from "framer-motion";
-import { useEffect, useMemo } from "react";
+import { motion } from "framer-motion";
+import { useMemo } from "react";
 
 interface Props {
   componentRender: JSX.Element | null;
