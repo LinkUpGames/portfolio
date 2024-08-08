@@ -7,32 +7,38 @@ export const markdownComponents: Partial<Components> = {
   h1(props) {
     const { node, ...rest } = props;
 
-    return <h1 className="font-bold text-5xl text-red" {...rest} />;
+    return <h1 className="font-bold text-5xl lg:text-6xl text-red" {...rest} />;
   },
   h2(props) {
     const { node, ...rest } = props;
 
-    return <h2 className="font-bold text-4xl text-dark" {...rest} />;
+    return (
+      <h2 className="font-bold text-4xl lg:text-5xl text-dark" {...rest} />
+    );
   },
   h3(props) {
     const { node, ...rest } = props;
 
-    return <h3 className="font-bold text-3xl text-green" {...rest} />;
+    return (
+      <h3 className="font-bold text-3xl lg:text-4xl text-green" {...rest} />
+    );
   },
   h4(props) {
     const { node, ...rest } = props;
 
-    return <h4 className="font-bold text-2xl text-blue" {...rest} />;
+    return (
+      <h4 className="font-bold text-2xl lg:text-3xl text-blue" {...rest} />
+    );
   },
   h5(props) {
     const { node, ...rest } = props;
 
-    return <h5 className="font-bold text-xl text-gold" {...rest} />;
+    return <h5 className="font-bold text-xl lg:text-2xl text-gold" {...rest} />;
   },
   h6(props) {
     const { node, ...rest } = props;
 
-    return <h6 className="font-bold text-lg text-black" {...rest} />;
+    return <h6 className="font-bold text-lg lg:text-xl text-black" {...rest} />;
   },
   hr(props) {
     const { node, ...rest } = props;
@@ -57,7 +63,12 @@ export const markdownComponents: Partial<Components> = {
   p(props) {
     const { node, ...rest } = props;
 
-    return <p className="font-normal text-base text-black mb-4" {...rest} />;
+    return (
+      <p
+        className="font-normal text-base lg:text-lg text-black mb-4"
+        {...rest}
+      />
+    );
   },
   a(props) {
     const { node, ...rest } = props;
