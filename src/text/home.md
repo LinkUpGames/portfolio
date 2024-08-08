@@ -3,6 +3,9 @@
 ### Software Engineer
 
 ---
+
+##### Ecclesiastes 9:10
+
 Hey! I'm Marcos and I am Computer Science student fueled by a passion for building things that matter. Growing up in Ecuador, I've always been fascinated by technology. Since moving to Canada three years ago, I've been taking my time to learning new skills and exploring more about software development.
 
 This is my portfolio, showcasing my journey in creating things that I enjoy. From crafting user-friendly websites to building immersive video games and crafting powerful CLI tools, I'm always eager to explore new ways to bring digital ideas to life.
