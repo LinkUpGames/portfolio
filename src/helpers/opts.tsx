@@ -57,9 +57,7 @@ export const markdownComponents: Partial<Components> = {
   p(props) {
     const { node, ...rest } = props;
 
-    return (
-      <p className="font-normal text-base md:text-lg text-black" {...rest} />
-    );
+    return <p className="font-normal text-base text-black mb-4" {...rest} />;
   },
   a(props) {
     const { node, ...rest } = props;
