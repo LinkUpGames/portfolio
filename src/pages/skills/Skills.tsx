@@ -85,13 +85,17 @@ const Skills = () => {
   ];
 
   return (
-    <WindowBorder title="Skills" className="!p-0">
+    <WindowBorder
+      title="Skills"
+      className="!p-0 h-full flex flex-col"
+      windowClassName="h-full flex"
+    >
       {/* Header */}
       <SkillHeader />
 
       {/* Content */}
-      <div className="w-full p-4">
-        <div className="p-2 w-full border-2 border-dark flex flex-col gap-4 justify-center items-center md:grid md:grid-cols-2">
+      <div className="w-full p-4 flex flex-1">
+        <div className="p-2 w-full border-2 border-dark flex flex-col gap-4 justify-center items-center md:grid md:grid-cols-2 h-full flex-shrink-0 overflow-y-auto">
           {skills.map((skill, index) => (
             <SkillIcon key={index} {...skill} />
           ))}
