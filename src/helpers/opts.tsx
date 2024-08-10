@@ -65,15 +65,21 @@ export const markdownComponents: Partial<Components> = {
 
     return (
       <p
-        className="font-normal text-base lg:text-lg text-black mb-4"
+        className="font-normal text-base lg:text-lg text-black mb-2"
         {...rest}
       />
     );
   },
   a(props) {
     const { node, ...rest } = props;
-
-    return <a className="underline text-links" target="_blank" {...rest} />;
+    return (
+      <a
+        className="underline text-links"
+        target="_top"
+        href={rest.href}
+        {...rest}
+      />
+    );
   },
   blockquote(props) {
     const { node, ...rest } = props;
