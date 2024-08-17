@@ -45,6 +45,18 @@ const DEFAULT_FILESYSTEM_STATE: Directory = {
         },
       ],
     },
+    // Other Ocean Interactive
+    {
+      name: "Other Ocean Interactive",
+      open: false,
+      files: [
+        {
+          name: "OOI-Experience.md",
+          content: <ExperienceCard experience={experiences.ooi} />,
+        },
+      ],
+      directories: [],
+    },
   ],
 };
 
