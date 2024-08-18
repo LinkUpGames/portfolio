@@ -57,6 +57,17 @@ const DEFAULT_FILESYSTEM_STATE: Directory = {
       ],
       directories: [],
     },
+    {
+      name: "LinkUp Games",
+      open: false,
+      files: [
+        {
+          name: "L.U.G-Experience.md",
+          content: <ExperienceCard experience={experiences.lug} />,
+        },
+      ],
+      directories: [],
+    },
   ],
 };
 
