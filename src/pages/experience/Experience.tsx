@@ -57,6 +57,7 @@ const DEFAULT_FILESYSTEM_STATE: Directory = {
       ],
       directories: [],
     },
+    // LinkUp Games
     {
       name: "LinkUp Games",
       open: false,

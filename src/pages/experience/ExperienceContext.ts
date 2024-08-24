@@ -1,6 +1,7 @@
 import { createContext } from "react";
 import FIF from "@/pages/experience/Files/FillitForward/FIF.md";
 import OOI from "@/pages/experience/Files/OtherOceanInterative/OOI.md";
+import LUG from "@/pages/experience/Files/LUG/lug.md";
 
 const DUMMY_DIRECTORY: Directory = {
   directories: [],
@@ -42,7 +43,6 @@ export const experiences: Record<string, Experience> = {
     company: "LinkUp Games",
     job: "Video Game Developer",
     time: "February 2019 - Present",
-    description:
-      "Building video games using different game engines, including Game Maker Studio and Godot",
+    description: LUG,
   },
 };
