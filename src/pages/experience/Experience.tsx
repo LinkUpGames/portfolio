@@ -236,10 +236,19 @@ export const Experience = () => {
       showContent(file.content);
     } else {
       // Default to the Intro txt
-      setSearchParams((prev) => ({
-        ...prev,
-        file: DEFAULT_FILE,
-      }));
+      setSearchParams((prev) => {
+        const params = new URLSearchParams(prev);
+
+        const file = searchParams.get("file");
+
+        if (file) {
+          params.set("file", DEFAULT_FILE);
+        } else {
+          params.append("file", DEFAULT_FILE);
+        }
+
+        return params;
+      });
     }
   };
 

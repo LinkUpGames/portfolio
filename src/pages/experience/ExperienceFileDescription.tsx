@@ -20,10 +20,19 @@ const ExperienceFileDescription = ({ file }: Props) => {
    */
   const handleClick = () => {
     // Add the file to the query paora
-    setSearchParams((prev) => ({
-      ...prev,
-      file: name,
-    }));
+    setSearchParams((prev) => {
+      const params = new URLSearchParams(prev);
+
+      const file = searchParams.get("file");
+
+      if (file) {
+        params.set("file", name);
+      } else {
+        params.append("file", name);
+      }
+
+      return params;
+    });
   };
 
   /**
