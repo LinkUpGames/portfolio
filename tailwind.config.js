@@ -14,7 +14,7 @@ module.exports = {
       transparent: "transparent",
       white: "#ECEFF1",
       grey: "#d1d1d1",
-      blue: "#80d2ff",
+      blue: "#05d9e8",
       links: "#0f65ba",
       red: "#FF2a6d",
       black: "#383838",
@@ -28,7 +28,7 @@ module.exports = {
       fresia: "#EFE7BC",
       gold: "#E1A140",
       "dark-status": "#29262c",
-      "blue-gray": "#607D8B",
+      "blue-gray": "#005678",
       charcoal: "#2B2B2B",
     },
     fontFamily: {
