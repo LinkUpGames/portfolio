@@ -3,7 +3,7 @@ import pdf from "@/assets/resume.pdf";
 const ExperienceIntro = () => {
   return (
     <div className="flex flex-col gap-2 justify-center items-center">
-      <h2 className="text-lg sm:text-xl md:text-2xl text-black underline text-center mb-2">
+      <h2 className="text-lg sm:text-xl md:text-2xl text-blue-gray underline text-center mb-2">
         Check Out My Experience!
       </h2>
 

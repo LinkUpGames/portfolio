@@ -29,6 +29,8 @@ module.exports = {
       gold: "#E1A140",
       "dark-status": "#29262c",
       "blue-gray": "#005678",
+      "dark-green": "#44786a",
+      "dark-blue": "#003062",
       charcoal: "#2B2B2B",
     },
     fontFamily: {

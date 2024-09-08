@@ -18,7 +18,7 @@ const ExperienceCard = ({ experience }: Props) => {
 
       {/* Description */}
       <div className="w-full flex flex-col">
-        <h6 className="text-xl md:text-lg text-green">{experience.job}</h6>
+        <h6 className="text-xl md:text-lg text-dark-blue">{experience.job}</h6>
         <Markdown
           rehypePlugins={[rehypeRaw]}
           components={markdownComponents}
