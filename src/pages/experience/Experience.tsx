@@ -1,12 +1,11 @@
 import WindowBorder from "@/components/desktop/Window";
+import { FaArrowCircleLeft } from "react-icons/fa";
 import ExperienceHeader from "./ExperienceHeader";
 import { ExperienceContext, experiences } from "./ExperienceContext";
 import { useEffect, useState } from "react";
 import ExperienceCard from "./ExperienceCard";
 import ExperienceIntro from "./ExperienceIntro";
 import { useSearchParams } from "react-router-dom";
-import cornerIconLeft from "pixelarticons/svg/corner-down-left.svg";
-import cornerIconDown from "pixelarticons/svg/corner-left-down.svg";
 import { motion } from "framer-motion";
 import ExperienceMarkdown from "./ExperienceMarkdown";
 import PortalMD from "./Files/FillitForward/Portal.md";
@@ -285,10 +284,10 @@ export const Experience = () => {
         windowClassName="h-full"
       >
         <div
-          className={`md:min-w-fit ${fileTreeClosed ? "h-12" : "h-auto"} transition-all duration-150 md:h-auto md:min-h-full md:w-fit overflow-y-auto relative`}
+          className={`md:min-w-fit ${fileTreeClosed ? "h-12" : "h-72"} transition-all ease-in-out duration-500 md:h-auto md:min-h-full md:w-fit overflow-y-auto relative`}
         >
           {/* The Button To open and Close */}
-          <motion.img
+          <motion.div
             whileHover={{
               scale: 1.3,
             }}
@@ -296,9 +295,14 @@ export const Experience = () => {
               scale: 1.3,
             }}
             onClick={() => setFileTreeClosed((prev) => !prev)}
-            className="absolute w-8 h-8 top-0 right-3 cursor-pointer block md:hidden flex-grow-0"
-            src={fileTreeClosed ? cornerIconLeft : cornerIconDown}
-          />
+            className={`absolute w-8 h-8 top-0 right-3 cursor-pointer block md:hidden flex-grow-0 mt-2`}
+          >
+            <FaArrowCircleLeft
+              size="100%"
+              className={`${fileTreeClosed ? "rotate-0" : "-rotate-90"}`}
+              color="#FFFFFF"
+            />
+          </motion.div>
 
           <ExperienceHeader />
         </div>

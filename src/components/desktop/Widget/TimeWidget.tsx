@@ -33,8 +33,8 @@ const TimeWidget = () => {
   }, []);
 
   return (
-    <Widget className="flex gap-1 md:gap-2 w-full items-center justify-center">
-      <FaClock size={25} color="#FFFFFF" />
+    <Widget className="flex gap-2 md:gap-2 w-full items-center justify-center">
+      <FaClock size={20} color="#FFFFFF" />
 
       <h4 className="text-base md:text-lg text-gold">{time}</h4>
     </Widget>
