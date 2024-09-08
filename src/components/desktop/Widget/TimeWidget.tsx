@@ -1,7 +1,7 @@
 import Widget from "../Widget";
-import clockIcon from "pixelarticons/svg/clock.svg";
 import { DateTime } from "luxon";
 import { useEffect, useState } from "react";
+import { FaClock } from "react-icons/fa";
 
 const TimeWidget = () => {
   // STATES
@@ -34,9 +34,9 @@ const TimeWidget = () => {
 
   return (
     <Widget className="flex gap-1 md:gap-2 w-full items-center justify-center">
-      <img src={clockIcon} className="object-contain w-6 h-6 md:w-8 md:h-8" />
+      <FaClock size={25} color="#FFFFFF" />
 
-      <h4 className="text-base md:text-lg text-green">{time}</h4>
+      <h4 className="text-base md:text-lg text-gold">{time}</h4>
     </Widget>
   );
 };

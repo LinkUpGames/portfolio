@@ -1,11 +1,14 @@
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import chatIcon from "pixelarticons/svg/chat.svg";
-import musicIcon from "pixelarticons/svg/music.svg";
-import socialsIcon from "pixelarticons/svg/user.svg";
-import githubIcon from "pixelarticons/svg/github.svg";
+
+import { IoIosMusicalNotes } from "react-icons/io";
+// @ts-ignore
+import { CiChat1 } from "react-icons/ci";
+import { IoShareSocialOutline } from "react-icons/io5";
+import { FaGithub } from "react-icons/fa";
 
 import { useContext, useRef } from "react";
 import { AppContext } from "@/AppContext";
+// @ts-ignore
 import Chat from "../Chat/Chat";
 import MusicPlayer from "../MusicPlayer/MusicPlayer";
 
@@ -15,28 +18,24 @@ const Launcher = () => {
 
   // The elements that are being shown at the button
   const elements: LauncherIcon[] = [
-    {
-      name: "chat",
-      icon: <img draggable={false} className="h-full w-full" src={chatIcon} />,
-      component: <Chat />,
-    },
+    // {
+    //   name: "chat",
+    //   icon: <CiChat1 size="100%" color="#FFFFFF" />,
+    //   component: <Chat />,
+    // },
     {
       name: "music",
-      icon: <img draggable={false} className="h-full w-full" src={musicIcon} />,
+      icon: <IoIosMusicalNotes size="100%" color="#FFFFFF" />,
       component: <MusicPlayer />,
     },
     {
       name: "socials",
-      icon: (
-        <img draggable={false} className="h-full w-full" src={socialsIcon} />
-      ),
+      icon: <IoShareSocialOutline size="100%" color="#FFFFFF" />,
       component: <div />,
     },
     {
       name: "github",
-      icon: (
-        <img draggable={false} className="h-full w-full" src={githubIcon} />
-      ),
+      icon: <FaGithub size="100%" color="#FFFFFF" />,
       component: <div />,
     },
   ];
@@ -47,7 +46,7 @@ const Launcher = () => {
       onMouseLeave={() => mouseX.set(Infinity)}
       className="mt-auto md:fixed md:bottom-0 md:mb-5 flex justify-end"
     >
-      <motion.ul className="backdrop-blur-sm bg-dark bg-opacity-60 rounded-md mx-auto flex gap-4 h-16 items-end px-4 pb-3">
+      <motion.ul className="backdrop-blur-sm bg-dark-status bg-opacity-70 rounded-md mx-auto flex gap-4 h-16 items-end px-4 pb-3">
         {elements.map((elem, index) => (
           <AppIcon key={index} element={elem} mouseX={mouseX} />
         ))}
@@ -102,7 +101,7 @@ const AppIcon = ({ element, mouseX }: AppIconProps) => {
     >
       <motion.div
         style={{ scaleX: textScale, scaleY: textScale }}
-        className="text-2xl text-white bg-red px-4 py-2 flex text-center justify-center items-center mx-auto rounded-lg absolute -top-[3.5rem]"
+        className="text-2xl text-white bg-dark px-4 py-2 flex text-center justify-center items-center mx-auto rounded-lg absolute -top-[3.5rem]"
       >
         <motion.h2 style={{ scaleX: textScale, scaleY: textScale }}>
           {element.name.toUpperCase()}

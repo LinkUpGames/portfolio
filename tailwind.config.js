@@ -10,7 +10,7 @@ module.exports = {
   prefix: "",
   theme: {
     colors: {
-      background: "#737794",
+      background: "#7c7280",
       transparent: "transparent",
       white: "#ffffff",
       grey: "#d1d1d1",
@@ -27,6 +27,7 @@ module.exports = {
       teal: "#3D5B59",
       fresia: "#EFE7BC",
       gold: "#E1A140",
+      "dark-status": "#29262c",
     },
     fontFamily: {
       "pixel:": ["Pixelify Sans", "sans-serif"],
