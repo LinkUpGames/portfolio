@@ -12,6 +12,8 @@ import {
 import BlueScreenDeath from "./pages/death/BlueScreen.tsx";
 import Skills from "./pages/skills/Skills.tsx";
 import { Experience } from "./pages/experience/Experience.tsx";
+import { ApolloProvider } from "@apollo/client";
+import { GithubClient } from "./clients/Apollo.ts";
 
 const router = createBrowserRouter(
   [
@@ -54,6 +56,8 @@ const router = createBrowserRouter(
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <ApolloProvider client={GithubClient}>
+      <RouterProvider router={router} />
+    </ApolloProvider>
   </React.StrictMode>,
 );
