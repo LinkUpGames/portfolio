@@ -3,6 +3,7 @@ import { useContext } from "react";
 import SocialHeader from "./SocialHeader";
 import SocialContent from "./SocialContent";
 import SocialFooter from "./SocialFooter";
+import { SocialContext } from "./SocialContext";
 
 /**
  * Showcase the socials where people can contact me
@@ -10,14 +11,28 @@ import SocialFooter from "./SocialFooter";
 const Socials = () => {
   const { changePopup } = useContext(AppContext);
 
+  // FUNCTIONS
+  /**
+   * Close the widget by assigning a null to the popup currently opened
+   */
+  const closeWidget = () => {
+    changePopup(null);
+  };
+
   return (
-    <div className="rounded-lg bg-dark-status border-red border-2 p-4 w-full max-h-full">
-      <SocialHeader />
+    <SocialContext.Provider
+      value={{
+        closeWidget: closeWidget,
+      }}
+    >
+      <div className="rounded-lg bg-dark-status border-red border-2 p-4 w-full max-h-full overflow-y-auto">
+        <SocialHeader />
 
-      <SocialContent />
+        <SocialContent />
 
-      <SocialFooter />
-    </div>
+        <SocialFooter />
+      </div>
+    </SocialContext.Provider>
   );
 };
 
