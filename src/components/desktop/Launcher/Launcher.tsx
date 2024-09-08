@@ -34,11 +34,11 @@ const Launcher = () => {
       icon: <IoShareSocialOutline size="100%" color="#FFFFFF" />,
       component: <Socials />,
     },
-    {
-      name: "github",
-      icon: <FaGithub size="100%" color="#FFFFFF" />,
-      component: <div />,
-    },
+    // {
+    //   name: "github",
+    //   icon: <FaGithub size="100%" color="#FFFFFF" />,
+    //   component: <div />,
+    // },
   ];
 
   return (
