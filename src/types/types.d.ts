@@ -94,3 +94,29 @@ interface SpotifyController {
   play: () => void;
   destroy: () => void;
 }
+
+/**
+ * The github contributions for a user based on the week
+a */
+interface Contributions {
+  /**
+   * The total number of contributions
+   */
+  total: number;
+
+  /**
+   * The contribution array
+   * each element contains a date and a number of contributions
+   */
+  contrbutions: {
+    /**
+     * The date for the contributions as a format of "YYYY-MM-dd"
+     */
+    date: string;
+
+    /**
+     * The total number of contributions that date
+     */
+    total: number;
+  }[];
+}

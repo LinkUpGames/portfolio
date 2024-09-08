@@ -12,6 +12,7 @@ import { AppContext } from "@/AppContext";
 import Chat from "../Chat/Chat";
 import MusicPlayer from "../MusicPlayer/MusicPlayer";
 import Socials from "../Socials/Socials";
+import Github from "../Github/Github";
 
 const Launcher = () => {
   // Framer Motion
@@ -37,7 +38,7 @@ const Launcher = () => {
     {
       name: "github",
       icon: <FaGithub size="100%" color="#FFFFFF" />,
-      component: <div />,
+      component: <Github />,
     },
   ];
 
