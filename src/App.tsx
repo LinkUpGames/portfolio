@@ -8,6 +8,7 @@ import Launcher from "./components/desktop/Launcher/Launcher";
 
 import en from "@/text/en.json";
 import Popup from "./components/desktop/Popup";
+import MatrixCode from "./helpers/MatrixCode";
 
 function App() {
   // REF
@@ -51,12 +52,15 @@ function App() {
         <StatusBar />
 
         <div
-          className="px-4 py-2 bg-background w-full relative h-full rounded-b-md flex flex-col justify-start gap-5 items-center overflow-y-auto md:overflow-hidden"
+          className="px-4 py-2 w-full relative h-full rounded-b-md flex flex-col justify-start gap-5 items-center overflow-y-auto md:overflow-hidden"
           ref={ref}
         >
+          <MatrixCode />
+
           <Outlet />
 
           <Popup componentRender={popup} />
+
           {/* Footer */}
           <Launcher />
         </div>
