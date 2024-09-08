@@ -25,7 +25,7 @@ const Socials = () => {
         closeWidget: closeWidget,
       }}
     >
-      <div className="rounded-lg bg-dark-status border-red border-2 p-4 w-full max-h-full overflow-y-auto">
+      <div className="rounded-lg bg-dark-status border-red border-2 p-4 w-full max-h-full overflow-y-auto backdrop-blur-md bg-opacity-85">
         <SocialHeader />
 
         <SocialContent />

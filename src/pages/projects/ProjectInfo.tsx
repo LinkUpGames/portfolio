@@ -50,13 +50,15 @@ const ProjectInfo = ({
           <div className="w-full h-full flex flex-col gap-4">
             <p className="text-base w-full whitespace-pre-line">{`${info.summary}`}</p>
 
-            <Link
-              to={info.link}
-              target="_blank"
-              className="text-base underline text-center mx-auto text-red rounded-lg border-2 border-red w-fit p-2 hover:text-green transition-colors duration-300"
-            >
-              Check the project out!
-            </Link>
+            {info.link && (
+              <Link
+                to={info.link}
+                target="_blank"
+                className="text-base underline text-center mx-auto text-red rounded-lg border-2 border-red w-fit p-2 hover:text-green transition-colors duration-300"
+              >
+                Check the project out!
+              </Link>
+            )}
 
             <div className="max-w-full">{info.widget}</div>
           </div>

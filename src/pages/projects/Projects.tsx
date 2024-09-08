@@ -7,6 +7,9 @@ import ur from "@/assets/icons/ultimate_reality_icon.png";
 import { useState } from "react";
 import ProjectHeader from "./ProjectHeader";
 
+import ADAICON1 from "@/assets/ada-1.jpeg";
+import ADAICON2 from "@/assets/ada-2.jpeg";
+
 const Projects = () => {
   const projects = [
     {
@@ -66,6 +69,21 @@ const Projects = () => {
             height="245"
           ></iframe>
         ),
+      },
+    },
+    {
+      name: "term-calendar.exe",
+      image:
+        "https://static-00.iconduck.com/assets.00/terminal-icon-512x478-wh766b7f.png",
+      info: {
+        title: "Terminal Calendar - Built with Ada",
+        summary: `A fully functional calendar with a custom ASCII font that displays the calendar year of the user's choosing!
+
+        This program was done for a class and fully built using the standard library for the Ada programming language. Ada is a real time systems programming language and was really good teaching experience in learning legacy programming languages and being able to built something with it.
+        `,
+        link: "",
+        images: [ADAICON1, ADAICON2],
+        widget: <div />,
       },
     },
   ];
