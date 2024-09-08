@@ -284,7 +284,7 @@ export const Experience = () => {
         windowClassName="h-full"
       >
         <div
-          className={`md:min-w-fit ${fileTreeClosed ? "h-12" : "h-72"} transition-all ease-in-out duration-500 md:h-auto md:min-h-full md:w-fit overflow-y-auto relative`}
+          className={`md:min-w-fit ${fileTreeClosed ? "h-12" : "h-auto max-h-72"} transition-all ease-in-out duration-500 md:h-auto md:min-h-full md:w-fit overflow-y-auto relative`}
         >
           {/* The Button To open and Close */}
           <motion.div
