@@ -11,6 +11,7 @@ import { AppContext } from "@/AppContext";
 // @ts-ignore
 import Chat from "../Chat/Chat";
 import MusicPlayer from "../MusicPlayer/MusicPlayer";
+import Socials from "../Socials/Socials";
 
 const Launcher = () => {
   // Framer Motion
@@ -31,7 +32,7 @@ const Launcher = () => {
     {
       name: "socials",
       icon: <IoShareSocialOutline size="100%" color="#FFFFFF" />,
-      component: <div />,
+      component: <Socials />,
     },
     {
       name: "github",
