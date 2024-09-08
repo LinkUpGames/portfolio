@@ -133,7 +133,7 @@ const MusicPlayer = () => {
         playTrack: playTrack,
       }}
     >
-      <div className="rounded-lg bg-dark-status border-2 border-dark h-full w-full justify-start items-center py-2 overflow-y-auto gap-3 px-4 backdrop-blur-md bg-opacity-75">
+      <div className="rounded-lg bg-dark-status border-2 border-red h-full w-full justify-start items-center py-2 overflow-y-auto gap-3 px-4 backdrop-blur-md bg-opacity-75">
         <MusicHeader />
 
         <MixTape />
