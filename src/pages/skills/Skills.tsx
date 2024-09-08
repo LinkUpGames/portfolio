@@ -95,7 +95,7 @@ const Skills = () => {
 
       {/* Content */}
       <div className="w-full p-4 flex flex-1">
-        <div className="p-2 w-full border-2 border-dark flex flex-col gap-4 justify-center items-center md:grid md:grid-cols-2 h-full flex-shrink-0 overflow-y-auto">
+        <div className="p-4 w-full rounded-lg border-2 border-dark flex flex-col gap-4 justify-center items-center md:grid md:grid-cols-2 h-full flex-shrink-0 overflow-y-auto bg-dark-status">
           {skills.map((skill, index) => (
             <SkillIcon key={index} {...skill} />
           ))}

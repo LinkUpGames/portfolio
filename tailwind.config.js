@@ -12,7 +12,7 @@ module.exports = {
     colors: {
       background: "#7c7280",
       transparent: "transparent",
-      white: "#ffffff",
+      white: "#ECEFF1",
       grey: "#d1d1d1",
       blue: "#80d2ff",
       links: "#0f65ba",
@@ -28,6 +28,8 @@ module.exports = {
       fresia: "#EFE7BC",
       gold: "#E1A140",
       "dark-status": "#29262c",
+      "blue-gray": "#607D8B",
+      charcoal: "#2B2B2B",
     },
     fontFamily: {
       "pixel:": ["Pixelify Sans", "sans-serif"],

@@ -24,6 +24,12 @@
   background: #555;
 }
 
+@media (orientation: portrait) {
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 @font-face {
   font-family: 'Chicago';
   font-style: normal;

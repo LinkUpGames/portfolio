@@ -1,8 +1,8 @@
-import folderIcon from "pixelarticons/svg/folder.svg";
 import ExperienceFileDescription from "./ExperienceFileDescription";
 import { useContext, useEffect, useState } from "react";
 import { ExperienceContext } from "./ExperienceContext";
 import { motion } from "framer-motion";
+import { CiFolderOn } from "react-icons/ci";
 
 interface Props {
   directory: Directory;
@@ -39,16 +39,16 @@ const ExperienceDirectory = ({ directory }: Props) => {
   };
 
   return (
-    <div className="w-full h-fit border-l-2 border-l-black">
+    <div className="w-full h-fit border-l-2 border-l-gold">
       {/* Logo and Directory name */}
       <motion.button
         onClick={handleClick}
-        className="w-full flex gap-2 items-center text-black mb-2 hover:border-b-2 hover:border-black border-0"
+        className="w-full flex gap-2 items-center text-white mb-2 hover:border-b-2 hover:border-gold border-0"
         whileTap={{
           scale: 0.9,
         }}
       >
-        <img src={folderIcon} className="w-6 h-6 object-fit" />
+        <CiFolderOn className="w-6 h-6 ml-2" />
 
         <h2 className="text-base text-nowrap">{name}</h2>
       </motion.button>

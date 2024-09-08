@@ -1,11 +1,11 @@
-import saveIcon from "pixelarticons/svg/save.svg";
+import { IoIosSave } from "react-icons/io";
 
 const SkillHeader = () => {
   return (
-    <div className="bg-red w-full flex flex-col md:flex-row items-start md:items-center justify-between p-2 mb-4">
+    <div className="bg-dark-status w-full flex flex-col md:flex-row items-start md:items-center justify-between p-2 mb-4">
       {/* Icon With Skill stuff */}
       <div className="w-full h-full flex flex-col justify-center md:justify-start md:flex-row gap-2 items-center">
-        <img src={saveIcon} className="h-12 w-auto" />
+        <IoIosSave size={50} color="#FFFFFF" />
 
         <div className="flex flex-col text-center md:text-left text-black gap-4 md:gap-0">
           <h2 className="text-lg md:text-3xl text-white underline">

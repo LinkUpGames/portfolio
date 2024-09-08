@@ -13,7 +13,7 @@ const MatrixCode = () => {
     ); // The actual letters to throw down on the background
   const fontSize = 18; // FIXME: Make sure that the actual size changes depending on the size of the document
   const backgroundColor = "rgba(0, 0, 0, 0.04)";
-  const textColor = "#f4427d";
+  const textColor = "#484D6D"; //#eb5959
 
   // STATES
   const [canvas, setCanvas] = useState<HTMLCanvasElement | null>(null); // The canvas to draw

@@ -47,7 +47,7 @@ function App() {
         changePopup: handlePopup,
       }}
     >
-      <div className="w-full p-3 h-screen max-h-screen bg-black flex flex-col md:overflow-hidden">
+      <div className="w-full p-1 md:p-3 h-screen max-h-screen bg-black flex flex-col md:overflow-hidden">
         {/* Navbar */}
         <StatusBar />
 
