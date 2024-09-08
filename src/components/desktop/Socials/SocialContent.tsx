@@ -26,8 +26,9 @@ const SocialContent = () => {
 
   return (
     <div className="flex flex-col md:flex-row flex-wrap w-full justify-center items-center gap-5 md:gap-32 mt-10">
-      {socials.map((social) => (
+      {socials.map((social, i) => (
         <motion.a
+          key={i}
           href={social.link}
           target="_blank"
           whileHover={{
