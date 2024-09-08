@@ -116,7 +116,6 @@ const MusicPlayer = () => {
   useEffect(() => {
     return () => {
       if (playerController.current) {
-        console.log("BRUH");
         playerController.current.destroy();
       }
     };
