@@ -36,7 +36,7 @@ const ProjectInfo = ({
     <Dialog open={open} onOpenChange={handleOpen}>
       <>{children}</>
 
-      <DialogContent className="z-[9999] w-11/12 rounded-lg border-4 border-black max-h-[80%] overflow-y-auto bg-dark text-white">
+      <DialogContent className="z-[9999] w-11/12 rounded-lg border-4 border-black max-h-[80%] overflow-y-auto bg-dark-status text-white">
         <DialogHeader className="border-b-2 border-b-grey text-blue">
           <DialogTitle className="text-sm sm:text-lg text-left sm:text-center">
             {info.title}
