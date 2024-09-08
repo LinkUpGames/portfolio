@@ -11,7 +11,9 @@ const MatrixCode = () => {
     "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%+-/~{[|`]}".split(
       "",
     ); // The actual letters to throw down on the background
-  const fontSize = 15; // FIXME: Make sure that the actual size changes depending on the size of the document
+  const fontSize = 18; // FIXME: Make sure that the actual size changes depending on the size of the document
+  const backgroundColor = "rgba(0, 0, 0, 0.04)";
+  const textColor = "#f4427d";
 
   // STATES
   const [canvas, setCanvas] = useState<HTMLCanvasElement | null>(null); // The canvas to draw
@@ -26,10 +28,10 @@ const MatrixCode = () => {
    * @param canvas The canvas in which we are generating the actual effect
    */
   const draw = (board: CanvasRenderingContext2D, canvas: HTMLCanvasElement) => {
-    board.fillStyle = "rgba(0, 0, 0, 0.04)";
+    board.fillStyle = backgroundColor;
     board.fillRect(0, 0, canvas.width, canvas.height);
 
-    board.fillStyle = "#f4427d"; // Color of the text that goes down
+    board.fillStyle = textColor; // Color of the text that goes down
     board.font = `${fontSize}px Chicago`;
 
     // Loop over the drops
@@ -92,7 +94,7 @@ const MatrixCode = () => {
     <canvas
       ref={ref}
       id="matrix"
-      className="absolute w-full h-full top-0 left-0"
+      className="absolute bg-dark w-full h-full top-0 left-0"
     ></canvas>
   );
 };
