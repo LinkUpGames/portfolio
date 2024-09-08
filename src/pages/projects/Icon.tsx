@@ -63,7 +63,7 @@ const Icon = ({
           <motion.img
             alt={name}
             draggable={false}
-            className="w-28 h-28 md:h-20 md:w-20 object-contain"
+            className="w-28 h-28 lg:h-36 lg:w-36 object-contain"
             onHoverStart={onHover}
             onTap={onHover}
             src={image}

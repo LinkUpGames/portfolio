@@ -1,4 +1,4 @@
-import fileIcon from "pixelarticons/svg/file.svg";
+import { CiFileOn } from "react-icons/ci";
 import { motion } from "framer-motion";
 import { useSearchParams } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -20,10 +20,19 @@ const ExperienceFileDescription = ({ file }: Props) => {
    */
   const handleClick = () => {
     // Add the file to the query paora
-    setSearchParams((prev) => ({
-      ...prev,
-      file: name,
-    }));
+    setSearchParams((prev) => {
+      const params = new URLSearchParams(prev);
+
+      const file = searchParams.get("file");
+
+      if (file) {
+        params.set("file", name);
+      } else {
+        params.append("file", name);
+      }
+
+      return params;
+    });
   };
 
   /**
@@ -33,22 +42,22 @@ const ExperienceFileDescription = ({ file }: Props) => {
     const fileName = searchParams.get("file");
 
     if (fileName && fileName === name) {
-      setTextColor("red");
+      setTextColor("blue");
     } else {
-      setTextColor("black");
+      setTextColor("white");
     }
   }, [searchParams]);
 
   return (
     <motion.button
       onClick={handleClick}
-      className="flex flex-row text-left justify-start items-center w-full gap-2 text-black hover:border-black hover:border-2 border-0"
+      className="flex flex-row text-left justify-start items-center w-full gap-2 text-white hover:border-gold hover:border-2 border-0"
       whileTap={{
         scale: 0.9,
       }}
     >
       {/* Logo */}
-      <img src={fileIcon} className="w-6 h-6 object-contain" alt="File Logo" />
+      <CiFileOn className="w-6 h-6 object-contain" />
 
       {/* Name */}
       <h2 className={`text-base text-${textColor} duration-200 transition-all`}>

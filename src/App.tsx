@@ -8,6 +8,7 @@ import Launcher from "./components/desktop/Launcher/Launcher";
 
 import en from "@/text/en.json";
 import Popup from "./components/desktop/Popup";
+import MatrixCode from "./helpers/MatrixCode";
 
 function App() {
   // REF
@@ -46,17 +47,20 @@ function App() {
         changePopup: handlePopup,
       }}
     >
-      <div className="w-full p-3 h-screen max-h-screen bg-black flex flex-col md:overflow-hidden">
+      <div className="w-full p-1 md:p-3 h-screen max-h-screen bg-black flex flex-col md:overflow-hidden">
         {/* Navbar */}
         <StatusBar />
 
         <div
-          className="px-4 py-2 bg-background w-full relative h-full rounded-b-md flex flex-col justify-start gap-5 items-center overflow-y-auto md:overflow-hidden"
+          className="px-4 py-2 w-full relative h-full rounded-b-md flex flex-col justify-start gap-5 items-center overflow-y-auto md:overflow-hidden"
           ref={ref}
         >
+          <MatrixCode />
+
           <Outlet />
 
           <Popup componentRender={popup} />
+
           {/* Footer */}
           <Launcher />
         </div>

@@ -66,7 +66,7 @@ const ExperienceHeader = () => {
   }, []);
 
   return (
-    <div className="w-full h-full bg-yellow overflow-x-auto py-2 px-2 border-r-2 border-r-green">
+    <div className="w-full h-full bg-dark-status overflow-x-auto py-2 px-2 border-r-2 border-r-gold">
       {/* Recursive Filesystem */}
       <ExperienceDirectory directory={filesystem} />
     </div>

@@ -36,7 +36,6 @@ interface Experience {
   company: string;
   job: string;
   time: string;
-  img: string;
   description: string;
 }
 

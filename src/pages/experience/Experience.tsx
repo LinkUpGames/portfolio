@@ -1,6 +1,6 @@
 import WindowBorder from "@/components/desktop/Window";
 import ExperienceHeader from "./ExperienceHeader";
-import { ExperienceContext } from "./ExperienceContext";
+import { ExperienceContext, experiences } from "./ExperienceContext";
 import { useEffect, useState } from "react";
 import ExperienceCard from "./ExperienceCard";
 import ExperienceIntro from "./ExperienceIntro";
@@ -8,33 +8,8 @@ import { useSearchParams } from "react-router-dom";
 import cornerIconLeft from "pixelarticons/svg/corner-down-left.svg";
 import cornerIconDown from "pixelarticons/svg/corner-left-down.svg";
 import { motion } from "framer-motion";
-
-// EXPERIENCES
-const experiences: Record<string, Experience> = {
-  fif: {
-    company: "Fill it Forward",
-    job: "💻 Junior Software Engineer",
-    time: "May 2023 - Present",
-    description: `Create, deploy and form full stack web applications that support our infrastructure and our services`,
-    img: "https://b3182707.smushcdn.com/3182707/wp-content/uploads/2023/12/team-website-102A9795F-e1712075423899.webp?lossy=2&strip=1&webp=1",
-  },
-  ooi: {
-    company: "Other Ocean Interactive",
-    job: "Programmer",
-    time: "April 2022 - Sept 2022",
-    description:
-      "Video Game Engineer creating tooling for the Unity game dev framework",
-    img: "",
-  },
-  lug: {
-    company: "LinkUp Games",
-    job: "Video Game Developer",
-    time: "February 2019 - Present",
-    description:
-      "Building video games using different game engines, including Game Maker Studio and Godot",
-    img: "",
-  },
-};
+import ExperienceMarkdown from "./ExperienceMarkdown";
+import PortalMD from "./Files/FillitForward/Portal.md";
 
 const DEFAULT_FILESYSTEM_STATE: Directory = {
   name: "Experience",
@@ -63,12 +38,36 @@ const DEFAULT_FILESYSTEM_STATE: Directory = {
           files: [
             {
               name: "Portal.iso",
-              content: <></>,
+              content: <ExperienceMarkdown file={PortalMD} />,
             },
           ],
           directories: [],
         },
       ],
+    },
+    // Other Ocean Interactive
+    {
+      name: "Other Ocean Interactive",
+      open: false,
+      files: [
+        {
+          name: "OOI-Experience.md",
+          content: <ExperienceCard experience={experiences.ooi} />,
+        },
+      ],
+      directories: [],
+    },
+    // LinkUp Games
+    {
+      name: "LinkUp Games",
+      open: false,
+      files: [
+        {
+          name: "L.U.G-Experience.md",
+          content: <ExperienceCard experience={experiences.lug} />,
+        },
+      ],
+      directories: [],
     },
   ],
 };
@@ -238,10 +237,19 @@ export const Experience = () => {
       showContent(file.content);
     } else {
       // Default to the Intro txt
-      setSearchParams((prev) => ({
-        ...prev,
-        file: DEFAULT_FILE,
-      }));
+      setSearchParams((prev) => {
+        const params = new URLSearchParams(prev);
+
+        const file = searchParams.get("file");
+
+        if (file) {
+          params.set("file", DEFAULT_FILE);
+        } else {
+          params.append("file", DEFAULT_FILE);
+        }
+
+        return params;
+      });
     }
   };
 

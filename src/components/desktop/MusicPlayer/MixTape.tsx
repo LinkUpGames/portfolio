@@ -24,6 +24,7 @@ const MixTape = () => {
       >
         <PiVinylRecordFill
           // size={100}
+          color="#d1d1d1"
           className="text-[9rem] sm:text-[8rem]"
         />
       </motion.div>

@@ -1,3 +1,7 @@
+import Markdown from "react-markdown";
+import { markdownComponents } from "@/helpers/opts";
+import rehypeRaw from "rehype-raw";
+
 interface Props {
   experience: Experience;
 }
@@ -14,22 +18,14 @@ const ExperienceCard = ({ experience }: Props) => {
 
       {/* Description */}
       <div className="w-full flex flex-col">
-        <h6 className="text-xl md:text-base text-green">{experience.job}</h6>
-        <h4 className="text-base md:text-sm text-black whitespace-pre-line">
-          {`${experience.description}`}
-        </h4>
+        <h6 className="text-xl md:text-lg text-green">{experience.job}</h6>
+        <Markdown
+          rehypePlugins={[rehypeRaw]}
+          components={markdownComponents}
+          children={experience.description}
+          skipHtml
+        />
       </div>
-
-      {/* Image */}
-      {experience.img && (
-        <div className="w-full">
-          <img
-            className="w-auto object-contain h-56 mx-auto border-red border-2 rounded-lg"
-            src={experience.img}
-            alt="Experience Image"
-          />
-        </div>
-      )}
     </div>
   );
 };

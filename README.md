@@ -2,7 +2,7 @@
 
 Portfolio website.
 
-For a look at the website, check it out [here]("https:www.linkupgames.com")
+For a look at the website, check it out [here]("https://linkupgames.github.io/portfolio/home")
 
 Technologies used:
 
