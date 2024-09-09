@@ -27,7 +27,7 @@ const Projects = () => {
       image: hacker,
       info: {
         title: "Hacker.Exe - Hacking Simulator",
-        summary: `This was my first ever game. Although this game had very mixed reviews, it taught me a lot about video games and how much effort and though goes into making them. The creation of this game took roughly 3 months, during my sophomore summer break in high school.
+        summary: `This was my first ever game. Although this game had very mixed reviews, it taught me a lot about video games and how much effort and thought goes into making them. The creation of this game took roughly 3 months, during my sophomore summer break in high school.
 
           More About The Game:
           * The game is heavily inspired by point and click horror games
