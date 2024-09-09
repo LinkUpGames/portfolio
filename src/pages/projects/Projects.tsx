@@ -11,7 +11,17 @@ import ADAICON1 from "@/assets/ada-1.jpeg";
 import ADAICON2 from "@/assets/ada-2.jpeg";
 
 const Projects = () => {
-  const projects = [
+  const projects: {
+    name: string;
+    image: string;
+    info: {
+      title: string;
+      summary: string;
+      link: string;
+      images: string[];
+      widget: JSX.Element;
+    };
+  }[] = [
     {
       name: "Hacker.exe",
       image: hacker,
@@ -79,7 +89,9 @@ const Projects = () => {
         title: "Terminal Calendar - Built with Ada",
         summary: `A fully functional calendar with a custom ASCII font that displays the calendar year of the user's choosing!
 
-        This program was done for a class and fully built using the standard library for the Ada programming language. Ada is a real time systems programming language and was really good teaching experience in learning legacy programming languages and being able to built something with it.
+        This program served as a proof-of-concept, developed for a class to explore diverse programming languages and their applications. 
+
+        Learning different syntax styles, such as the one used in Ada, was both rewarding and practical. This experience allowed to broadened my understanding of different programming paradigms and their influence on various domains.
         `,
         link: "",
         images: [ADAICON1, ADAICON2],
