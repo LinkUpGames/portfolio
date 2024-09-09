@@ -10,4 +10,4 @@ I redesigned the Client Portal, focusing on a  clean and modern aesthetic. To ac
 
 ##### What I learned
 
-I learned that understanding a codebase is the first step in understanding how to take it down.
+I learned that understanding a codebase is the first step in understanding how to take it down. I also learned that maintaining a project is crucial to avoid tech debt and that following best practices sets up teams for success when developing big features.
