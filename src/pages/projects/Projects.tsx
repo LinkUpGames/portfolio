@@ -7,14 +7,27 @@ import ur from "@/assets/icons/ultimate_reality_icon.png";
 import { useState } from "react";
 import ProjectHeader from "./ProjectHeader";
 
+import ADAICON1 from "@/assets/ada-1.jpeg";
+import ADAICON2 from "@/assets/ada-2.jpeg";
+
 const Projects = () => {
-  const projects = [
+  const projects: {
+    name: string;
+    image: string;
+    info: {
+      title: string;
+      summary: string;
+      link: string;
+      images: string[];
+      widget: JSX.Element;
+    };
+  }[] = [
     {
       name: "Hacker.exe",
       image: hacker,
       info: {
         title: "Hacker.Exe - Hacking Simulator",
-        summary: `This was my first ever game. Although this game had very mixed reviews, it taught me a lot about video games and how much effort and though goes into making them. The creation of this game took roughly 3 months, during my sophomore summer break in high school.
+        summary: `This was my first ever game. Although this game had very mixed reviews, it taught me a lot about video games and how much effort and thought goes into making them. The creation of this game took roughly 3 months, during my sophomore summer break in high school.
 
           More About The Game:
           * The game is heavily inspired by point and click horror games
@@ -66,6 +79,23 @@ const Projects = () => {
             height="245"
           ></iframe>
         ),
+      },
+    },
+    {
+      name: "term-calendar.exe",
+      image:
+        "https://static-00.iconduck.com/assets.00/terminal-icon-512x478-wh766b7f.png",
+      info: {
+        title: "Terminal Calendar - Built with Ada",
+        summary: `A fully functional calendar with a custom ASCII font that displays the calendar year of the user's choosing!
+
+        This program served as a proof-of-concept, developed for a class to explore diverse programming languages and their applications. 
+
+        Learning different syntax styles, such as the one used in Ada, was both rewarding and practical. This experience allowed to broadened my understanding of different programming paradigms and their influence on various domains.
+        `,
+        link: "",
+        images: [ADAICON1, ADAICON2],
+        widget: <div />,
       },
     },
   ];

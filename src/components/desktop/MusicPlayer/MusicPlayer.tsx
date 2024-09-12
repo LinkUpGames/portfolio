@@ -116,7 +116,6 @@ const MusicPlayer = () => {
   useEffect(() => {
     return () => {
       if (playerController.current) {
-        console.log("BRUH");
         playerController.current.destroy();
       }
     };
@@ -134,7 +133,7 @@ const MusicPlayer = () => {
         playTrack: playTrack,
       }}
     >
-      <div className="rounded-lg bg-dark-status border-2 border-dark h-full w-full justify-start items-center py-2 overflow-y-auto gap-3 px-4 backdrop-blur-md bg-opacity-50">
+      <div className="rounded-lg bg-dark-status border-2 border-red h-full w-full justify-start items-center py-2 overflow-y-auto gap-3 px-4 backdrop-blur-md bg-opacity-85">
         <MusicHeader />
 
         <MixTape />
