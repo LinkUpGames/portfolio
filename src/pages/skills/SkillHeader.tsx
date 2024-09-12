@@ -12,7 +12,7 @@ const SkillHeader = () => {
             Languages, Frameworks, Tools
           </h2>
           <h4 className="text-base text-light md:text-lg">
-            Below is an estimate in how comfortable I feel using the tool
+            Below is an estimate in how proficient I am with the following tools
             specified below
           </h4>
         </div>

@@ -9,6 +9,7 @@ import { useSearchParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import ExperienceMarkdown from "./ExperienceMarkdown";
 import PortalMD from "./Files/FillitForward/Portal.md";
+import useMediaQuery from "@/helpers/hooks";
 
 const DEFAULT_FILESYSTEM_STATE: Directory = {
   name: "Experience",
@@ -72,6 +73,8 @@ const DEFAULT_FILESYSTEM_STATE: Directory = {
 };
 
 export const Experience = () => {
+  const desktop = useMediaQuery("(min-width: 768px");
+
   // FILE SYSTEM
   const [filesystem, setFilesystem] = useState<Directory>(
     DEFAULT_FILESYSTEM_STATE,
@@ -276,6 +279,7 @@ export const Experience = () => {
         getDirectoryState: getDirectoryState,
         updateDirectory: updateDirectory,
         filesystem: filesystem,
+        fileTreeClosed: fileTreeClosed,
       }}
     >
       <WindowBorder
@@ -284,7 +288,7 @@ export const Experience = () => {
         windowClassName="h-full"
       >
         <div
-          className={`md:min-w-fit ${fileTreeClosed ? "h-12" : "h-auto max-h-72"} transition-all ease-in-out duration-500 md:h-auto md:min-h-full md:w-fit overflow-y-auto relative`}
+          className={`${desktop && (fileTreeClosed ? "w-16" : "min-w-fit w-fit")} ${fileTreeClosed ? "h-12" : "h-auto max-h-72"} transition-all ease-in-out duration-500 md:h-auto md:min-h-full overflow-y-auto relative bg-dark-status  border-r-2 border-r-gold`}
         >
           {/* The Button To open and Close */}
           <motion.div
@@ -295,11 +299,11 @@ export const Experience = () => {
               scale: 1.3,
             }}
             onClick={() => setFileTreeClosed((prev) => !prev)}
-            className={`absolute w-8 h-8 top-0 right-3 cursor-pointer block md:hidden flex-grow-0 mt-2`}
+            className={`absolute w-8 h-8 top-0 right-3 bg-transparent cursor-pointer block flex-grow-0 mt-2`}
           >
             <FaArrowCircleLeft
               size="100%"
-              className={`${fileTreeClosed ? "rotate-0" : "-rotate-90"}`}
+              className={`${fileTreeClosed ? (desktop ? "rotate-180" : "-rotate-90") : desktop ? "rotate-0" : "rotate-90"}`}
               color="#FFFFFF"
             />
           </motion.div>

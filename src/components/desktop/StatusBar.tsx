@@ -13,13 +13,13 @@ const StatusBar = () => {
       name: "Home",
     },
     {
+      name: "Experience",
+    },
+    {
       name: "Projects",
     },
     {
       name: "Skills",
-    },
-    {
-      name: "Experience",
     },
   ];
 

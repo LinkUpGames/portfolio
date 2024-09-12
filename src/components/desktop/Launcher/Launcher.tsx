@@ -4,6 +4,7 @@ import { IoIosMusicalNotes } from "react-icons/io";
 // @ts-ignore
 import { CiChat1 } from "react-icons/ci";
 import { IoShareSocialOutline } from "react-icons/io5";
+// @ts-ignore
 import { FaGithub } from "react-icons/fa";
 
 import { useContext, useRef } from "react";

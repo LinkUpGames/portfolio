@@ -10,12 +10,50 @@ const DUMMY_DIRECTORY: Directory = {
   name: "default",
 };
 
+/**
+ * All functions and Props available to all components under the
+ * Experience component and in the experience page
+ */
 interface ExperienceContextProps {
+  /**
+   * This is the directory that is being displayed on the side
+   */
   filesystem: Directory;
+
+  /**
+   * Update the content displayed on the side of the directory
+   *
+   * @param element The component to render
+   */
   showContent: (element: JSX.Element) => void;
+
+  /**
+   * Update the state of a current directory. The state
+   * can either be opened or closed
+   *
+   * @param dirName The name of the directory to change
+   * @param value Either opened (true) or closed (false)
+   */
   updateDirectoryState: (dirName: string, value: boolean) => void;
+
+  /**
+   * Update the directory reference by replacing the state with a new one
+   *
+   * @param dir The new directory status
+   */
   updateDirectory: (dir: Directory) => void;
+
+  /**
+   * Check if the current Directory is opened or not
+   *
+   * @param dirName The name of the directory
+   */
   getDirectoryState: (dirName: string) => boolean;
+
+  /**
+   * Check whether the user has closed the file tree system
+   */
+  fileTreeClosed: boolean;
 }
 
 export const ExperienceContext = createContext<ExperienceContextProps>({
@@ -24,6 +62,7 @@ export const ExperienceContext = createContext<ExperienceContextProps>({
   updateDirectoryState: () => {},
   getDirectoryState: () => false,
   updateDirectory: () => {},
+  fileTreeClosed: false,
 });
 
 export const experiences: Record<string, Experience> = {

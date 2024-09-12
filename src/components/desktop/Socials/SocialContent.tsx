@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { FaGithub } from "react-icons/fa";
 import { FaInstagramSquare } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
@@ -21,6 +22,10 @@ const SocialContent = () => {
     {
       icon: <FaSquareXTwitter size="100%" color="#05d9e8" />,
       link: "https://x.com/flykidsblue1",
+    },
+    {
+      icon: <FaGithub size="100%" color="#05d9e8" />,
+      link: "https://github.com/LinkUpGames",
     },
   ];
 
