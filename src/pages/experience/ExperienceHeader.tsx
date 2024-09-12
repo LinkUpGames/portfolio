@@ -4,7 +4,8 @@ import ExperienceDirectory from "./ExperienceDirectory";
 import { useSearchParams } from "react-router-dom";
 
 const ExperienceHeader = () => {
-  const { filesystem, updateDirectory } = useContext(ExperienceContext);
+  const { filesystem, updateDirectory, fileTreeClosed } =
+    useContext(ExperienceContext);
 
   // SEARCH PARAMS
   const [searchParams, _setSearchParams] = useSearchParams();
@@ -66,7 +67,9 @@ const ExperienceHeader = () => {
   }, []);
 
   return (
-    <div className="w-full h-full bg-dark-status overflow-x-auto py-2 px-2 border-r-2 border-r-gold">
+    <div
+      className={`${fileTreeClosed ? "hidden" : "block"} w-full h-full overflow-x-auto py-2 px-2`}
+    >
       {/* Recursive Filesystem */}
       <ExperienceDirectory directory={filesystem} />
     </div>
