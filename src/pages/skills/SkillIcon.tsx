@@ -10,7 +10,7 @@ const SkillIcon = ({ name, level, image }: Props) => {
   const percentage = +(level * 100).toFixed(2);
 
   const color =
-    percentage >= 85 ? "bg-green" : percentage >= 60 ? "bg-yellow" : "bg-red";
+    percentage >= 85 ? "green" : percentage >= 60 ? "yellow" : "red";
 
   return (
     <div className="w-full flex flex-col md:flex-row items-center justify-center md:justify-between gap-3 md:gap-0">
@@ -31,9 +31,9 @@ const SkillIcon = ({ name, level, image }: Props) => {
         {/* Percentage */}
         <h3 className="text-white">{percentage}%</h3>
 
-        <div className="w-full border-charcoal border-2 h-6">
+        <div className={`w-full border-${color} border-[1px] h-6`}>
           <motion.div
-            className={`w-full ${color} h-full`}
+            className={`w-full bg-${color} h-full`}
             animate={{
               width: `${percentage}%`,
               transition: {
