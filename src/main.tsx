@@ -44,6 +44,11 @@ const router = createBrowserRouter(
           path: "Experience",
           element: <Experience />,
         },
+        {
+          path: "*",
+          element: <Navigate to="/profile" replace />,
+        },
+        ,
       ],
     },
   ],
