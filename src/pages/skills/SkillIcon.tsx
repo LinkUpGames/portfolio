@@ -9,8 +9,14 @@ interface Props {
 const SkillIcon = ({ name, level, image }: Props) => {
   const percentage = +(level * 100).toFixed(2);
 
-  const color =
-    percentage >= 85 ? "green" : percentage >= 60 ? "yellow" : "red";
+  const bgColor =
+    percentage >= 85 ? "bg-green" : percentage >= 60 ? "bg-yellow" : "bg-red";
+  const borderColor =
+    percentage >= 85
+      ? "border-green"
+      : percentage >= 60
+        ? "border-yellow"
+        : "border-red";
 
   return (
     <div className="w-full flex flex-col lg:flex-row items-center justify-center lg:justify-between lg:gap-3 gap-0">
@@ -21,7 +27,8 @@ const SkillIcon = ({ name, level, image }: Props) => {
           src={image}
           className="h-12 w-12 object-contain rounded-full bg-[#FFFFFF]"
         />
-        <h2 className="text-white text-base lg:text-xl text-left text-wrap inline-block">
+
+        <h2 className="text-white text-base lg:text-xs 2xl::text-lg text-left text-wrap inline-block">
           {name}
         </h2>
       </div>
@@ -31,9 +38,9 @@ const SkillIcon = ({ name, level, image }: Props) => {
         {/* Percentage */}
         <h3 className="text-white">{percentage}%</h3>
 
-        <div className={`w-full border-${color} border-[1px] h-6`}>
+        <div className={`w-full ${borderColor} border-[1px] h-6`}>
           <motion.div
-            className={`w-full bg-${color} h-full`}
+            className={`w-full ${bgColor} h-full`}
             animate={{
               width: `${percentage}%`,
               transition: {
