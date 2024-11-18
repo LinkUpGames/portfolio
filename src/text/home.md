@@ -8,7 +8,9 @@
 <img
     width="200px"
     height="200px"
-    src="https://media.licdn.com/dms/image/D5603AQFFlfRWnjBp3Q/profile-displayphoto-shrink_400_400/0/1700880299498?e=2147483647&v=beta&t=7IdTO4l5uzcNa_ufwV63dj9yVUD0OmM1Ed6Q8yi5PcU"/>
+    src="https://media.licdn.com/dms/image/D5603AQFFlfRWnjBp3Q/profile-displayphoto-shrink_400_400/0/1700880299498?e=2147483647&v=beta&t=7IdTO4l5uzcNa_ufwV63dj9yVUD0OmM1Ed6Q8yi5PcU"
+    alt="Profile Image"
+  />
 </div>
 
 ---
