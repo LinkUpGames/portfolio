@@ -1,5 +1,5 @@
 import { PiVinylRecordFill } from "react-icons/pi";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import SpotifyWidget from "./SpotifyWidget";
 import { useContext } from "react";
 import { MusicPlayerContext } from "./MusicContext";

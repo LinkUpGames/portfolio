@@ -68,7 +68,7 @@ const Chat = () => {
         addMessage: addMessage,
       }}
     >
-      <div className="flex flex-col rounded-lg bg-gradient-to-r from-grey to-grey border-2 border-dark h-full w-full">
+      <div className="flex flex-col rounded-lg bg-linear-to-r from-grey to-grey border-2 border-dark h-full w-full">
         {/* Header */}
         <div className="flex text-3xl bg-white text-black w-full justify-center items-center relative">
           {/* Profile Icon */}
@@ -83,7 +83,7 @@ const Chat = () => {
         </div>
 
         {/* Message Conversation */}
-        <div className="justify-start whitespace-pre-line w-full gap-3 overflow-y-auto flex flex-col flex-grow">
+        <div className="justify-start whitespace-pre-line w-full gap-3 overflow-y-auto flex flex-col grow">
           <Messages />
         </div>
 

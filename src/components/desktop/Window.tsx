@@ -108,7 +108,7 @@ const WindowBorder = ({
       </div>
 
       <div
-        className={`py-4 px-4 w-full flex-grow overflow-y-auto break-words bg-white ${className}`}
+        className={`py-4 px-4 w-full grow overflow-y-auto break-words bg-white ${className}`}
       >
         {children}
       </div>

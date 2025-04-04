@@ -141,7 +141,7 @@ const Skills = () => {
   return (
     <WindowBorder
       title="Skills"
-      className="!p-0 h-full flex flex-col"
+      className="p-0! h-full flex flex-col"
       windowClassName="h-full flex"
     >
       {/* Header */}
@@ -149,7 +149,7 @@ const Skills = () => {
 
       {/* Content */}
       <div className="w-full p-4 flex flex-1">
-        {/* <div className="flex flex-col gap-8 justify-center lg:items-start lg:grid lg:grid-cols-2 h-full lg:flex-shrink-0 bg-dark-status"> */}
+        {/* <div className="flex flex-col gap-8 justify-center lg:items-start lg:grid lg:grid-cols-2 h-full lg:shrink-0 bg-dark-status"> */}
         <div className="border-2 border-red w-full py-2 px-4 rounded-lg bg-dark-status lg:grid lg:grid-cols-2 lg:justify-center lg:items-start lg:overflow-y-auto lg:gap-4">
           {/* Languages */}
           <SkillSection skills={languages} title="Languages" />
