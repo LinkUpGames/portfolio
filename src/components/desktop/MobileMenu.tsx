@@ -39,7 +39,7 @@ const MobileMenu = ({ menu }: Props) => {
       </DropdownMenuTrigger>
 
       {/* Content */}
-      <DropdownMenuContent className="z-[9999] ml-3 bg-dark-status">
+      <DropdownMenuContent className="z-9999 ml-3 bg-dark-status">
         {menu.map((element, index) => (
           <DropdownMenuItem key={index} onClick={() => handleClick(index)}>
             <Link

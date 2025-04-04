@@ -284,7 +284,7 @@ export const Experience = () => {
     >
       <WindowBorder
         title="Experience"
-        className="!p-0 flex md:flex-row flex-col h-full w-full"
+        className="p-0! flex md:flex-row flex-col h-full w-full"
         windowClassName="h-full"
       >
         <div
@@ -299,7 +299,7 @@ export const Experience = () => {
               scale: 1.3,
             }}
             onClick={() => setFileTreeClosed((prev) => !prev)}
-            className={`absolute w-8 h-8 top-0 right-3 bg-transparent cursor-pointer block flex-grow-0 mt-2`}
+            className={`absolute w-8 h-8 top-0 right-3 bg-transparent cursor-pointer block grow-0 mt-2`}
           >
             <FaArrowCircleLeft
               size="100%"
@@ -311,7 +311,7 @@ export const Experience = () => {
           <ExperienceHeader />
         </div>
 
-        <div className="flex-grow p-4 border-2 border-red overflow-y-auto flex-1">
+        <div className="grow p-4 border-2 border-red overflow-y-auto flex-1">
           {content}
         </div>
       </WindowBorder>

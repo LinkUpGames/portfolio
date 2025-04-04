@@ -24,7 +24,7 @@ const SkillSection = ({ skills, title }: Props) => {
     <div className="flex flex-col gap-2 mb-4">
       <h2 className="text-xl text-red">{title}</h2>
 
-      <div className="p-4 w-full rounded-lg border-2 border-dark flex flex-col gap-4 justify-center items-center md:grid md:grid-cols-2 h-full flex-shrink-0 overflow-y-auto bg-dark-status">
+      <div className="p-4 w-full rounded-lg border-2 border-dark flex flex-col gap-4 justify-center items-center md:grid md:grid-cols-2 h-full shrink-0 overflow-y-auto bg-dark-status">
         {skills.map((skill, index) => (
           <SkillIcon key={index} {...skill} />
         ))}

@@ -48,7 +48,7 @@ const Launcher = () => {
       onMouseLeave={() => mouseX.set(Infinity)}
       className="mt-auto md:fixed md:bottom-0 md:mb-5 flex justify-end"
     >
-      <motion.ul className="backdrop-blur-sm bg-dark-status bg-opacity-70 rounded-md mx-auto flex gap-4 h-16 items-end px-4 pb-3">
+      <motion.ul className="backdrop-blur-xs bg-dark-status bg-opacity-70 rounded-md mx-auto flex gap-4 h-16 items-end px-4 pb-3">
         {elements.map((elem, index) => (
           <AppIcon key={index} element={elem} mouseX={mouseX} />
         ))}
