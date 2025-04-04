@@ -1,5 +1,5 @@
 import { CiFileOn } from "react-icons/ci";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { useSearchParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 

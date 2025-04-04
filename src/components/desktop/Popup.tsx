@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { useMemo } from "react";
 
 interface Props {
@@ -33,7 +33,7 @@ const Popup = ({ componentRender }: Props) => {
 
   return (
     <div
-      className={`${component ? "absolute" : "hidden"} z-[9999] h-[95%] w-full`}
+      className={`${component ? "absolute" : "hidden"} z-9999 h-[95%] w-full`}
     >
       <div className="flex justify-center items-center w-full h-full">
         <motion.div
