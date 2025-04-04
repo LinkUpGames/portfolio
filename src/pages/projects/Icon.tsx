@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import ProjectInfo from "./ProjectInfo";
 import { useState } from "react";
 import { ProjectContext } from "./ProjectContext";

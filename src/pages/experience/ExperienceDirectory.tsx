@@ -1,7 +1,7 @@
 import ExperienceFileDescription from "./ExperienceFileDescription";
 import { useContext, useEffect, useState } from "react";
 import { ExperienceContext } from "./ExperienceContext";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { CiFolderOn } from "react-icons/ci";
 
 interface Props {

@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import ExperienceCard from "./ExperienceCard";
 import ExperienceIntro from "./ExperienceIntro";
 import { useSearchParams } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import ExperienceMarkdown from "./ExperienceMarkdown";
 import PortalMD from "./Files/FillitForward/Portal.md";
 import useMediaQuery from "@/helpers/hooks";

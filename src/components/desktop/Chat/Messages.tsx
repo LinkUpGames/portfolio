@@ -1,7 +1,7 @@
 import { useContext, useMemo } from "react";
 import humanNormalIcon from "pixelarticons/svg/human.svg";
 import { ChatContext } from "./ChatContext";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
 
 const Messages = () => {
   const { messages } = useContext(ChatContext);

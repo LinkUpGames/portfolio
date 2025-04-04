@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { useContext, useMemo } from "react";
 import { MusicPlayerContext } from "./MusicContext";
 
