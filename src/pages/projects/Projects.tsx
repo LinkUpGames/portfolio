@@ -83,8 +83,7 @@ const Projects = () => {
     },
     {
       name: "term-calendar.exe",
-      image:
-        "https://static-00.iconduck.com/assets.00/terminal-icon-512x478-wh766b7f.png",
+      image: "terminal-icon.png",
       info: {
         title: "Terminal Calendar - Built with Ada",
         summary: `A fully functional calendar with a custom ASCII font that displays the calendar year of the user's choosing!
@@ -112,6 +111,17 @@ const Projects = () => {
         images: [
           "https://private-user-images.githubusercontent.com/71405160/432564955-418c4550-4caf-462a-b145-c50a251f5d02.gif?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTA2MzM2NzgsIm5iZiI6MTc1MDYzMzM3OCwicGF0aCI6Ii83MTQwNTE2MC80MzI1NjQ5NTUtNDE4YzQ1NTAtNGNhZi00NjJhLWIxNDUtYzUwYTI1MWY1ZDAyLmdpZj9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA2MjIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNjIyVDIzMDI1OFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTM1OGI1MGE0NGRhZWZjM2JmNmY1YWIyNDAxN2QzZTQyMDA0MTY2NmYzNzYxNjJlODk5ZGU4ODhjZjk0MmMyNjUmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.-n4jES5GFTimZY-ppKy5UrBKYy3K8aBWmGZh_41nJWk",
         ],
+        widget: <div />,
+      },
+    },
+    {
+      name: "notification-system.exe",
+      image: "bell.png",
+      info: {
+        title: "Notification System",
+        summary: `This is a small scale architecture design for Duolingo's notification system. This project is divided into 4 main components: server, batch job, database, client. The project was programmed in C, Go, Python, and Typescript`,
+        link: "https://github.com/LinkUpGames/notification-system",
+        images: [],
         widget: <div />,
       },
     },
